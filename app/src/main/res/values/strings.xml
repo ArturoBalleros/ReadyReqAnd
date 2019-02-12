@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ReadyReq</string>
+    <string name="menu_grupo">Workgroup</string>
+    <string name="menu_actor">Project Actors</string>
+    <string name="menu_conf">Configuration</string>
+    <string name="menu_objet">Objectives of the Project</string>
+    <string name="menu_paque">Project Packages</string>
+    <string name="menu_rf">Functional Requirements</string>
+    <string name="menu_rnf">Non-Functional Requirements</string>
+    <string name="menu_ri">Information Requirements</string>
+
+    <string name="toolbar_grupo">Worker</string>
+    <string name="toolbar_actor">Actor</string>
+    <string name="toolbar_objet">Objective</string>
+    <string name="toolbar_paque">Package</string>
+    <string name="toolbar_rf">Functional Requirement</string>
+    <string name="toolbar_rnf">Non-Functional Requirement</string>
+    <string name="toolbar_ri">Information Requirement</string>
+
+    <string name="progress_dialog">Getting information</string>
+    <string name="conf_frag_ip">Ip Server</string>
+    <string name="conf_frag_user">User</string>
+    <string name="conf_frag_pass">Password</string>
+    <string name="conf_frag_database">Database</string>
+    <string name="conf_frag_port">Port</string>
+    <string name="conf_frag_conn">Connect and Save</string>
+    <string name="success">Success</string>
+
+    <string name="conf_frag_error_1">The file could not be written</string>
+    <string name="error_connect">Unable to connect to server</string>
+    <string name="error_read_file">The file could not be read</string>
+    <string name="error_query">Error with the query</string>
+    <string name="error_empty_param">There are empty parameters</string>
+    <string name="error_empty_query">The query is empty</string>
+
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="quest_delete">Do you want to delete?</string>
+
+    <string name="data">Data</string>
+    <string name="autho">Authors</string>
+    <string name="sourc">Sources</string>
+    <string name="objec">Objectives</string>
+    <string name="reque">Requirements</string>
+    <string name="datesp">Spe. Dat.</string>
+    <string name="actor">Actors</string>
+    <string name="secnor">Seq. Nor.</string>
+    <string name="secexc">Seq. Exc.</string>
+
+    <string name="text_name">Name</string>
+    <string name="text_org">Organization</string>
+    <string name="text_rol">Role</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_no">No</string>
+    <string name="text_comen">Commentary</string>
+    <string name="text_categ">Category</string>
+    <string name="text_devel">Is Developer</string>
+
+    <string name="text_desc">Description</string>
+    <string name="text_desc_comp">Desc. Comple.</string>
+    <string name="text_comp">Complexity</string>
+
+    <string name="text_vlow">Very Low</string>
+    <string name="text_low">Low</string>
+    <string name="text_med">Medium</string>
+    <string name="text_high">High</string>
+    <string name="text_vhigh">Very High</string>
+
+    <string name="text_prio">Priority</string>
+    <string name="text_urge">Urgency</string>
+    <string name="text_stab">Stability</string>
+    <string name="text_sta">State</string>
+
+    <string name="text_ver">Verified</string>
+    <string name="text_nver">Not verified</string>
+
+    <string name="text_ocu">Occurrences</string>
+    <string name="text_tlif">Time to life</string>
+
+    <string name="text_medo">Medium</string>
+    <string name="text_max">Maximum</string>
+
+    <string name="text_precond">Precondition</string>
+    <string name="text_postcond">Postcondition</string>
+
+    <string-array name="categories">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    
+</resources>

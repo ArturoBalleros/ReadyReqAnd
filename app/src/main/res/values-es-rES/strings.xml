@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ReadyReq</string>
+    <string name="menu_grupo">Grupo de Trabajo</string>
+    <string name="menu_actor">Actores del Proyecto</string>
+    <string name="menu_conf">Configuración</string>
+    <string name="menu_objet">Objetivos del Proyecto</string>
+    <string name="menu_paque">Paquetes del Proyecto</string>
+    <string name="menu_rf">Requisitos Funcionales</string>
+    <string name="menu_rnf">Requisitos No Funcionales</string>
+    <string name="menu_ri">Requisitos de Información</string>
+
+    <string name="toolbar_grupo">Trabajador</string>
+    <string name="toolbar_actor">Actor</string>
+    <string name="toolbar_objet">Objetivo</string>
+    <string name="toolbar_paque">Paquete</string>
+    <string name="toolbar_rf">Requisito Funcional</string>
+    <string name="toolbar_rnf">Requisito No Funcional</string>
+    <string name="toolbar_ri">Requisito de Información</string>
+
+    <string name="progress_dialog">Obteniendo información</string>
+    <string name="conf_frag_ip">Ip Servidor</string>
+    <string name="conf_frag_user">Usuario</string>
+    <string name="conf_frag_pass">Contraseña</string>
+    <string name="conf_frag_database">Base de datos</string>
+    <string name="conf_frag_port">Puerto</string>
+    <string name="conf_frag_conn">Conectar y Guardar</string>
+    <string name="success">Correcto</string>
+
+    <string name="conf_frag_error_1">No se pudo escribir el fichero</string>
+    <string name="error_connect">No se ha podido conectar al servidor</string>
+    <string name="error_read_file">No se pudo leer el fichero</string>
+    <string name="error_query">Error con la consulta</string>
+    <string name="error_empty_param">Existen parámetros vacios</string>
+    <string name="error_empty_query">La consulta esta vacía</string>
+
+    <string name="delete">Eliminar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="quest_delete">¿Desea eliminar?</string>
+
+    <string name="data">Datos</string>
+    <string name="autho">Autores</string>
+    <string name="sourc">Fuentes</string>
+    <string name="objec">Objectives</string>
+    <string name="reque">Requisitos</string>
+    <string name="datesp">Dat. Esp.</string>
+    <string name="actor">Actores</string>
+    <string name="secnor">Sec. Nor.</string>
+    <string name="secexc">Sec. Exc.</string>
+
+    <string name="text_name">Nombre</string>
+    <string name="text_org">Organización</string>
+    <string name="text_rol">Rol</string>
+    <string name="text_yes">Si</string>
+    <string name="text_no">No</string>
+    <string name="text_comen">Comentario</string>
+    <string name="text_categ">Categoría</string>
+    <string name="text_devel">Es Desarrollador</string>
+
+    <string name="text_desc">Descripción</string>
+    <string name="text_desc_comp">Desc. Comple.</string>
+    <string name="text_comp">Complejidad</string>
+
+    <string name="text_vlow">Muy Baja</string>
+    <string name="text_low">Baja</string>
+    <string name="text_med">Media</string>
+    <string name="text_high">Alta</string>
+    <string name="text_vhigh">Muy Alta</string>
+
+    <string name="text_prio">Prioridad</string>
+    <string name="text_urge">Urgencia</string>
+    <string name="text_stab">Estabilidad</string>
+    <string name="text_sta">Estado</string>
+
+    <string name="text_ver">Verificado</string>
+    <string name="text_nver">No verificado</string>
+
+    <string name="text_ocu">Ocurrencias</string>
+    <string name="text_tlif">Tiempo de Vida</string>
+
+    <string name="text_medo">Medio</string>
+    <string name="text_max">Máximo</string>
+
+    <string name="text_precond">Precondición</string>
+    <string name="text_postcond">Postcondición</string>
+
+    <string-array name="categories">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+</resources>
