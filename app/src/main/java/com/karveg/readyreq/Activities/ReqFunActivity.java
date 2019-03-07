@@ -186,15 +186,16 @@ public class ReqFunActivity extends AppCompatActivity {
             url += "d=" + reqfun.getPackage() + "&";
             url += "e=" + reqfun.getPreCond() + "&";
             url += "f=" + reqfun.getPostCond() + "&";
-            url += "g=" + reqfun.getPrior() + "&";
-            url += "h=" + reqfun.getUrge() + "&";
-            url += "i=" + reqfun.getEsta() + "&";
+            url += "g=" + reqfun.getComplejidad() + "&";//complejidad
+            url += "h=" + reqfun.getPrior() + "&";
+            url += "i=" + reqfun.getUrge() + "&";
+            url += "j=" + reqfun.getEsta() + "&";
             if (reqfun.isState())
-                url += "j=" + 1 + "&";
+                url += "k=" + 1 + "&";
             else
-                url += "j=" + 0 + "&";
-            url += "k=" + reqfun.getCategory() + "&";
-            url += "l=" + reqfun.getCommentary();
+                url += "k=" + 0 + "&";
+            url += "l=" + reqfun.getCategory() + "&";
+            url += "m=" + reqfun.getCommentary();
             Utils.create_update_delete(ReqFunActivity.this, url, progressDialog, MyApplication.REQ_FUNC, true);
 
         } else { //Creo
@@ -205,15 +206,16 @@ public class ReqFunActivity extends AppCompatActivity {
             url += "c=" + reqfun.getPackage() + "&";
             url += "d=" + reqfun.getPreCond() + "&";
             url += "e=" + reqfun.getPostCond() + "&";
-            url += "f=" + reqfun.getPrior() + "&";
-            url += "g=" + reqfun.getUrge() + "&";
-            url += "h=" + reqfun.getEsta() + "&";
+            url += "f=" + reqfun.getComplejidad() + "&";//complejidad
+            url += "g=" + reqfun.getPrior() + "&";
+            url += "h=" + reqfun.getUrge() + "&";
+            url += "i=" + reqfun.getEsta() + "&";
             if (reqfun.isState())
-                url += "i=" + 1 + "&";
+                url += "j=" + 1 + "&";
             else
-                url += "i=" + 0 + "&";
-            url += "j=" + reqfun.getCategory() + "&";
-            url += "k=" + reqfun.getCommentary();
+                url += "j=" + 0 + "&";
+            url += "k=" + reqfun.getCategory() + "&";
+            url += "l=" + reqfun.getCommentary();
             Utils.create_update_delete(ReqFunActivity.this, url, progressDialog, MyApplication.REQ_FUNC, true);
             ReqFun.getIdReque(getApplicationContext(), reqfun.getName(), progressDialog);
 

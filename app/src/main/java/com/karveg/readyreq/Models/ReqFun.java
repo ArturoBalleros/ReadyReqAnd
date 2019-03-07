@@ -38,6 +38,7 @@ public class ReqFun implements Serializable {
     private int Package;
     private String PreCond;
     private String PostCond;
+    private int Complejidad;
     private int Prior;
     private int Urge;
     private int Esta;
@@ -103,6 +104,14 @@ public class ReqFun implements Serializable {
 
     public void setPostCond(String postCond) {
         PostCond = postCond;
+    }
+
+    public int getComplejidad() {
+        return Complejidad;
+    }
+
+    public void setComplejidad(int compl) {
+        Complejidad = compl;
     }
 
     public int getPrior() {
