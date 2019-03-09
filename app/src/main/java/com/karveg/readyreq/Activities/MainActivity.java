@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Fragments.ConfigFragment;
+import com.karveg.readyreq.Fragments.EstimFragment;
 import com.karveg.readyreq.Fragments.GenericFragment;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
@@ -124,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_ri:
                 mode_select = MyApplication.REQ_INFO;
                 fragment = new GenericFragment(mode_select);
+                fragmentTransaction = true;
+                break;
+            case R.id.menu_estim:
+                mode_select = MyApplication.NOTHING;
+                fragment = new EstimFragment();
                 fragmentTransaction = true;
                 break;
             case R.id.menu_conf:

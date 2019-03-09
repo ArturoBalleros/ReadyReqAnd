@@ -95,14 +95,15 @@ public class ReqInfoFragment extends Fragment {
 
         bindUI(view);
         Events();
-              setValuesUI();
+        setValuesUI();
 
         return view;
     }
 
-    private void Events(){
+    private void Events() {
         seekBarOcuMed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int prog = 0;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 prog = progress;
@@ -123,6 +124,7 @@ public class ReqInfoFragment extends Fragment {
 
         seekBarOcuMax.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int prog = 0;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 prog = progress;
@@ -143,6 +145,7 @@ public class ReqInfoFragment extends Fragment {
 
         seekBarTlifMed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int prog = 0;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 prog = progress;
@@ -163,6 +166,7 @@ public class ReqInfoFragment extends Fragment {
 
         seekBarTlifMax.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int prog = 0;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 prog = progress;

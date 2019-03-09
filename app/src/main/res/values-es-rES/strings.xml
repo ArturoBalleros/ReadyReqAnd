@@ -9,6 +9,7 @@
     <string name="menu_rf">Requisitos Funcionales</string>
     <string name="menu_rnf">Requisitos No Funcionales</string>
     <string name="menu_ri">Requisitos de Información</string>
+    <string name="menu_estim">Estimaciones</string>
 
     <string name="toolbar_grupo">Trabajador</string>
     <string name="toolbar_actor">Actor</string>
@@ -83,6 +84,62 @@
 
     <string name="text_precond">Precondición</string>
     <string name="text_postcond">Postcondición</string>
+
+    <string name="text_tec_fact">Factores Técnicos</string>
+
+    <string name="text_dsr">Sistema distribuido requerido</string>
+    <string name="text_rtii">El tiempo de respuesta es importante</string>
+    <string name="text_eue">Eficiencia del usuario final</string>
+    <string name="text_cipr">Procesamiento interno complejo requerido</string>
+
+    <string name="text_rcmbaf">El código reutilizable debe ser un enfoque</string>
+    <string name="text_ie">Facilidad de instalación</string>
+    <string name="text_u">Usabilidad</string>
+    <string name="text_cps">Soporte multiplataforma</string>
+
+    <string name="text_etc">Fácil de cambiar</string>
+    <string name="text_hc">Altamente concurrente</string>
+    <string name="text_cs">Seguridad personalizada</string>
+    <string name="text_dotpc">Dependencia del código de terceros</string>
+    <string name="text_ut">Entrenamiento de usuario</string>
+
+    <string name="text_env_fact">Factores de Entorno</string>
+
+    <string name="text_fwtp">Familiaridad con el proyecto</string>
+    <string name="text_ae">Experiencia de aplicación</string>
+    <string name="text_oope">Experiencia en programación OO</string>
+    <string name="text_lac">Capacidad de analista líder</string>
+
+    <string name="text_m">Motivación</string>
+    <string name="text_sr">Requisitos estables</string>
+    <string name="text_pts">Personal a tiempo parcial</string>
+    <string name="text_dpl">Lenguaje de programación difícil</string>
+
+    <string name="text_help_dsr">Los números más altos representan una arquitectura más compleja.</string>
+    <string name="text_help_rtii">Los números más altos representan una importancia cada vez mayor del tiempo de respuesta.</string>
+    <string name="text_help_eue">Los números más altos representan proyectos que dependen más de la aplicación, para mejorar la eficiencia del usuario.</string>
+    <string name="text_help_cipr">Los algoritmos complejos tienen números más altos.</string>
+
+    <string name="text_help_rcmbaf">Los números más altos representan el nivel de reutilización, menor será el número.</string>
+    <string name="text_help_ie">Los números más altos representan el nivel de competencia de los usuarios, menor será el número.</string>
+    <string name="text_help_u">Cuanto mayor es la importancia de la usabilidad, mayor es el número.</string>
+    <string name="text_help_cps">Cuantas más plataformas haya que admitir, mayor será el valor.</string>
+
+    <string name="text_help_etc">Cuanto más personalización se requiera en el futuro, mayor será el valor.</string>
+    <string name="text_help_hc">Cuanta más atención tenga que dedicar a resolver conflictos en los datos o la aplicación, mayor será el valor.</string>
+    <string name="text_help_cs">Cuanto más trabajo de seguridad personalizado tenga que realizar, mayor será el valor.</string>
+    <string name="text_help_dotpc">Cuanto más código de terceros, menor será el número.</string>
+    <string name="text_help_ut">Cuanto más tarde a los usuarios cruzar el umbral de succión, mayor será el valor.</string>
+
+    <string name="text_help_fwtp">Los niveles más altos de experiencia obtienen un número más alto.</string>
+    <string name="text_help_ae">Los números más altos representan más experiencia.</string>
+    <string name="text_help_oope">Los números más altos representan más experiencia POO.</string>
+    <string name="text_help_lac">Los números más altos representan una mayor habilidad y conocimiento.</string>
+
+    <string name="text_help_m">Los números más altos representan más motivación.</string>
+    <string name="text_help_sr">Los números más altos representan más cambios.</string>
+    <string name="text_help_pts">El multiplicador para este número es negativo. Los números más altos reflejan miembros del equipo que no se dedican a tiempo completo al proyecto o son externos a la entidad.</string>
+    <string name="text_help_dpl">Este multiplicador también es negativo. Los idiomas más duros representan números más altos.</string>
 
     <string-array name="categories">
         <item>1</item>

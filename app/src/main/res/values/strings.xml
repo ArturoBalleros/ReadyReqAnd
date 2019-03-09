@@ -9,6 +9,7 @@
     <string name="menu_rf">Functional Requirements</string>
     <string name="menu_rnf">Non-Functional Requirements</string>
     <string name="menu_ri">Information Requirements</string>
+    <string name="menu_estim">Estimates</string>
 
     <string name="toolbar_grupo">Worker</string>
     <string name="toolbar_actor">Actor</string>
@@ -84,6 +85,62 @@
     <string name="text_precond">Precondition</string>
     <string name="text_postcond">Postcondition</string>
 
+    <string name="text_tec_fact">Technical Factors</string>
+
+    <string name="text_dsr">Distributed system required</string>
+    <string name="text_rtii">Response time is important</string>
+    <string name="text_eue">End user efficiency</string>
+    <string name="text_cipr">Complex internal processing required</string>
+
+    <string name="text_rcmbaf">Reusable code must be a focus</string>
+    <string name="text_ie">Installation ease</string>
+    <string name="text_u">Usability</string>
+    <string name="text_cps">Cross-Platform support</string>
+
+    <string name="text_etc">Easy to change</string>
+    <string name="text_hc">Highly concurrent</string>
+    <string name="text_cs">Custom security</string>
+    <string name="text_dotpc">Dependence on third-party code</string>
+    <string name="text_ut">User training</string>
+
+    <string name="text_env_fact">Environmental Factors</string>
+
+    <string name="text_fwtp">Familiarity with the project</string>
+    <string name="text_ae">Application experience</string>
+    <string name="text_oope">OO programming experience</string>
+    <string name="text_lac">Lead analyst capability</string>
+
+    <string name="text_m">Motivation</string>
+    <string name="text_sr">Stable requirements</string>
+    <string name="text_pts">Part time staff</string>
+    <string name="text_dpl">Difficult programming language</string>
+
+    <string name="text_help_dsr">Higher numbers represent a more complex architecture.</string>
+    <string name="text_help_rtii">Higher numbers represent an increasing importance of response time.</string>
+    <string name="text_help_eue">Higher numbers represent projects that depend more on the application, to improve user efficiency.</string>
+    <string name="text_help_cipr">Complex algorithms have higher numbers.</string>
+
+    <string name="text_help_rcmbaf">The higher numbers represent the level of reuse, the lower the number.</string>
+    <string name="text_help_ie">The higher numbers represent the level of competence of the users, the lower the number.</string>
+    <string name="text_help_u">The greater the importance of usability, the greater the number.</string>
+    <string name="text_help_cps">The more platforms that have to be supported, the greater the value.</string>
+
+    <string name="text_help_etc">The more personalization is required in the future, the greater the value.</string>
+    <string name="text_help_hc">The more attention you have to dedicate to resolving conflicts in the data or the application, the greater the value.</string>
+    <string name="text_help_cs">The more custom security work you have to perform, the greater the value.</string>
+    <string name="text_help_dotpc">The more third-party code, the smaller the number.</string>
+    <string name="text_help_ut">The later the users cross the suction threshold, the higher the value.</string>
+
+    <string name="text_help_fwtp">Higher levels of experience get a higher number.</string>
+    <string name="text_help_ae">Higher numbers represent more experience.</string>
+    <string name="text_help_oope">Higher numbers represent more POO experience.</string>
+    <string name="text_help_lac">Higher numbers represent greater skill and knowledge.</string>
+
+    <string name="text_help_m">Higher numbers represent more motivation.</string>
+    <string name="text_help_sr">Higher numbers represent more changes.</string>
+    <string name="text_help_pts">The multiplier for this number is negative, the higher numbers reflect members of the team that are not dedicated full-time to the project or are external to the entity.</string>
+    <string name="text_help_dpl">This multiplier is also negative, the harder languages ​​represent higher numbers.</string>
+
     <string-array name="categories">
         <item>1</item>
         <item>2</item>
@@ -96,5 +153,4 @@
         <item>9</item>
         <item>10</item>
     </string-array>
-    
 </resources>

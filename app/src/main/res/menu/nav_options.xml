@@ -30,6 +30,10 @@
             android:icon="@drawable/ic_ri"
             android:title="@string/menu_ri" />
         <item
+            android:id="@+id/menu_estim"
+            android:icon="@drawable/ic_conf"
+            android:title="@string/menu_estim" />
+        <item
             android:id="@+id/menu_conf"
             android:icon="@drawable/ic_conf"
             android:title="@string/menu_conf" />
