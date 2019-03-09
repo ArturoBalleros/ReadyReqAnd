@@ -37,6 +37,10 @@ public class ReqFunFragment extends Fragment {
     private static EditText editTextPreCond;
     private static EditText editTextPostCond;
 
+    private static RadioButton radioButtonCLow;
+    private static RadioButton radioButtonCMed;
+    private static RadioButton radioButtonCHigh;
+
     private static RadioButton radioButtonPVLow;
     private static RadioButton radioButtonPLow;
     private static RadioButton radioButtonPMed;
@@ -109,6 +113,10 @@ public class ReqFunFragment extends Fragment {
         editTextPreCond = view.findViewById(R.id.editTextPreCond);
         editTextPostCond = view.findViewById(R.id.editTextPostCond);
 
+        radioButtonCLow = view.findViewById(R.id.radioButtonCLow);
+        radioButtonCMed = view.findViewById(R.id.radioButtonCMed);
+        radioButtonCHigh = view.findViewById(R.id.radioButtonCHigh);
+
         radioButtonPVLow = view.findViewById(R.id.radioButtonPVLow);
         radioButtonPLow = view.findViewById(R.id.radioButtonPLow);
         radioButtonPMed = view.findViewById(R.id.radioButtonPMed);
@@ -140,6 +148,13 @@ public class ReqFunFragment extends Fragment {
 
         editTextPreCond.setText(reqfun.getPreCond());
         editTextPostCond.setText(reqfun.getPostCond());
+
+        if (reqfun.getComplejidad() == 1)
+            radioButtonCLow.setChecked(true);
+        else if (reqfun.getComplejidad() == 2)
+            radioButtonCMed.setChecked(true);
+        else if (reqfun.getComplejidad() == 3)
+            radioButtonCHigh.setChecked(true);
 
         if (reqfun.getPrior() == 1)
             radioButtonPVLow.setChecked(true);
@@ -194,6 +209,13 @@ public class ReqFunFragment extends Fragment {
 
         reqfun.setPreCond(editTextPreCond.getText().toString());
         reqfun.setPostCond(editTextPostCond.getText().toString());
+
+        if (radioButtonCLow.isChecked())
+            reqfun.setComplejidad(1);
+        else if (radioButtonCMed.isChecked())
+            reqfun.setComplejidad(2);
+        else if (radioButtonCHigh.isChecked())
+            reqfun.setComplejidad(3);
 
         if (radioButtonPVLow.isChecked())
             reqfun.setPrior(1);

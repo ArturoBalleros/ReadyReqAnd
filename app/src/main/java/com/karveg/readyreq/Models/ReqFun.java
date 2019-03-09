@@ -259,6 +259,7 @@ public class ReqFun implements Serializable {
                     r.setPackage(jsonObject.optInt("Paquete"));
                     r.setPreCond(jsonObject.optString("Precond"));
                     r.setPostCond(jsonObject.optString("Postcond"));
+                    r.setComplejidad(jsonObject.optInt("Complejidad"));
                     r.setPrior(jsonObject.optInt("Prioridad"));
                     r.setUrge(jsonObject.optInt("Urgencia"));
                     r.setEsta(jsonObject.optInt("Estabilidad"));
