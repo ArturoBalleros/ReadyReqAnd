@@ -141,6 +141,16 @@
     <string name="text_help_pts">El multiplicador para este número es negativo. Los números más altos reflejan miembros del equipo que no se dedican a tiempo completo al proyecto o son externos a la entidad.</string>
     <string name="text_help_dpl">Este multiplicador también es negativo. Los idiomas más duros representan números más altos.</string>
 
+    <string name="text_tfc">TFC</string>
+    <string name="text_ef">EF</string>
+    <string name="text_uucp">UUCP</string>
+    <string name="text_aw">AW</string>
+    <string name="text_ucp">UCP</string>
+    <string name="text_hxucp">Hora/UCP</string>
+    <string name="text_he">Horas de Esfuerzo</string>
+
+    <string name="text_fc">Calculos Finales</string>
+
     <string-array name="categories">
         <item>1</item>
         <item>2</item>

@@ -141,6 +141,16 @@
     <string name="text_help_pts">The multiplier for this number is negative, the higher numbers reflect members of the team that are not dedicated full-time to the project or are external to the entity.</string>
     <string name="text_help_dpl">This multiplier is also negative, the harder languages ​​represent higher numbers.</string>
 
+    <string name="text_tfc">TFC</string>
+    <string name="text_ef">EF</string>
+    <string name="text_uucp">UUCP</string>
+    <string name="text_aw">AW</string>
+    <string name="text_ucp">UCP</string>
+    <string name="text_hxucp">Hour/UCP</string>
+    <string name="text_he">Hours of Effort</string>
+
+    <string name="text_fc">Final Calculations</string>
+
     <string-array name="categories">
         <item>1</item>
         <item>2</item>

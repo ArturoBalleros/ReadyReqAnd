@@ -22,6 +22,7 @@ public class MyApplication extends Application {
     public static final int REQ_FUNC = 4;
     public static final int REQ_NO_FUN = 5;
     public static final int REQ_INFO = 6;
+    public static final int ESTIM = 7;
 
     public static final int DATA = 0;
     public static final int AUTH = 1;

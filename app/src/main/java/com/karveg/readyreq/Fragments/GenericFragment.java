@@ -129,7 +129,7 @@ public class GenericFragment extends Fragment {
         //Metodos necesarios
         bindUI(view);
         configRecyclerView();
-        Events();;
+        Events();
 
         return view;
     }

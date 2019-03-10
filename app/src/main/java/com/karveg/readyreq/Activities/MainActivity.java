@@ -12,6 +12,8 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.karveg.readyreq.App.MyApplication;
@@ -36,11 +38,6 @@ public class MainActivity extends AppCompatActivity {
         setToolBar();
         navigationView = findViewById(R.id.navView);
         drawerLayout = findViewById(R.id.drawer_layout);
-/*
-       Intent i = new Intent(MainActivity.this, ObjecActivity.class);
-        i.putExtra("code", 3);
-        startActivity(i);
-        finish();*/
 
         Bundle bu = getIntent().getExtras();
         if (bu != null && bu.getInt("Fragment") > MyApplication.NOTHING) {
@@ -74,10 +71,12 @@ public class MainActivity extends AppCompatActivity {
             case android.R.id.home://esto es el burger
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
+            case R.id.saveObject:
+                EstimFragment.saveEstimates();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
 
     //que se ponga en el nav como seleccionado
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction = true;
                 break;
             case R.id.menu_estim:
-                mode_select = MyApplication.NOTHING;
+                mode_select = MyApplication.ESTIM;
                 fragment = new EstimFragment();
                 fragmentTransaction = true;
                 break;
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (mode_select != MyApplication.NOTHING) {
+        if (mode_select != MyApplication.NOTHING && mode_select != MyApplication.ESTIM) {
             getMenuInflater().inflate(R.menu.toolbar_search, menu);
 
             MenuItem searchItem = menu.findItem(R.id.searchView);
@@ -164,15 +163,15 @@ public class MainActivity extends AppCompatActivity {
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
-                        if (!query.isEmpty()) {
-                            MenuItem item = navigationView.getMenu().getItem(mode_select);
-                            Fragment fragment = new GenericFragment(mode_select, Utils.getNameSearch(mode_select), query);
-                            changeFragment(fragment, item);
-                            //se oculta el EditText
-                            searchView.clearFocus();
-                            searchView.setQuery("", false);
-                            searchView.setIconified(true);
-                        }
+                    if (!query.isEmpty()) {
+                        MenuItem item = navigationView.getMenu().getItem(mode_select);
+                        Fragment fragment = new GenericFragment(mode_select, Utils.getNameSearch(mode_select), query);
+                        changeFragment(fragment, item);
+                        //se oculta el EditText
+                        searchView.clearFocus();
+                        searchView.setQuery("", false);
+                        searchView.setIconified(true);
+                    }
                     return true;
                 }
 
@@ -181,6 +180,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             });
+        }
+        if (mode_select == MyApplication.ESTIM) {
+            getMenuInflater().inflate(R.menu.ctx_menu_save, menu);
         }
         return super.onCreateOptionsMenu(menu);
     }
