@@ -142,6 +142,7 @@ public class SecNorFragment extends Fragment {
         fabUpd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //borro todos y los guardo en el orden correcto
                 String url = "";
                 url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?";
                 url += "a=reqsecnor where idreq = " + reqfun.getId() + ";";

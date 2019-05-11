@@ -203,7 +203,7 @@ public class Utils {
                         Utils.create_update_delete(ctx, Utils.getUrlDelete(mode, flagTab, id, g), progressDialog, mode, false);
                     }
                 }
-                DatEspFragment.updateRecyclerView();
+                updateFragment(flagTab);
             }
         });
 
@@ -244,6 +244,9 @@ public class Utils {
         if (flagTab == MyApplication.OBJE) ObjecFragment.updateRecyclerView();
         if (flagTab == MyApplication.REQU) RequFragment.updateRecyclerView();
         if (flagTab == MyApplication.ACTO) ActoFragment.updateRecyclerView();
+        if (flagTab == MyApplication.SEC_NOR) SecNorFragment.updateRecyclerView();
+        if (flagTab == MyApplication.SEC_EXC) SecExcFragment.updateRecyclerView();
+        if (flagTab == MyApplication.DAT_ESP) DatEspFragment.updateRecyclerView();
     }
 
     public static void create_update_delete(final Context ctx, String url, final AlertDialog progressDialog, final int mode, final boolean salt) {
@@ -423,14 +426,13 @@ public class Utils {
     public static void showAlertForItem(final List<Generic> objects, final Context ctx, final int mode, final int id) {
 
         android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(ctx);//creo el alert
-        builder.setTitle("Palabra");
+        builder.setTitle(R.string.new_desc);
 
         //inflo la vista, rescato la UI y le pongo titulo
         View viewInflated = LayoutInflater.from(ctx).inflate(R.layout.dialog_item, null);
         final EditText input = viewInflated.findViewById(R.id.editTextCtxMenu);
         builder.setView(viewInflated);
-        builder.setMessage("Escribe");
-        builder.setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -445,14 +447,10 @@ public class Utils {
                     url += "b=" + id + ",'" + text + "'";
                     if (id != MyApplication.NOTHING) saveObject(ctx, url);
                 }
-                if (mode == MyApplication.SEC_NOR) SecNorFragment.updateRecyclerView();
-                if (mode == MyApplication.SEC_EXC) SecExcFragment.updateRecyclerView();
-                if (mode == MyApplication.DAT_ESP) DatEspFragment.updateRecyclerView();
-
-
+                updateFragment(mode);
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();

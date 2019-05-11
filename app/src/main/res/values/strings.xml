@@ -35,6 +35,9 @@
     <string name="error_empty_param">There are empty parameters</string>
     <string name="error_empty_query">The query is empty</string>
 
+    <string name="new_desc">New Description</string>
+
+    <string name="save">Save</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="quest_delete">Do you want to delete?</string>

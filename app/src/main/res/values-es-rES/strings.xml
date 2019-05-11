@@ -35,6 +35,9 @@
     <string name="error_empty_param">Existen parámetros vacios</string>
     <string name="error_empty_query">La consulta esta vacía</string>
 
+    <string name="new_desc">Nueva Descripción</string>
+
+    <string name="save">Guardar</string>
     <string name="delete">Eliminar</string>
     <string name="cancel">Cancelar</string>
     <string name="quest_delete">¿Desea eliminar?</string>
