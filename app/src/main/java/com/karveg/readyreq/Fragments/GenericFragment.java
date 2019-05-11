@@ -261,7 +261,7 @@ public class GenericFragment extends Fragment {
         progressDialog.show();
 
         String url = "";
-        url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/" + filePHP + ".php?";
+        url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/" + filePHP + ".php?";
         url += "a=" + buscar;
         url = url.replace(" ", "%20");
 

@@ -26,6 +26,10 @@ public class SharedP {
         return prefs.getInt("Port", 3306);
     }
 
+    public static int getPortHttpPrefs(SharedPreferences prefs) {
+        return prefs.getInt("PortHTTP", 8080);
+    }
+
     public static void saveIPSer(SharedPreferences prefs, String ipSer) {
         SharedPreferences.Editor editor = prefs.edit();//escribir
         editor.putString("IPServer", ipSer);
@@ -37,7 +41,7 @@ public class SharedP {
     public static void saveUser(SharedPreferences prefs, String User) {
         SharedPreferences.Editor editor = prefs.edit();//escribir
         editor.putString("User", User);
-        MyApplication.USER= User;
+        MyApplication.USER = User;
         editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
         editor.apply();
     }
@@ -45,7 +49,7 @@ public class SharedP {
     public static void savePass(SharedPreferences prefs, String Pass) {
         SharedPreferences.Editor editor = prefs.edit();//escribir
         editor.putString("Password", Pass);
-        MyApplication.PASS= Pass;
+        MyApplication.PASS = Pass;
         editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
         editor.apply();
     }
@@ -53,7 +57,7 @@ public class SharedP {
     public static void saveDatabase(SharedPreferences prefs, String Database) {
         SharedPreferences.Editor editor = prefs.edit();//escribir
         editor.putString("Database", Database);
-        MyApplication.DATABASE= Database;
+        MyApplication.DATABASE = Database;
         editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
         editor.apply();
     }
@@ -61,7 +65,15 @@ public class SharedP {
     public static void savePort(SharedPreferences prefs, int Port) {
         SharedPreferences.Editor editor = prefs.edit();//escribir
         editor.putInt("Port", Port);
-        MyApplication.PORT= Port;
+        MyApplication.PORT = Port;
+        editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
+        editor.apply();
+    }
+
+    public static void savePortHttp(SharedPreferences prefs, int PortHttp) {
+        SharedPreferences.Editor editor = prefs.edit();//escribir
+        editor.putInt("PortHTTP", PortHttp);
+        MyApplication.PORTHTTP = PortHttp;
         editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
         editor.apply();
     }

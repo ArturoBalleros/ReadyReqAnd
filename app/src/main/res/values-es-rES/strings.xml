@@ -24,7 +24,8 @@
     <string name="conf_frag_user">Usuario</string>
     <string name="conf_frag_pass">Contraseña</string>
     <string name="conf_frag_database">Base de datos</string>
-    <string name="conf_frag_port">Puerto</string>
+    <string name="conf_frag_port">Puerto Mysql</string>
+    <string name="conf_frag_port_http">Puerto HTTP</string>
     <string name="conf_frag_conn">Conectar y Guardar</string>
     <string name="success">Correcto</string>
 

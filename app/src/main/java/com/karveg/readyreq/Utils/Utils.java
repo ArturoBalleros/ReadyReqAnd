@@ -73,19 +73,19 @@ public class Utils {
 
     public static String getUrlList(int mode) {
         if (MyApplication.GRUPO == mode)
-            return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/group_frag_list.php";
+            return "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/group_frag_list.php";
         else if (MyApplication.PAQUETES == mode)
-            return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/paq_frag_list.php";
+            return "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_frag_list.php";
         else if (MyApplication.OBJETIVOS == mode)
-            return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/objet_frag_list.php";
+            return "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_frag_list.php";
         else if (MyApplication.ACTORES == mode)
-            return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/actor_frag_list.php";
+            return "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_frag_list.php";
         else if (MyApplication.REQ_FUNC == mode)
-            return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqfun_frag_list.php";
+            return "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqfun_frag_list.php";
         else if (MyApplication.REQ_NO_FUN == mode)
-            return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqnfun_frag_list.php";
+            return "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqnfun_frag_list.php";
         else if (MyApplication.REQ_INFO == mode)
-            return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqinfo_frag_list.php";
+            return "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_frag_list.php";
         else return "";
     }
 
@@ -105,66 +105,66 @@ public class Utils {
         String Descrip = g.getName();
 
         if (MyApplication.GRUPO == mode && flagTab == MyApplication.NOTHING)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/group_delete.php?a=" + id;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/group_delete.php?a=" + id;
         if (MyApplication.PAQUETES == mode && flagTab == MyApplication.NOTHING)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/paq_delete.php?a=" + id;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_delete.php?a=" + id;
         if (MyApplication.OBJETIVOS == mode && flagTab == MyApplication.NOTHING)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/objet_delete.php?a=" + id;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_delete.php?a=" + id;
         if (MyApplication.ACTORES == mode && flagTab == MyApplication.NOTHING)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/actor_delete.php?a=" + id;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_delete.php?a=" + id;
         if (MyApplication.REQ_FUNC == mode && flagTab == MyApplication.NOTHING)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqfun_delete.php?a=" + id;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqfun_delete.php?a=" + id;
         if (MyApplication.REQ_NO_FUN == mode && flagTab == MyApplication.NOTHING)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqnfun_delete.php?a=" + id;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqnfun_delete.php?a=" + id;
         if (MyApplication.REQ_INFO == mode && flagTab == MyApplication.NOTHING)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqinfo_delete.php?a=" + id;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_delete.php?a=" + id;
 
         if (MyApplication.OBJETIVOS == mode && flagTab == MyApplication.AUTH)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=objauto where idobj = " + id + " and idautor = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=objauto where idobj = " + id + " and idautor = " + idO;
         if (MyApplication.OBJETIVOS == mode && flagTab == MyApplication.SOUR)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=objfuen where idobj = " + id + " and idfuen = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=objfuen where idobj = " + id + " and idfuen = " + idO;
         if (MyApplication.OBJETIVOS == mode && flagTab == MyApplication.OBJE)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=objsubobj where idobj = " + id + " and idsubobj = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=objsubobj where idobj = " + id + " and idsubobj = " + idO;
 
         if (MyApplication.ACTORES == mode && flagTab == MyApplication.AUTH)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=actauto where idact = " + id + " and idautor = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=actauto where idact = " + id + " and idautor = " + idO;
         if (MyApplication.ACTORES == mode && flagTab == MyApplication.SOUR)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=actfuen where idact = " + id + " and idfuen = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=actfuen where idact = " + id + " and idfuen = " + idO;
 
         if (MyApplication.REQ_NO_FUN == mode && flagTab == MyApplication.AUTH)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqnauto where idreq = " + id + " and idautor = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqnauto where idreq = " + id + " and idautor = " + idO;
         if (MyApplication.REQ_NO_FUN == mode && flagTab == MyApplication.SOUR)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqnfuen where idreq = " + id + " and idfuen = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqnfuen where idreq = " + id + " and idfuen = " + idO;
         if (MyApplication.REQ_NO_FUN == mode && flagTab == MyApplication.OBJE)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqnobj where idreq = " + id + " and idobj = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqnobj where idreq = " + id + " and idobj = " + idO;
         if (MyApplication.REQ_NO_FUN == mode && flagTab == MyApplication.REQU)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqnreqr where idreq = " + id + " and idreqr = " + idO + " and tiporeq = " + tipoReq;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqnreqr where idreq = " + id + " and idreqr = " + idO + " and tiporeq = " + tipoReq;
 
         if (MyApplication.REQ_INFO == mode && flagTab == MyApplication.AUTH)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqiauto where idreq = " + id + " and idautor = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqiauto where idreq = " + id + " and idautor = " + idO;
         if (MyApplication.REQ_INFO == mode && flagTab == MyApplication.SOUR)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqifuen where idreq = " + id + " and idfuen = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqifuen where idreq = " + id + " and idfuen = " + idO;
         if (MyApplication.REQ_INFO == mode && flagTab == MyApplication.OBJE)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqiobj where idreq = " + id + " and idobj = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqiobj where idreq = " + id + " and idobj = " + idO;
         if (MyApplication.REQ_INFO == mode && flagTab == MyApplication.REQU)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqireqr where idreq = " + id + " and idreqr = " + idO + " and tiporeq = " + tipoReq;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqireqr where idreq = " + id + " and idreqr = " + idO + " and tiporeq = " + tipoReq;
         if (MyApplication.REQ_INFO == mode && flagTab == MyApplication.DAT_ESP)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqidatesp where idreq = " + id + " and descrip = '" + Descrip + "'";
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqidatesp where idreq = " + id + " and descrip = '" + Descrip + "'";
 
         if (MyApplication.REQ_FUNC == mode && flagTab == MyApplication.AUTH)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqauto where idreq = " + id + " and idautor = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqauto where idreq = " + id + " and idautor = " + idO;
         if (MyApplication.REQ_FUNC == mode && flagTab == MyApplication.SOUR)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqfuen where idreq = " + id + " and idfuen = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqfuen where idreq = " + id + " and idfuen = " + idO;
         if (MyApplication.REQ_FUNC == mode && flagTab == MyApplication.OBJE)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqobj where idreq = " + id + " and idobj = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqobj where idreq = " + id + " and idobj = " + idO;
         if (MyApplication.REQ_FUNC == mode && flagTab == MyApplication.REQU)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqreqr where idreq = " + id + " and idreqr = " + idO + " and tiporeq = " + tipoReq;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqreqr where idreq = " + id + " and idreqr = " + idO + " and tiporeq = " + tipoReq;
         if (MyApplication.REQ_FUNC == mode && flagTab == MyApplication.ACTO)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqact where idreq = " + id + " and idact = " + idO;
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqact where idreq = " + id + " and idact = " + idO;
         if (MyApplication.REQ_FUNC == mode && flagTab == MyApplication.SEC_NOR)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqsecnor where idreq = " + id + " and descrip = '" + Descrip + "'";
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqsecnor where idreq = " + id + " and descrip = '" + Descrip + "'";
         if (MyApplication.REQ_FUNC == mode && flagTab == MyApplication.SEC_EXC)
-            resul = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?a=reqsecexc where idreq = " + id + " and descrip = '" + Descrip + "'";
+            resul = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?a=reqsecexc where idreq = " + id + " and descrip = '" + Descrip + "'";
 
         return resul;
     }
@@ -440,7 +440,7 @@ public class Utils {
                 if (text.length() > 0) {
                     Generic g = new Generic(objects.size() + 1, text);
                     objects.add(g);
-                    String url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+                    String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
                     if (mode == MyApplication.SEC_NOR) url += "a=reqsecnor(idreq,descrip)&";
                     if (mode == MyApplication.SEC_EXC) url += "a=reqsecexc(idreq,descrip)&";
                     if (mode == MyApplication.DAT_ESP) url += "a=reqidatesp(idreq,descrip)&";

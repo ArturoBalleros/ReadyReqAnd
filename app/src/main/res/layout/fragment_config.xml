@@ -66,6 +66,17 @@
             android:inputType="number"
             android:textSize="18dp" />
 
+        <EditText
+            android:id="@+id/editTextPortHttp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/conf_frag_port_http"
+            android:inputType="number"
+            android:textSize="18dp" />
+
         <Button
             android:id="@+id/buttonConnect"
             android:layout_width="wrap_content"

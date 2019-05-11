@@ -72,7 +72,7 @@ public class Package {
 
         request = Volley.newRequestQueue(ctx);
 
-        String url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/paq_search.php?";
+        String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_search.php?";
         url += "a=" + intCode;
         url = url.replace(" ", "%20");
         jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {

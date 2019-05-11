@@ -714,7 +714,7 @@ public class EstimFragment extends Fragment {
     }
 
     private static void sendRequest(String NomEst, int value) {
-        String url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_update.php?";
+        String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_update.php?";
         url += "a=estim";
         url += "&b=ValEst = " + value;
         url += "&c=NomEst = '" + NomEst + "'";

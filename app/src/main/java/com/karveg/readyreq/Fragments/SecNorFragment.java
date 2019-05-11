@@ -144,7 +144,7 @@ public class SecNorFragment extends Fragment {
             public void onClick(View v) {
                 //borro todos y los guardo en el orden correcto
                 String url = "";
-                url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?";
+                url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?";
                 url += "a=reqsecnor where idreq = " + reqfun.getId() + ";";
                 Utils.create_update_delete(getContext(), url, progressDialog, MyApplication.SEC_NOR, false);
             }
@@ -171,7 +171,7 @@ public class SecNorFragment extends Fragment {
     public static void updateSecNor() {
         String url = "";
         for (Generic g : reqfun.getSecNor()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=reqsecnor(idreq,descrip)&";
             url += "b=" + reqfun.getId() + ",'" + g.getName() + "'";
             try {

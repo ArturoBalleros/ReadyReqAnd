@@ -171,7 +171,7 @@ public class ActorActivity extends AppCompatActivity {
         String url;
         if (actor.getId() != MyApplication.NOTHING) { //Modifico
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/actor_update.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_update.php?";
             url += "a=" + actor.getId() + "&";
             url += "b=" + actor.getName() + "&";
             url += "c=" + actor.getDescription() + "&";
@@ -183,7 +183,7 @@ public class ActorActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/actor_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_create.php?";
             url += "a=" + actor.getName() + "&";
             url += "b=" + actor.getDescription() + "&";
             url += "c=" + actor.getComple() + "&";
@@ -199,13 +199,13 @@ public class ActorActivity extends AppCompatActivity {
     public static void saveObjects(Context ctx, int id) {
         String url = "";
         for (Generic g : actor.getAutors()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=actauto(idautor,idact)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : actor.getSources()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=actfuen(idfuen,idact)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);

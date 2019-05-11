@@ -142,7 +142,7 @@ public class SecExcFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String url = "";
-                url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_delete.php?";
+                url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?";
                 url += "a=reqsecexc where idreq = " + reqfun.getId() + ";";
                 Utils.create_update_delete(getContext(), url, progressDialog, MyApplication.SEC_EXC, false);
             }
@@ -169,7 +169,7 @@ public class SecExcFragment extends Fragment {
     public static void updateSecExc() {
         String url = "";
         for (Generic g : reqfun.getSecExc()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=reqsecexc(idreq,descrip)&";
             url += "b=" + reqfun.getId() + ",'" + g.getName() + "'";
             try {

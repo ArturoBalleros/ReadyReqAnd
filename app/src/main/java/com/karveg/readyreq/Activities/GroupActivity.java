@@ -151,7 +151,7 @@ public class GroupActivity extends AppCompatActivity {
         String url;
         if (intCode != MyApplication.NOTHING) { //Modifico
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/group_update.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/group_update.php?";
             url += "a=" + worker.getId() + "&";
             url += "b=" + worker.getName() + "&";
             url += "c=" + worker.getOrganization() + "&";
@@ -163,7 +163,7 @@ public class GroupActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/group_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/group_create.php?";
             url += "a=" + worker.getName() + "&";
             url += "b=" + worker.getOrganization() + "&";
             url += "c=" + worker.getRole() + "&";

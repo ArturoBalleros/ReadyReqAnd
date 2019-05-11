@@ -133,7 +133,7 @@ public class PackageActivity extends AppCompatActivity {
         String url;
         if (intCode != MyApplication.NOTHING) { //Modifico
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/paq_update.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_update.php?";
             url += "a=" + pack.getId() + "&";
             url += "b=" + pack.getName() + "&";
             url += "c=" + pack.getCategory() + "&";
@@ -141,7 +141,7 @@ public class PackageActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/paq_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_create.php?";
             url += "a=" + pack.getName() + "&";
             url += "b=" + pack.getCategory() + "&";
             url += "c=" + pack.getCommentary();

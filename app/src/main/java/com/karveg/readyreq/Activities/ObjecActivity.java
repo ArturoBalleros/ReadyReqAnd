@@ -174,7 +174,7 @@ public class ObjecActivity extends AppCompatActivity {
         String url;
         if (objective.getId() != MyApplication.NOTHING) { //Modifico
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/objet_update.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_update.php?";
             url += "a=" + objective.getId() + "&";
             url += "b=" + objective.getName() + "&";
             url += "c=" + objective.getDescription() + "&";
@@ -189,7 +189,7 @@ public class ObjecActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/objet_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_create.php?";
             url += "a=" + objective.getName() + "&";
             url += "b=" + objective.getDescription() + "&";
             url += "c=" + objective.getPrior() + "&";
@@ -208,19 +208,19 @@ public class ObjecActivity extends AppCompatActivity {
     public static void saveObjects(Context ctx, int id) {
         String url = "";
         for (Generic g : objective.getAutors()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=objauto(idautor,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : objective.getSources()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=objfuen(idfuen,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : objective.getObjetives()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=objsubobj(idsubobj,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);

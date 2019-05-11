@@ -47,6 +47,7 @@ public class ConfigFragment extends Fragment {
     private EditText editTextPass;
     private EditText editTextDatabase;
     private EditText editTextPort;
+    private EditText editTextPortHTTP;
     private Button buttonConnect;
 
 
@@ -100,7 +101,7 @@ public class ConfigFragment extends Fragment {
         String url = "";
 
         progressDialog.show();
-        url = "http://" + editTextIpServer.getText().toString() + ":8080/readyreq/conf_frag_connection_android.php?";
+        url = "http://" + editTextIpServer.getText().toString() + ":" + editTextPortHTTP.getText().toString() + "/readyreq/conf_frag_connection_android.php?";
         url += "a=" + editTextIpServer.getText().toString() + "&";
         url += "b=" + editTextUser.getText().toString() + "&";
         url += "c=" + Utils.encrypt(editTextPass.getText().toString(), "readyreqreadyreq") + "&";
@@ -128,6 +129,7 @@ public class ConfigFragment extends Fragment {
                     SharedP.savePass(prefs, editTextPass.getText().toString());
                     SharedP.saveDatabase(prefs, editTextDatabase.getText().toString());
                     SharedP.savePort(prefs, Integer.parseInt(editTextPort.getText().toString()));
+                    SharedP.savePortHttp(prefs, Integer.parseInt(editTextPortHTTP.getText().toString()));
 
                     Toast.makeText(getContext(), R.string.success, Toast.LENGTH_SHORT).show();
 
@@ -174,6 +176,7 @@ public class ConfigFragment extends Fragment {
         editTextPass = view.findViewById(R.id.editTextPass);
         editTextDatabase = view.findViewById(R.id.editTextDatabase);
         editTextPort = view.findViewById(R.id.editTextPort);
+        editTextPortHTTP = view.findViewById(R.id.editTextPortHttp);
         buttonConnect = view.findViewById(R.id.buttonConnect);
         editTextIpServer.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
     }
@@ -184,6 +187,7 @@ public class ConfigFragment extends Fragment {
         editTextPass.setText(MyApplication.PASS);
         editTextDatabase.setText(MyApplication.DATABASE);
         editTextPort.setText(MyApplication.PORT + "");
+        editTextPortHTTP.setText(MyApplication.PORTHTTP + "");
     }
 
     private AlertDialog.Builder CreateProgressDialog() {

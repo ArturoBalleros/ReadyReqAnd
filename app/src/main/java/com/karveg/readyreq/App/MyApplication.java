@@ -48,6 +48,6 @@ public class MyApplication extends Application {
         PASS = SharedP.getPassPrefs(sharedPref);
         DATABASE = SharedP.getBasePrefs(sharedPref);
         PORT = SharedP.getPortPrefs(sharedPref);
-
+        PORTHTTP = SharedP.getPortHttpPrefs(sharedPref);
     }
 }

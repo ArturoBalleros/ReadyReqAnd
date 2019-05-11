@@ -171,7 +171,7 @@ public class ReqNFunActivity extends AppCompatActivity {
         String url;
         if (reqnfun.getId() != MyApplication.NOTHING) { //Modifico
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqnfun_update.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqnfun_update.php?";
             url += "a=" + reqnfun.getId() + "&";
             url += "b=" + reqnfun.getName() + "&";
             url += "c=" + reqnfun.getDescription() + "&";
@@ -186,7 +186,7 @@ public class ReqNFunActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqnfun_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqnfun_create.php?";
             url += "a=" + reqnfun.getName() + "&";
             url += "b=" + reqnfun.getDescription() + "&";
             url += "c=" + reqnfun.getPrior() + "&";
@@ -205,25 +205,25 @@ public class ReqNFunActivity extends AppCompatActivity {
     public static void saveObjects(Context ctx, int id) {
         String url = "";
         for (Generic g : reqnfun.getAutors()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=reqnauto(idautor,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqnfun.getSources()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=reqnfuen(idfuen,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqnfun.getObjetives()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=reqnobj(idobj,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqnfun.getRequirements()) {
-            url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
+            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=reqnreqr(idreqr,tiporeq,idreq)&";
             url += "b=" + g.getId() + "," + Utils.deterTipoReq(g.getImage()) + "," + reqnfun.getId();
             Utils.saveObject(ctx, url);
