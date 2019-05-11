@@ -1,10 +1,8 @@
 package com.karveg.readyreq.Fragments;
 
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,26 +14,17 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.karveg.readyreq.Activities.ReqInfoActivity;
 import com.karveg.readyreq.Adapters.DatEspAdapter;
-import com.karveg.readyreq.Adapters.GenericAdapter;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Models.Generic;
-import com.karveg.readyreq.Models.ReqFun;
 import com.karveg.readyreq.Models.ReqInfo;
-import com.karveg.readyreq.Models.ReqNFun;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.SimpleItemTouchHelperCallback;
 import com.karveg.readyreq.Utils.Utils;
 
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class DatEspFragment extends Fragment {
 
     private static ReqInfo reqinfo;
@@ -116,8 +105,7 @@ public class DatEspFragment extends Fragment {
         mAdapter = new DatEspAdapter(objects, R.layout.cardview_default, new DatEspAdapter.ICallback() {
             @Override
             public void onItemPositionChange(int fromPosition, int toPosition) {
-                if (fabUpd.getVisibility() == View.INVISIBLE)
-                    fabUpd.setVisibility(View.VISIBLE);
+                if (fabUpd.getVisibility() == View.INVISIBLE) fabUpd.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -171,12 +159,9 @@ public class DatEspFragment extends Fragment {
     private static void visibilityFab() {
         boolean visibility = false;
         for (Generic g : objects)
-            if (g.isSelected())
-                visibility = true;
-        if (visibility)
-            fabDel.setVisibility(View.VISIBLE);
-        else
-            fabDel.setVisibility(View.INVISIBLE);
+            if (g.isSelected()) visibility = true;
+        if (visibility) fabDel.setVisibility(View.VISIBLE);
+        else fabDel.setVisibility(View.INVISIBLE);
     }
 
     public static void updateDatEsp() {

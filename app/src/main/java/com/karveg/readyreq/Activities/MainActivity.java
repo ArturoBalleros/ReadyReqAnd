@@ -1,6 +1,5 @@
 package com.karveg.readyreq.Activities;
 
-
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -12,9 +11,6 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Fragments.ConfigFragment;
@@ -22,7 +18,6 @@ import com.karveg.readyreq.Fragments.EstimFragment;
 import com.karveg.readyreq.Fragments.GenericFragment;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
-
 
 public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
@@ -40,11 +35,10 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
 
         Bundle bu = getIntent().getExtras();
-        if (bu != null && bu.getInt("Fragment") > MyApplication.NOTHING) {
+        if (bu != null && bu.getInt("Fragment") > MyApplication.NOTHING)
             setFragmentToContent(bu.getInt("Fragment"));
-        } else {
-            setFragmentToContent(MyApplication.GRUPO);
-        }
+        else setFragmentToContent(MyApplication.GRUPO);
+
 
         //Eventos para cambiar de pestaña
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -181,9 +175,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-        if (mode_select == MyApplication.ESTIM) {
+        if (mode_select == MyApplication.ESTIM)
             getMenuInflater().inflate(R.menu.ctx_menu_save, menu);
-        }
+
         return super.onCreateOptionsMenu(menu);
     }
 }

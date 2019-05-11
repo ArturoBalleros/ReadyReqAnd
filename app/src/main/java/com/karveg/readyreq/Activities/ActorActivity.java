@@ -1,7 +1,6 @@
 package com.karveg.readyreq.Activities;
 
 import android.app.AlertDialog;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,17 +16,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.karveg.readyreq.Adapters.PageAdapter;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Fragments.ActorDataFragment;
-import com.karveg.readyreq.Fragments.AuthFragment;
 import com.karveg.readyreq.Models.Actor;
 import com.karveg.readyreq.Models.Generic;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
-
 
 public class ActorActivity extends AppCompatActivity {
 
@@ -67,10 +63,8 @@ public class ActorActivity extends AppCompatActivity {
 
             if (bu.getSerializable("actor") != null) {
                 actor = (Actor) bu.getSerializable("actor");
-                if (bu.getInt("flagTab") != 0)
-                    setViewPager(bu.getInt("flagTab"));
-                else
-                    setViewPager(MyApplication.NOTHING);
+                if (bu.getInt("flagTab") != 0) setViewPager(bu.getInt("flagTab"));
+                else setViewPager(MyApplication.NOTHING);
             }
         } else {//nuevo
             actor = new Actor();
@@ -122,8 +116,7 @@ public class ActorActivity extends AppCompatActivity {
         pageAdapter = new PageAdapter(fragmentManager, tabLayout.getTabCount(), actor, MyApplication.ACTORES);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setAdapter(pageAdapter);
-        if (currentTab != MyApplication.NOTHING)
-            viewPager.setCurrentItem(currentTab);
+        if (currentTab != MyApplication.NOTHING) viewPager.setCurrentItem(currentTab);
     }
 
     @Override
@@ -218,5 +211,4 @@ public class ActorActivity extends AppCompatActivity {
             Utils.saveObject(ctx, url);
         }
     }
-
 }

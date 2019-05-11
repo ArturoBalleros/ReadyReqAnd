@@ -20,11 +20,8 @@ import android.widget.TextView;
 import com.karveg.readyreq.Adapters.PageAdapter;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Fragments.ReqInfoFragment;
-import com.karveg.readyreq.Fragments.ReqNFunFragment;
-import com.karveg.readyreq.Models.Actor;
 import com.karveg.readyreq.Models.Generic;
 import com.karveg.readyreq.Models.ReqInfo;
-import com.karveg.readyreq.Models.ReqNFun;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
 
@@ -66,10 +63,8 @@ public class ReqInfoActivity extends AppCompatActivity {
 
             if (bu.getSerializable("reqinfo") != null) {
                 reqinfo = (ReqInfo) bu.getSerializable("reqinfo");
-                if (bu.getInt("flagTab") != 0)
-                    setViewPager(bu.getInt("flagTab"));
-                else
-                    setViewPager(MyApplication.NOTHING);
+                if (bu.getInt("flagTab") != 0) setViewPager(bu.getInt("flagTab"));
+                else setViewPager(MyApplication.NOTHING);
             }
         } else {//nuevo
             reqinfo = new ReqInfo();
@@ -109,8 +104,7 @@ public class ReqInfoActivity extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                if (tab.getPosition() == MyApplication.DATA)
-                    ReqInfoFragment.setValuesReque();
+                if (tab.getPosition() == MyApplication.DATA) ReqInfoFragment.setValuesReque();
             }
 
             @Override
@@ -123,8 +117,7 @@ public class ReqInfoActivity extends AppCompatActivity {
         pageAdapter = new PageAdapter(fragmentManager, tabLayout.getTabCount(), reqinfo, MyApplication.REQ_INFO);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setAdapter(pageAdapter);
-        if (currentTab != MyApplication.NOTHING)
-            viewPager.setCurrentItem(currentTab);
+        if (currentTab != MyApplication.NOTHING) viewPager.setCurrentItem(currentTab);
     }
 
     @Override
@@ -189,10 +182,8 @@ public class ReqInfoActivity extends AppCompatActivity {
             url += "h=" + reqinfo.getPrior() + "&";
             url += "i=" + reqinfo.getUrge() + "&";
             url += "j=" + reqinfo.getEsta() + "&";
-            if (reqinfo.isState())
-                url += "k=" + 1 + "&";
-            else
-                url += "k=" + 0 + "&";
+            if (reqinfo.isState()) url += "k=" + 1 + "&";
+            else url += "k=" + 0 + "&";
             url += "l=" + reqinfo.getCategory() + "&";
             url += "m=" + reqinfo.getCommentary();
             Utils.create_update_delete(ReqInfoActivity.this, url, progressDialog, MyApplication.REQ_INFO, true);
@@ -209,10 +200,8 @@ public class ReqInfoActivity extends AppCompatActivity {
             url += "g=" + reqinfo.getPrior() + "&";
             url += "h=" + reqinfo.getUrge() + "&";
             url += "i=" + reqinfo.getEsta() + "&";
-            if (reqinfo.isState())
-                url += "j=" + 1 + "&";
-            else
-                url += "j=" + 0 + "&";
+            if (reqinfo.isState()) url += "j=" + 1 + "&";
+            else url += "j=" + 0 + "&";
             url += "k=" + reqinfo.getCategory() + "&";
             url += "l=" + reqinfo.getCommentary();
             Utils.create_update_delete(ReqInfoActivity.this, url, progressDialog, MyApplication.REQ_INFO, true);
@@ -255,7 +244,4 @@ public class ReqInfoActivity extends AppCompatActivity {
             Utils.saveObject(ctx, url);
         }
     }
-
-
-
-    }
+}

@@ -78,18 +78,15 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.ViewHold
             view = itemView;
             imageViewIcon = v.findViewById(R.id.imageViewIcon);
             textViewDesc = v.findViewById(R.id.textViewDesc);
-            if (flagPopUp)
-                v.setOnCreateContextMenuListener(this); //Registro el ContextMenu
+            if (flagPopUp) v.setOnCreateContextMenuListener(this); //Registro el ContextMenu
         }
 
         public void bind(final Generic object, final OnItemClickListener listener) {
             //Procesamos
             textViewDesc.setText(object.getName());
             int image = object.getImage();
-            if (image != -1)
-                imageViewIcon.setImageResource(image);
-            else
-                textViewDesc.setTextSize(14);
+            if (image != -1) imageViewIcon.setImageResource(image);
+            else textViewDesc.setTextSize(14);
 
             //Eventos del Card
             itemView.setOnClickListener(new View.OnClickListener() {

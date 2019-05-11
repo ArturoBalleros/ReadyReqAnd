@@ -14,7 +14,6 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.karveg.readyreq.Activities.ReqInfoActivity;
-import com.karveg.readyreq.Activities.ReqNFunActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
@@ -28,7 +27,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReqInfo  implements Serializable {
+public class ReqInfo implements Serializable {
 
     private int Id;
     private String Name;
@@ -45,12 +44,12 @@ public class ReqInfo  implements Serializable {
     private int OcuMed;
     private int OcuMax;
 
-    private List<Generic> Autors= new ArrayList<>();
-    private List<Generic> Sources= new ArrayList<>();
-    private List<Generic> Objetives= new ArrayList<>();
-    private List<Generic> Requirements= new ArrayList<>();
+    private List<Generic> Autors = new ArrayList<>();
+    private List<Generic> Sources = new ArrayList<>();
+    private List<Generic> Objetives = new ArrayList<>();
+    private List<Generic> Requirements = new ArrayList<>();
 
-    private List<Generic> DatEspec= new ArrayList<>();
+    private List<Generic> DatEspec = new ArrayList<>();
 
     public ReqInfo() {
     }
@@ -244,42 +243,35 @@ public class ReqInfo  implements Serializable {
                     r.setPrior(jsonObject.optInt("Prioridad"));
                     r.setUrge(jsonObject.optInt("Urgencia"));
                     r.setEsta(jsonObject.optInt("Estabilidad"));
-                    if (jsonObject.optInt("Estado") == 1)
-                        r.setState(true);
-                    else
-                        r.setState(false);
+                    if (jsonObject.optInt("Estado") == 1) r.setState(true);
+                    else r.setState(false);
                     r.setCategory(jsonObject.optInt("Categoria"));
                     r.setCommentary(jsonObject.optString("Comentario"));
 
                     json = response.optJSONArray("Resul2");
                     if (json != null)
-                        r.setAutors(Utils.JSONArrayToListGeneric(json,MyApplication.GRUPO));
-                    else
-                        r.setAutors(new ArrayList<Generic>());
+                        r.setAutors(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
+                    else r.setAutors(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul3");
                     if (json != null)
-                        r.setSources(Utils.JSONArrayToListGeneric(json,MyApplication.GRUPO));
-                    else
-                        r.setSources(new ArrayList<Generic>());
+                        r.setSources(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
+                    else r.setSources(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul4");
                     if (json != null)
-                        r.setObjetives(Utils.JSONArrayToListGeneric(json,MyApplication.OBJETIVOS));
-                    else
-                        r.setObjetives(new ArrayList<Generic>());
+                        r.setObjetives(Utils.JSONArrayToListGeneric(json, MyApplication.OBJETIVOS));
+                    else r.setObjetives(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul5");
                     if (json != null)
-                        r.setRequirements(Utils.JSONArrayToListGeneric(json,MyApplication.REQU));
-                    else
-                        r.setRequirements(new ArrayList<Generic>());
+                        r.setRequirements(Utils.JSONArrayToListGeneric(json, MyApplication.REQU));
+                    else r.setRequirements(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul6");
                     if (json != null)
-                        r.setDatEspec(Utils.JSONArrayToListGeneric(json,MyApplication.NOTHING));
-                    else
-                        r.setDatEspec(new ArrayList<Generic>());
+                        r.setDatEspec(Utils.JSONArrayToListGeneric(json, MyApplication.NOTHING));
+                    else r.setDatEspec(new ArrayList<Generic>());
 
                     ReqInfoActivity.setValueReque(r);
                 }
@@ -346,7 +338,7 @@ public class ReqInfo  implements Serializable {
                 else if (jsonObject.optString("a").equals("No5"))
                     Toast.makeText(ctx, R.string.error_empty_query, Toast.LENGTH_SHORT).show();
                 else {
-                     ReqInfoActivity.saveObjects(ctx,jsonObject.optInt("Id"));
+                    ReqInfoActivity.saveObjects(ctx, jsonObject.optInt("Id"));
                 }
                 progressDialog.dismiss();
             }

@@ -1,6 +1,5 @@
 package com.karveg.readyreq.Fragments;
 
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,20 +11,15 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Models.Generic;
-import com.karveg.readyreq.Models.Objective;
 import com.karveg.readyreq.Models.ReqFun;
 import com.karveg.readyreq.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ReqFunFragment extends Fragment {
 
     private static ReqFun reqfun;
@@ -149,50 +143,30 @@ public class ReqFunFragment extends Fragment {
         editTextPreCond.setText(reqfun.getPreCond());
         editTextPostCond.setText(reqfun.getPostCond());
 
-        if (reqfun.getComplejidad() == 1)
-            radioButtonCLow.setChecked(true);
-        else if (reqfun.getComplejidad() == 2)
-            radioButtonCMed.setChecked(true);
-        else if (reqfun.getComplejidad() == 3)
-            radioButtonCHigh.setChecked(true);
+        if (reqfun.getComplejidad() == 1) radioButtonCLow.setChecked(true);
+        else if (reqfun.getComplejidad() == 2) radioButtonCMed.setChecked(true);
+        else if (reqfun.getComplejidad() == 3) radioButtonCHigh.setChecked(true);
 
-        if (reqfun.getPrior() == 1)
-            radioButtonPVLow.setChecked(true);
-        else if (reqfun.getPrior() == 2)
-            radioButtonPLow.setChecked(true);
-        else if (reqfun.getPrior() == 3)
-            radioButtonPMed.setChecked(true);
-        else if (reqfun.getPrior() == 4)
-            radioButtonPHigh.setChecked(true);
-        else if (reqfun.getPrior() == 5)
-            radioButtonPVHigh.setChecked(true);
+        if (reqfun.getPrior() == 1) radioButtonPVLow.setChecked(true);
+        else if (reqfun.getPrior() == 2) radioButtonPLow.setChecked(true);
+        else if (reqfun.getPrior() == 3) radioButtonPMed.setChecked(true);
+        else if (reqfun.getPrior() == 4) radioButtonPHigh.setChecked(true);
+        else if (reqfun.getPrior() == 5) radioButtonPVHigh.setChecked(true);
 
-        if (reqfun.getUrge() == 1)
-            radioButtonUVLow.setChecked(true);
-        else if (reqfun.getUrge() == 2)
-            radioButtonULow.setChecked(true);
-        else if (reqfun.getUrge() == 3)
-            radioButtonUMed.setChecked(true);
-        else if (reqfun.getUrge() == 4)
-            radioButtonUHigh.setChecked(true);
-        else if (reqfun.getUrge() == 5)
-            radioButtonUVHigh.setChecked(true);
+        if (reqfun.getUrge() == 1) radioButtonUVLow.setChecked(true);
+        else if (reqfun.getUrge() == 2) radioButtonULow.setChecked(true);
+        else if (reqfun.getUrge() == 3) radioButtonUMed.setChecked(true);
+        else if (reqfun.getUrge() == 4) radioButtonUHigh.setChecked(true);
+        else if (reqfun.getUrge() == 5) radioButtonUVHigh.setChecked(true);
 
-        if (reqfun.getEsta() == 1)
-            radioButtonEVLow.setChecked(true);
-        else if (reqfun.getEsta() == 2)
-            radioButtonELow.setChecked(true);
-        else if (reqfun.getEsta() == 3)
-            radioButtonEMed.setChecked(true);
-        else if (reqfun.getEsta() == 4)
-            radioButtonEHigh.setChecked(true);
-        else if (reqfun.getEsta() == 5)
-            radioButtonEVHigh.setChecked(true);
+        if (reqfun.getEsta() == 1) radioButtonEVLow.setChecked(true);
+        else if (reqfun.getEsta() == 2) radioButtonELow.setChecked(true);
+        else if (reqfun.getEsta() == 3) radioButtonEMed.setChecked(true);
+        else if (reqfun.getEsta() == 4) radioButtonEHigh.setChecked(true);
+        else if (reqfun.getEsta() == 5) radioButtonEVHigh.setChecked(true);
 
-        if (reqfun.isState())
-            radioButtonVer.setChecked(true);
-        else
-            radioButtonNVer.setChecked(true);
+        if (reqfun.isState()) radioButtonVer.setChecked(true);
+        else radioButtonNVer.setChecked(true);
 
         spinnerCateg.setSelection(reqfun.getCategory() - 1);
         editTextComen.setText(reqfun.getCommentary());
@@ -210,50 +184,30 @@ public class ReqFunFragment extends Fragment {
         reqfun.setPreCond(editTextPreCond.getText().toString());
         reqfun.setPostCond(editTextPostCond.getText().toString());
 
-        if (radioButtonCLow.isChecked())
-            reqfun.setComplejidad(1);
-        else if (radioButtonCMed.isChecked())
-            reqfun.setComplejidad(2);
-        else if (radioButtonCHigh.isChecked())
-            reqfun.setComplejidad(3);
+        if (radioButtonCLow.isChecked()) reqfun.setComplejidad(1);
+        else if (radioButtonCMed.isChecked()) reqfun.setComplejidad(2);
+        else if (radioButtonCHigh.isChecked()) reqfun.setComplejidad(3);
 
-        if (radioButtonPVLow.isChecked())
-            reqfun.setPrior(1);
-        else if (radioButtonPLow.isChecked())
-            reqfun.setPrior(2);
-        else if (radioButtonPMed.isChecked())
-            reqfun.setPrior(3);
-        else if (radioButtonPHigh.isChecked())
-            reqfun.setPrior(4);
-        else if (radioButtonPVHigh.isChecked())
-            reqfun.setPrior(5);
+        if (radioButtonPVLow.isChecked()) reqfun.setPrior(1);
+        else if (radioButtonPLow.isChecked()) reqfun.setPrior(2);
+        else if (radioButtonPMed.isChecked()) reqfun.setPrior(3);
+        else if (radioButtonPHigh.isChecked()) reqfun.setPrior(4);
+        else if (radioButtonPVHigh.isChecked()) reqfun.setPrior(5);
 
-        if (radioButtonUVLow.isChecked())
-            reqfun.setUrge(1);
-        else if (radioButtonULow.isChecked())
-            reqfun.setUrge(2);
-        else if (radioButtonUMed.isChecked())
-            reqfun.setUrge(3);
-        else if (radioButtonUHigh.isChecked())
-            reqfun.setUrge(4);
-        else if (radioButtonUVHigh.isChecked())
-            reqfun.setUrge(5);
+        if (radioButtonUVLow.isChecked()) reqfun.setUrge(1);
+        else if (radioButtonULow.isChecked()) reqfun.setUrge(2);
+        else if (radioButtonUMed.isChecked()) reqfun.setUrge(3);
+        else if (radioButtonUHigh.isChecked()) reqfun.setUrge(4);
+        else if (radioButtonUVHigh.isChecked()) reqfun.setUrge(5);
 
-        if (radioButtonEVLow.isChecked())
-            reqfun.setEsta(1);
-        else if (radioButtonELow.isChecked())
-            reqfun.setEsta(2);
-        else if (radioButtonEMed.isChecked())
-            reqfun.setEsta(3);
-        else if (radioButtonEHigh.isChecked())
-            reqfun.setEsta(4);
-        else if (radioButtonEVHigh.isChecked())
-            reqfun.setEsta(5);
+        if (radioButtonEVLow.isChecked()) reqfun.setEsta(1);
+        else if (radioButtonELow.isChecked()) reqfun.setEsta(2);
+        else if (radioButtonEMed.isChecked()) reqfun.setEsta(3);
+        else if (radioButtonEHigh.isChecked()) reqfun.setEsta(4);
+        else if (radioButtonEVHigh.isChecked()) reqfun.setEsta(5);
 
-        if (radioButtonVer.isChecked())
-            reqfun.setState(true);
-        else
-            reqfun.setState(false);
+        if (radioButtonVer.isChecked()) reqfun.setState(true);
+        else reqfun.setState(false);
 
         reqfun.setCategory(spinnerCateg.getSelectedItemPosition() + 1);
         reqfun.setCommentary(editTextComen.getText().toString());
@@ -263,8 +217,7 @@ public class ReqFunFragment extends Fragment {
         packages = p;
         packages.add(0, new Generic(0, "No paquete"));
         ArrayList<String> namePack = new ArrayList<>();
-        for (Generic g : packages)
-            namePack.add(g.getName());
+        for (Generic g : packages) namePack.add(g.getName());
         ArrayAdapter<String> adapter = new ArrayAdapter<>(ctx, android.R.layout.simple_list_item_1, namePack);
         spinnerPack.setAdapter(adapter);
         setValueSpinnerInit();

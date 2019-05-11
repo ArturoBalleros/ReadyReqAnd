@@ -49,7 +49,7 @@ public class AutoAdapter extends RecyclerView.Adapter<AutoAdapter.ViewHolder> {
     //solo se ejecuta al crear
     @Override
     public void onBindViewHolder(AutoAdapter.ViewHolder holder, int position) {
-              holder.bind(objects.get(position));
+        holder.bind(objects.get(position));
     }
 
     //numero
@@ -77,7 +77,7 @@ public class AutoAdapter extends RecyclerView.Adapter<AutoAdapter.ViewHolder> {
         public void bind(final Generic object) {
             //Procesamos
             textViewDesc.setText(object.getName());
-                imageViewIcon.setImageResource(object.getImage());
+            imageViewIcon.setImageResource(object.getImage());
         }
 
         //Creo el popup

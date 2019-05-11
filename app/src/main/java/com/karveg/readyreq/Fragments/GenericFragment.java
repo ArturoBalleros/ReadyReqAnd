@@ -1,12 +1,10 @@
 package com.karveg.readyreq.Fragments;
 
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -29,19 +27,13 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.karveg.readyreq.Activities.ActorActivity;
 import com.karveg.readyreq.Activities.GroupActivity;
-import com.karveg.readyreq.Activities.ListActivity;
 import com.karveg.readyreq.Activities.PackageActivity;
 import com.karveg.readyreq.Activities.ReqFunActivity;
 import com.karveg.readyreq.Activities.ReqInfoActivity;
 import com.karveg.readyreq.Activities.ReqNFunActivity;
 import com.karveg.readyreq.Adapters.GenericAdapter;
 import com.karveg.readyreq.App.MyApplication;
-import com.karveg.readyreq.Models.Actor;
 import com.karveg.readyreq.Models.Generic;
-import com.karveg.readyreq.Models.Objective;
-import com.karveg.readyreq.Models.ReqFun;
-import com.karveg.readyreq.Models.ReqInfo;
-import com.karveg.readyreq.Models.ReqNFun;
 import com.karveg.readyreq.Activities.ObjecActivity;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
@@ -50,14 +42,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class GenericFragment extends Fragment {
 
     private static List<Generic> objects;
@@ -114,17 +102,15 @@ public class GenericFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
         ctx = getContext();
-        act=getActivity();
+        act = getActivity();
 
         request = Volley.newRequestQueue(ctx);
         progressDialog = CreateProgressDialog().create();
 
 
         objects = new ArrayList<>();
-        if (filePHP.equals("No") && buscar.equals("No"))
-            getObjects();
-        else
-            getObjectsSearch();
+        if (filePHP.equals("No") && buscar.equals("No")) getObjects();
+        else getObjectsSearch();
 
         //Metodos necesarios
         bindUI(view);
@@ -187,8 +173,7 @@ public class GenericFragment extends Fragment {
         if (mode == MyApplication.REQ_FUNC)
             i = new Intent(c.getApplicationContext(), ReqFunActivity.class);
 
-        if (Id != MyApplication.NOTHING)
-            i.putExtra("code", Id);
+        if (Id != MyApplication.NOTHING) i.putExtra("code", Id);
 
         c.startActivity(i);
         act.finish();
@@ -341,7 +326,6 @@ public class GenericFragment extends Fragment {
                 }
             }
         };
-
         request.add(jsonObjectRequest);
     }
 }

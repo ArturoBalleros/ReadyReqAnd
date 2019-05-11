@@ -102,5 +102,4 @@ public class SourAdapter extends RecyclerView.Adapter<SourAdapter.ViewHolder> {
             }
         };
     }
-
 }

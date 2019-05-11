@@ -18,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
@@ -37,7 +36,6 @@ import com.karveg.readyreq.Models.ReqFun;
 import com.karveg.readyreq.Models.ReqInfo;
 import com.karveg.readyreq.Models.ReqNFun;
 import com.karveg.readyreq.R;
-import com.karveg.readyreq.Utils.SharedP;
 import com.karveg.readyreq.Utils.Utils;
 
 import org.json.JSONArray;
@@ -77,10 +75,8 @@ public class ListActivity extends AppCompatActivity {
         //Bundle
         Bundle bu = getIntent().getExtras();
         if (bu != null) {
-            if (bu.getInt("mode") != MyApplication.NOTHING)
-                mode = bu.getInt("mode");
-            if (bu.getInt("flagTab") != MyApplication.NOTHING)
-                flagTab = bu.getInt("flagTab");
+            if (bu.getInt("mode") != MyApplication.NOTHING) mode = bu.getInt("mode");
+            if (bu.getInt("flagTab") != MyApplication.NOTHING) flagTab = bu.getInt("flagTab");
 
             if (mode == MyApplication.ACTORES && bu.getSerializable("actor") != null)
                 actor = (Actor) bu.getSerializable("actor");
@@ -204,31 +200,21 @@ public class ListActivity extends AppCompatActivity {
 
     private String getTitleToolbar() {
         String title = "";
-        if (flagTab == MyApplication.AUTH)
-            title = getResources().getString(R.string.autho);
-        if (flagTab == MyApplication.SOUR)
-            title = getResources().getString(R.string.sourc);
-        if (flagTab == MyApplication.OBJE)
-            title = getResources().getString(R.string.objec);
-        if (flagTab == MyApplication.REQU)
-            title = getResources().getString(R.string.reque);
-        if (flagTab == MyApplication.ACTO)
-            title = getResources().getString(R.string.actor);
+        if (flagTab == MyApplication.AUTH) title = getResources().getString(R.string.autho);
+        if (flagTab == MyApplication.SOUR) title = getResources().getString(R.string.sourc);
+        if (flagTab == MyApplication.OBJE) title = getResources().getString(R.string.objec);
+        if (flagTab == MyApplication.REQU) title = getResources().getString(R.string.reque);
+        if (flagTab == MyApplication.ACTO) title = getResources().getString(R.string.actor);
         return title;
     }
 
     private int getImageToolbar() {
         int image = 0;
-        if (flagTab == MyApplication.AUTH)
-            image = R.drawable.ic_grupo;
-        if (flagTab == MyApplication.SOUR)
-            image = R.drawable.ic_grupo;
-        if (flagTab == MyApplication.OBJE)
-            image = R.drawable.ic_objet;
-        if (flagTab == MyApplication.REQU)
-            image = R.drawable.ic_rf;
-        if (flagTab == MyApplication.ACTO)
-            image = R.drawable.ic_actor;
+        if (flagTab == MyApplication.AUTH) image = R.drawable.ic_grupo;
+        if (flagTab == MyApplication.SOUR) image = R.drawable.ic_grupo;
+        if (flagTab == MyApplication.OBJE) image = R.drawable.ic_objet;
+        if (flagTab == MyApplication.REQU) image = R.drawable.ic_rf;
+        if (flagTab == MyApplication.ACTO) image = R.drawable.ic_actor;
         return image;
     }
 
@@ -239,17 +225,11 @@ public class ListActivity extends AppCompatActivity {
         url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_list.php?";
         url += "a=" + mode + "&";
         url += "b=" + flagTab + "&";
-        if (mode == MyApplication.ACTORES)
-            url += "c=" + actor.getId();
-        if (mode == MyApplication.OBJETIVOS)
-            url += "c=" + objective.getId();
-        if (mode == MyApplication.REQ_FUNC)
-            url += "c=" + reqfun.getId();
-        if (mode == MyApplication.REQ_NO_FUN)
-            url += "c=" + reqnfun.getId();
-        if (mode == MyApplication.REQ_INFO)
-            url += "c=" + reqinfo.getId();
-
+        if (mode == MyApplication.ACTORES) url += "c=" + actor.getId();
+        if (mode == MyApplication.OBJETIVOS) url += "c=" + objective.getId();
+        if (mode == MyApplication.REQ_FUNC) url += "c=" + reqfun.getId();
+        if (mode == MyApplication.REQ_NO_FUN) url += "c=" + reqnfun.getId();
+        if (mode == MyApplication.REQ_INFO) url += "c=" + reqinfo.getId();
 
         url = url.replace(" ", "%20");
 
@@ -304,8 +284,7 @@ public class ListActivity extends AppCompatActivity {
                     JSONObject result = null;
                     if (jsonString != null && jsonString.length() > 0)
                         result = new JSONObject(jsonString);
-                    return Response.success(result,
-                            HttpHeaderParser.parseCacheHeaders(response));
+                    return Response.success(result, HttpHeaderParser.parseCacheHeaders(response));
                 } catch (UnsupportedEncodingException e) {
                     return Response.error(new ParseError(e));
                 } catch (JSONException je) {

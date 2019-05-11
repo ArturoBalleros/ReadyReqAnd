@@ -1,6 +1,5 @@
 package com.karveg.readyreq.Fragments;
 
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,7 +13,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.karveg.readyreq.Activities.ListActivity;
 import com.karveg.readyreq.Adapters.SourAdapter;
@@ -29,9 +27,6 @@ import com.karveg.readyreq.R;
 
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SourFragment extends Fragment {
 
     private static List<Generic> objects;
@@ -139,16 +134,11 @@ public class SourFragment extends Fragment {
 
     public static void updateRecyclerView() {
         int id = MyApplication.NOTHING;
-        if (mode == MyApplication.ACTORES)
-            id = actor.getId();
-        if (mode == MyApplication.OBJETIVOS)
-            id = objective.getId();
-        if (mode == MyApplication.REQ_FUNC)
-            id = reqfun.getId();
-        if (mode == MyApplication.REQ_NO_FUN)
-            id = reqnfun.getId();
-        if (mode == MyApplication.REQ_INFO)
-            id = reqinfo.getId();
+        if (mode == MyApplication.ACTORES) id = actor.getId();
+        if (mode == MyApplication.OBJETIVOS) id = objective.getId();
+        if (mode == MyApplication.REQ_FUNC) id = reqfun.getId();
+        if (mode == MyApplication.REQ_NO_FUN) id = reqnfun.getId();
+        if (mode == MyApplication.REQ_INFO) id = reqinfo.getId();
 
         mAdapter = new SourAdapter(objects, id, R.layout.cardview_default, ctx, mode, progressDialog);
         mRecyclerView.setAdapter(mAdapter);
@@ -169,30 +159,20 @@ public class SourFragment extends Fragment {
         i = new Intent(c.getApplicationContext(), ListActivity.class);
         i.putExtra("mode", mode);
         i.putExtra("flagTab", MyApplication.SOUR);
-        if (mode == MyApplication.ACTORES)
-            i.putExtra("actor", actor);
-        if (mode == MyApplication.OBJETIVOS)
-            i.putExtra("objec", objective);
-        if (mode == MyApplication.REQ_INFO)
-            i.putExtra("reqinfo", reqinfo);
-        if (mode == MyApplication.REQ_NO_FUN)
-            i.putExtra("reqnfun", reqnfun);
-        if (mode == MyApplication.REQ_FUNC)
-            i.putExtra("reqfun", reqfun);
+        if (mode == MyApplication.ACTORES) i.putExtra("actor", actor);
+        if (mode == MyApplication.OBJETIVOS) i.putExtra("objec", objective);
+        if (mode == MyApplication.REQ_INFO) i.putExtra("reqinfo", reqinfo);
+        if (mode == MyApplication.REQ_NO_FUN) i.putExtra("reqnfun", reqnfun);
+        if (mode == MyApplication.REQ_FUNC) i.putExtra("reqfun", reqfun);
         c.startActivity(i);
         getActivity().finish();
     }
 
     private void getListObject() {
-        if (mode == MyApplication.ACTORES)
-            objects = actor.getSources();
-        if (mode == MyApplication.OBJETIVOS)
-            objects = objective.getSources();
-        if (mode == MyApplication.REQ_FUNC)
-            objects = reqfun.getSources();
-        if (mode == MyApplication.REQ_NO_FUN)
-            objects = reqnfun.getSources();
-        if (mode == MyApplication.REQ_INFO)
-            objects = reqinfo.getSources();
+        if (mode == MyApplication.ACTORES) objects = actor.getSources();
+        if (mode == MyApplication.OBJETIVOS) objects = objective.getSources();
+        if (mode == MyApplication.REQ_FUNC) objects = reqfun.getSources();
+        if (mode == MyApplication.REQ_NO_FUN) objects = reqnfun.getSources();
+        if (mode == MyApplication.REQ_INFO) objects = reqinfo.getSources();
     }
 }

@@ -19,7 +19,7 @@ import com.karveg.readyreq.Utils.Utils;
 
 import java.util.List;
 
-public class RequAdapter  extends RecyclerView.Adapter<RequAdapter.ViewHolder>{
+public class RequAdapter extends RecyclerView.Adapter<RequAdapter.ViewHolder> {
 
     //Atributos
     private static List<Generic> objects;
@@ -102,5 +102,4 @@ public class RequAdapter  extends RecyclerView.Adapter<RequAdapter.ViewHolder>{
             }
         };
     }
-
 }

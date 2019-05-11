@@ -19,10 +19,8 @@ import android.widget.TextView;
 
 import com.karveg.readyreq.Adapters.PageAdapter;
 import com.karveg.readyreq.App.MyApplication;
-import com.karveg.readyreq.Fragments.ObjecDataFragment;
 import com.karveg.readyreq.Fragments.ReqNFunFragment;
 import com.karveg.readyreq.Models.Generic;
-import com.karveg.readyreq.Models.Objective;
 import com.karveg.readyreq.Models.ReqNFun;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
@@ -64,10 +62,8 @@ public class ReqNFunActivity extends AppCompatActivity {
             }
             if (bu.getSerializable("reqnfun") != null) {
                 reqnfun = (ReqNFun) bu.getSerializable("reqnfun");
-                if (bu.getInt("flagTab") != 0)
-                    setViewPager(bu.getInt("flagTab"));
-                else
-                    setViewPager(MyApplication.NOTHING);
+                if (bu.getInt("flagTab") != 0) setViewPager(bu.getInt("flagTab"));
+                else setViewPager(MyApplication.NOTHING);
             }
         } else {//nuevo
             reqnfun = new ReqNFun();
@@ -107,8 +103,7 @@ public class ReqNFunActivity extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                if (tab.getPosition() == MyApplication.DATA)
-                    ReqNFunFragment.setValuesReque();
+                if (tab.getPosition() == MyApplication.DATA) ReqNFunFragment.setValuesReque();
             }
 
             @Override
@@ -121,8 +116,7 @@ public class ReqNFunActivity extends AppCompatActivity {
         pageAdapter = new PageAdapter(fragmentManager, tabLayout.getTabCount(), reqnfun, MyApplication.REQ_NO_FUN);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setAdapter(pageAdapter);
-        if (currentTab != MyApplication.NOTHING)
-            viewPager.setCurrentItem(currentTab);
+        if (currentTab != MyApplication.NOTHING) viewPager.setCurrentItem(currentTab);
     }
 
     @Override
@@ -184,10 +178,8 @@ public class ReqNFunActivity extends AppCompatActivity {
             url += "d=" + reqnfun.getPrior() + "&";
             url += "e=" + reqnfun.getUrge() + "&";
             url += "f=" + reqnfun.getEsta() + "&";
-            if (reqnfun.isState())
-                url += "g=" + 1 + "&";
-            else
-                url += "g=" + 0 + "&";
+            if (reqnfun.isState()) url += "g=" + 1 + "&";
+            else url += "g=" + 0 + "&";
             url += "h=" + reqnfun.getCategory() + "&";
             url += "i=" + reqnfun.getCommentary();
             Utils.create_update_delete(ReqNFunActivity.this, url, progressDialog, MyApplication.REQ_NO_FUN, true);
@@ -200,10 +192,8 @@ public class ReqNFunActivity extends AppCompatActivity {
             url += "c=" + reqnfun.getPrior() + "&";
             url += "d=" + reqnfun.getUrge() + "&";
             url += "e=" + reqnfun.getEsta() + "&";
-            if (reqnfun.isState())
-                url += "f=" + 1 + "&";
-            else
-                url += "f=" + 0 + "&";
+            if (reqnfun.isState()) url += "f=" + 1 + "&";
+            else url += "f=" + 0 + "&";
             url += "g=" + reqnfun.getCategory() + "&";
             url += "h=" + reqnfun.getCommentary();
             Utils.create_update_delete(ReqNFunActivity.this, url, progressDialog, MyApplication.REQ_NO_FUN, true);

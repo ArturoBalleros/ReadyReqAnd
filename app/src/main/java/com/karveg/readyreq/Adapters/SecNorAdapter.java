@@ -15,7 +15,7 @@ import com.karveg.readyreq.R;
 import java.util.Collections;
 import java.util.List;
 
-public class SecNorAdapter  extends RecyclerView.Adapter<SecNorAdapter.ViewHolder> implements ItemTouchHelperAdapter {
+public class SecNorAdapter extends RecyclerView.Adapter<SecNorAdapter.ViewHolder> implements ItemTouchHelperAdapter {
 
     //Atributos
     private static List<Generic> objects;
@@ -39,7 +39,7 @@ public class SecNorAdapter  extends RecyclerView.Adapter<SecNorAdapter.ViewHolde
     //solo se ejecuta al crear
     @Override
     public void onBindViewHolder(SecNorAdapter.ViewHolder holder, int position) {
-        holder.bind(objects.get(position),listener);
+        holder.bind(objects.get(position), listener);
     }
 
     //numero
@@ -95,12 +95,13 @@ public class SecNorAdapter  extends RecyclerView.Adapter<SecNorAdapter.ViewHolde
         //Darle color cuando lo descelecionas
         @Override
         public void onItemClear() {
-            itemView.setBackgroundColor(  objects.get(getAdapterPosition()).isSelected()? Color.CYAN : Color.parseColor("#E2E2E2"));
+            itemView.setBackgroundColor(objects.get(getAdapterPosition()).isSelected() ? Color.CYAN : Color.parseColor("#E2E2E2"));
         }
     }
 
     public interface ICallback {
         void onItemPositionChange(int fromPosition, int toPosition);
+
         void onItemClick(Generic object, int position, View v);
     }
 }

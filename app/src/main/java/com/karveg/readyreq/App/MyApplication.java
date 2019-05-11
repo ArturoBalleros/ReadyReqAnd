@@ -13,6 +13,7 @@ public class MyApplication extends Application {
     public static String PASS;
     public static String DATABASE;
     public static int PORT;
+    public static int PORTHTTP;
 
     public static final int NOTHING = -1;
     public static final int GRUPO = 0;

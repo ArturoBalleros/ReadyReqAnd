@@ -43,14 +43,12 @@
             android:id="@+id/fabAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
             android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="15dp"
             android:backgroundTint="#FFFFFF"
             android:elevation="10dp"
             android:src="@android:drawable/ic_menu_add"
             app:borderWidth="0dp" />
 
     </LinearLayout>
-
-
 </FrameLayout>

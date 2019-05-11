@@ -390,13 +390,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="20dp"
                     android:layout_marginHorizontal="50dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
                     android:hint="@string/text_comen"
                     android:textSize="18dp" />
             </LinearLayout>
         </ScrollView>
     </android.support.constraint.ConstraintLayout>
-
 </LinearLayout>

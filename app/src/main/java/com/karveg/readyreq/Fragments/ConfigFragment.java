@@ -1,6 +1,7 @@
 package com.karveg.readyreq.Fragments;
 
 //Buscar en todos los sitio ctrl + shift + f
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -34,9 +35,6 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ConfigFragment extends Fragment {
 
     private RequestQueue request;

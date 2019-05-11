@@ -26,7 +26,6 @@ import com.karveg.readyreq.Models.Objective;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
 
-
 public class ObjecActivity extends AppCompatActivity {
 
 
@@ -66,10 +65,8 @@ public class ObjecActivity extends AppCompatActivity {
 
             if (bu.getSerializable("objec") != null) {
                 objective = (Objective) bu.getSerializable("objec");
-                if (bu.getInt("flagTab") != 0)
-                    setViewPager(bu.getInt("flagTab"));
-                else
-                    setViewPager(MyApplication.NOTHING);
+                if (bu.getInt("flagTab") != 0) setViewPager(bu.getInt("flagTab"));
+                else setViewPager(MyApplication.NOTHING);
             }
         } else {//nuevo
             objective = new Objective();
@@ -184,10 +181,8 @@ public class ObjecActivity extends AppCompatActivity {
             url += "d=" + objective.getPrior() + "&";
             url += "e=" + objective.getUrge() + "&";
             url += "f=" + objective.getEsta() + "&";
-            if (objective.isState())
-                url += "g=" + 1 + "&";
-            else
-                url += "g=" + 0 + "&";
+            if (objective.isState()) url += "g=" + 1 + "&";
+            else url += "g=" + 0 + "&";
             url += "h=" + objective.getCategory() + "&";
             url += "i=" + objective.getCommentary();
             Utils.create_update_delete(ObjecActivity.this, url, progressDialog, MyApplication.OBJETIVOS, true);
@@ -200,10 +195,8 @@ public class ObjecActivity extends AppCompatActivity {
             url += "c=" + objective.getPrior() + "&";
             url += "d=" + objective.getUrge() + "&";
             url += "e=" + objective.getEsta() + "&";
-            if (objective.isState())
-                url += "f=" + 1 + "&";
-            else
-                url += "f=" + 0 + "&";
+            if (objective.isState()) url += "f=" + 1 + "&";
+            else url += "f=" + 0 + "&";
             url += "g=" + objective.getCategory() + "&";
             url += "h=" + objective.getCommentary();
             Utils.create_update_delete(ObjecActivity.this, url, progressDialog, MyApplication.OBJETIVOS, true);

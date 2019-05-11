@@ -13,7 +13,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.karveg.readyreq.Activities.ObjecActivity;
 import com.karveg.readyreq.Activities.ReqNFunActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.R;
@@ -193,36 +192,30 @@ public class ReqNFun implements Serializable {
                     r.setPrior(jsonObject.optInt("Prioridad"));
                     r.setUrge(jsonObject.optInt("Urgencia"));
                     r.setEsta(jsonObject.optInt("Estabilidad"));
-                    if (jsonObject.optInt("Estado") == 1)
-                        r.setState(true);
-                    else
-                        r.setState(false);
+                    if (jsonObject.optInt("Estado") == 1) r.setState(true);
+                    else r.setState(false);
                     r.setCategory(jsonObject.optInt("Categoria"));
                     r.setCommentary(jsonObject.optString("Comentario"));
 
                     json = response.optJSONArray("Resul2");
                     if (json != null)
                         r.setAutors(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
-                    else
-                        r.setAutors(new ArrayList<Generic>());
+                    else r.setAutors(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul3");
                     if (json != null)
                         r.setSources(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
-                    else
-                        r.setSources(new ArrayList<Generic>());
+                    else r.setSources(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul4");
                     if (json != null)
                         r.setObjetives(Utils.JSONArrayToListGeneric(json, MyApplication.OBJETIVOS));
-                    else
-                        r.setObjetives(new ArrayList<Generic>());
+                    else r.setObjetives(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul5");
                     if (json != null)
                         r.setRequirements(Utils.JSONArrayToListGeneric(json, MyApplication.REQU));
-                    else
-                        r.setRequirements(new ArrayList<Generic>());
+                    else r.setRequirements(new ArrayList<Generic>());
 
                     ReqNFunActivity.setValueReque(r);
                 }
@@ -289,7 +282,7 @@ public class ReqNFun implements Serializable {
                 else if (jsonObject.optString("a").equals("No5"))
                     Toast.makeText(ctx, R.string.error_empty_query, Toast.LENGTH_SHORT).show();
                 else {
-                     ReqNFunActivity.saveObjects(ctx,jsonObject.optInt("Id"));
+                    ReqNFunActivity.saveObjects(ctx, jsonObject.optInt("Id"));
                 }
                 progressDialog.dismiss();
             }

@@ -191,20 +191,17 @@ public class Objective implements Serializable {
                     json = response.optJSONArray("Resul2");
                     if (json != null)
                         o.setAutors(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
-                    else
-                        o.setAutors(new ArrayList<Generic>());
+                    else o.setAutors(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul3");
                     if (json != null)
                         o.setSources(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
-                    else
-                        o.setSources(new ArrayList<Generic>());
+                    else o.setSources(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul4");
                     if (json != null)
                         o.setObjetives(Utils.JSONArrayToListGeneric(json, MyApplication.OBJETIVOS));
-                    else
-                        o.setObjetives(new ArrayList<Generic>());
+                    else o.setObjetives(new ArrayList<Generic>());
 
                     ObjecActivity.setValueObjec(o);
                 }
@@ -271,7 +268,7 @@ public class Objective implements Serializable {
                 else if (jsonObject.optString("a").equals("No5"))
                     Toast.makeText(ctx, R.string.error_empty_query, Toast.LENGTH_SHORT).show();
                 else {
-                    ObjecActivity.saveObjects(ctx,jsonObject.optInt("Id"));
+                    ObjecActivity.saveObjects(ctx, jsonObject.optInt("Id"));
                 }
                 progressDialog.dismiss();
             }

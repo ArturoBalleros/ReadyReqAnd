@@ -1,6 +1,5 @@
 package com.karveg.readyreq.Fragments;
 
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,14 +11,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
-import com.karveg.readyreq.App.MyApplication;
-import com.karveg.readyreq.Models.Actor;
 import com.karveg.readyreq.Models.Objective;
 import com.karveg.readyreq.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ObjecDataFragment extends Fragment {
 
     private static Objective objective;
@@ -84,7 +78,7 @@ public class ObjecDataFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_objec, container, false);
 
         bindUI(view);
-              setValuesUI();
+        setValuesUI();
 
         return view;
     }
@@ -122,43 +116,26 @@ public class ObjecDataFragment extends Fragment {
         editTextName.setText(objective.getName());
         editTextDesc.setText(objective.getDescription());
 
-        if (objective.getPrior() == 1)
-            radioButtonPVLow.setChecked(true);
-        else if (objective.getPrior() == 2)
-            radioButtonPLow.setChecked(true);
-        else if (objective.getPrior() == 3)
-            radioButtonPMed.setChecked(true);
-        else if (objective.getPrior() == 4)
-            radioButtonPHigh.setChecked(true);
-        else if (objective.getPrior() == 5)
-            radioButtonPVHigh.setChecked(true);
+        if (objective.getPrior() == 1) radioButtonPVLow.setChecked(true);
+        else if (objective.getPrior() == 2) radioButtonPLow.setChecked(true);
+        else if (objective.getPrior() == 3) radioButtonPMed.setChecked(true);
+        else if (objective.getPrior() == 4) radioButtonPHigh.setChecked(true);
+        else if (objective.getPrior() == 5) radioButtonPVHigh.setChecked(true);
 
-        if (objective.getUrge() == 1)
-            radioButtonUVLow.setChecked(true);
-        else if (objective.getUrge() == 2)
-            radioButtonULow.setChecked(true);
-        else if (objective.getUrge() == 3)
-            radioButtonUMed.setChecked(true);
-        else if (objective.getUrge() == 4)
-            radioButtonUHigh.setChecked(true);
-        else if (objective.getUrge() == 5)
-            radioButtonUVHigh.setChecked(true);
+        if (objective.getUrge() == 1) radioButtonUVLow.setChecked(true);
+        else if (objective.getUrge() == 2) radioButtonULow.setChecked(true);
+        else if (objective.getUrge() == 3) radioButtonUMed.setChecked(true);
+        else if (objective.getUrge() == 4) radioButtonUHigh.setChecked(true);
+        else if (objective.getUrge() == 5) radioButtonUVHigh.setChecked(true);
 
-        if (objective.getEsta() == 1)
-            radioButtonEVLow.setChecked(true);
-        else if (objective.getEsta() == 2)
-            radioButtonELow.setChecked(true);
-        else if (objective.getEsta() == 3)
-            radioButtonEMed.setChecked(true);
-        else if (objective.getEsta() == 4)
-            radioButtonEHigh.setChecked(true);
-        else if (objective.getEsta() == 5)
-            radioButtonEVHigh.setChecked(true);
+        if (objective.getEsta() == 1) radioButtonEVLow.setChecked(true);
+        else if (objective.getEsta() == 2) radioButtonELow.setChecked(true);
+        else if (objective.getEsta() == 3) radioButtonEMed.setChecked(true);
+        else if (objective.getEsta() == 4) radioButtonEHigh.setChecked(true);
+        else if (objective.getEsta() == 5) radioButtonEVHigh.setChecked(true);
 
-        if (objective.isState())
-            radioButtonVer.setChecked(true);
-        else
-            radioButtonNVer.setChecked(true);
+        if (objective.isState()) radioButtonVer.setChecked(true);
+        else radioButtonNVer.setChecked(true);
 
         spinnerCateg.setSelection(objective.getCategory() - 1);
         editTextComen.setText(objective.getCommentary());
@@ -168,43 +145,26 @@ public class ObjecDataFragment extends Fragment {
         objective.setName(editTextName.getText().toString());
         objective.setDescription(editTextDesc.getText().toString());
 
-        if (radioButtonPVLow.isChecked())
-            objective.setPrior(1);
-        else if (radioButtonPLow.isChecked())
-            objective.setPrior(2);
-        else if (radioButtonPMed.isChecked())
-            objective.setPrior(3);
-        else if (radioButtonPHigh.isChecked())
-            objective.setPrior(4);
-        else if (radioButtonPVHigh.isChecked())
-            objective.setPrior(5);
+        if (radioButtonPVLow.isChecked()) objective.setPrior(1);
+        else if (radioButtonPLow.isChecked()) objective.setPrior(2);
+        else if (radioButtonPMed.isChecked()) objective.setPrior(3);
+        else if (radioButtonPHigh.isChecked()) objective.setPrior(4);
+        else if (radioButtonPVHigh.isChecked()) objective.setPrior(5);
 
-        if (radioButtonUVLow.isChecked())
-            objective.setUrge(1);
-        else if (radioButtonULow.isChecked())
-            objective.setUrge(2);
-        else if (radioButtonUMed.isChecked())
-            objective.setUrge(3);
-        else if (radioButtonUHigh.isChecked())
-            objective.setUrge(4);
-        else if (radioButtonUVHigh.isChecked())
-            objective.setUrge(5);
+        if (radioButtonUVLow.isChecked()) objective.setUrge(1);
+        else if (radioButtonULow.isChecked()) objective.setUrge(2);
+        else if (radioButtonUMed.isChecked()) objective.setUrge(3);
+        else if (radioButtonUHigh.isChecked()) objective.setUrge(4);
+        else if (radioButtonUVHigh.isChecked()) objective.setUrge(5);
 
-        if (radioButtonEVLow.isChecked())
-            objective.setEsta(1);
-        else if (radioButtonELow.isChecked())
-            objective.setEsta(2);
-        else if (radioButtonEMed.isChecked())
-            objective.setEsta(3);
-        else if (radioButtonEHigh.isChecked())
-            objective.setEsta(4);
-        else if (radioButtonEVHigh.isChecked())
-            objective.setEsta(5);
+        if (radioButtonEVLow.isChecked()) objective.setEsta(1);
+        else if (radioButtonELow.isChecked()) objective.setEsta(2);
+        else if (radioButtonEMed.isChecked()) objective.setEsta(3);
+        else if (radioButtonEHigh.isChecked()) objective.setEsta(4);
+        else if (radioButtonEVHigh.isChecked()) objective.setEsta(5);
 
-        if(radioButtonVer.isChecked())
-            objective.setState(true);
-        else
-            objective.setState(false);
+        if (radioButtonVer.isChecked()) objective.setState(true);
+        else objective.setState(false);
 
         objective.setCategory(spinnerCateg.getSelectedItemPosition() + 1);
         objective.setCommentary(editTextComen.getText().toString());

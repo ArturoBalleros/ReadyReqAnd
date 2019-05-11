@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Models.Package;
-import com.karveg.readyreq.Models.Worker;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
 
@@ -46,10 +45,8 @@ public class PackageActivity extends AppCompatActivity {
 
         //Bundle
         Bundle bu = getIntent().getExtras();
-        if (bu != null && bu.getInt("code") != MyApplication.NOTHING)
-            intCode = bu.getInt("code");
-        else
-            intCode = MyApplication.NOTHING;
+        if (bu != null && bu.getInt("code") != MyApplication.NOTHING) intCode = bu.getInt("code");
+        else intCode = MyApplication.NOTHING;
 
         pack = new Package();
 

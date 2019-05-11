@@ -13,7 +13,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.karveg.readyreq.Activities.GroupActivity;
 import com.karveg.readyreq.Activities.PackageActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.R;

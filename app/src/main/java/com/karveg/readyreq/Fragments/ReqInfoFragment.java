@@ -1,6 +1,5 @@
 package com.karveg.readyreq.Fragments;
 
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
@@ -14,14 +13,9 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.karveg.readyreq.App.MyApplication;
-import com.karveg.readyreq.Models.ReqFun;
 import com.karveg.readyreq.Models.ReqInfo;
 import com.karveg.readyreq.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ReqInfoFragment extends Fragment {
 
     private static ReqInfo reqinfo;
@@ -230,43 +224,26 @@ public class ReqInfoFragment extends Fragment {
         editTextName.setText(reqinfo.getName());
         editTextDesc.setText(reqinfo.getDescription());
 
-        if (reqinfo.getPrior() == 1)
-            radioButtonPVLow.setChecked(true);
-        else if (reqinfo.getPrior() == 2)
-            radioButtonPLow.setChecked(true);
-        else if (reqinfo.getPrior() == 3)
-            radioButtonPMed.setChecked(true);
-        else if (reqinfo.getPrior() == 4)
-            radioButtonPHigh.setChecked(true);
-        else if (reqinfo.getPrior() == 5)
-            radioButtonPVHigh.setChecked(true);
+        if (reqinfo.getPrior() == 1) radioButtonPVLow.setChecked(true);
+        else if (reqinfo.getPrior() == 2) radioButtonPLow.setChecked(true);
+        else if (reqinfo.getPrior() == 3) radioButtonPMed.setChecked(true);
+        else if (reqinfo.getPrior() == 4) radioButtonPHigh.setChecked(true);
+        else if (reqinfo.getPrior() == 5) radioButtonPVHigh.setChecked(true);
 
-        if (reqinfo.getUrge() == 1)
-            radioButtonUVLow.setChecked(true);
-        else if (reqinfo.getUrge() == 2)
-            radioButtonULow.setChecked(true);
-        else if (reqinfo.getUrge() == 3)
-            radioButtonUMed.setChecked(true);
-        else if (reqinfo.getUrge() == 4)
-            radioButtonUHigh.setChecked(true);
-        else if (reqinfo.getUrge() == 5)
-            radioButtonUVHigh.setChecked(true);
+        if (reqinfo.getUrge() == 1) radioButtonUVLow.setChecked(true);
+        else if (reqinfo.getUrge() == 2) radioButtonULow.setChecked(true);
+        else if (reqinfo.getUrge() == 3) radioButtonUMed.setChecked(true);
+        else if (reqinfo.getUrge() == 4) radioButtonUHigh.setChecked(true);
+        else if (reqinfo.getUrge() == 5) radioButtonUVHigh.setChecked(true);
 
-        if (reqinfo.getEsta() == 1)
-            radioButtonEVLow.setChecked(true);
-        else if (reqinfo.getEsta() == 2)
-            radioButtonELow.setChecked(true);
-        else if (reqinfo.getEsta() == 3)
-            radioButtonEMed.setChecked(true);
-        else if (reqinfo.getEsta() == 4)
-            radioButtonEHigh.setChecked(true);
-        else if (reqinfo.getEsta() == 5)
-            radioButtonEVHigh.setChecked(true);
+        if (reqinfo.getEsta() == 1) radioButtonEVLow.setChecked(true);
+        else if (reqinfo.getEsta() == 2) radioButtonELow.setChecked(true);
+        else if (reqinfo.getEsta() == 3) radioButtonEMed.setChecked(true);
+        else if (reqinfo.getEsta() == 4) radioButtonEHigh.setChecked(true);
+        else if (reqinfo.getEsta() == 5) radioButtonEVHigh.setChecked(true);
 
-        if (reqinfo.isState())
-            radioButtonVer.setChecked(true);
-        else
-            radioButtonNVer.setChecked(true);
+        if (reqinfo.isState()) radioButtonVer.setChecked(true);
+        else radioButtonNVer.setChecked(true);
 
         spinnerCateg.setSelection(reqinfo.getCategory() - 1);
         editTextComen.setText(reqinfo.getCommentary());
@@ -287,43 +264,26 @@ public class ReqInfoFragment extends Fragment {
         reqinfo.setName(editTextName.getText().toString());
         reqinfo.setDescription(editTextDesc.getText().toString());
 
-        if (radioButtonPVLow.isChecked())
-            reqinfo.setPrior(1);
-        else if (radioButtonPLow.isChecked())
-            reqinfo.setPrior(2);
-        else if (radioButtonPMed.isChecked())
-            reqinfo.setPrior(3);
-        else if (radioButtonPHigh.isChecked())
-            reqinfo.setPrior(4);
-        else if (radioButtonPVHigh.isChecked())
-            reqinfo.setPrior(5);
+        if (radioButtonPVLow.isChecked()) reqinfo.setPrior(1);
+        else if (radioButtonPLow.isChecked()) reqinfo.setPrior(2);
+        else if (radioButtonPMed.isChecked()) reqinfo.setPrior(3);
+        else if (radioButtonPHigh.isChecked()) reqinfo.setPrior(4);
+        else if (radioButtonPVHigh.isChecked()) reqinfo.setPrior(5);
 
-        if (radioButtonUVLow.isChecked())
-            reqinfo.setUrge(1);
-        else if (radioButtonULow.isChecked())
-            reqinfo.setUrge(2);
-        else if (radioButtonUMed.isChecked())
-            reqinfo.setUrge(3);
-        else if (radioButtonUHigh.isChecked())
-            reqinfo.setUrge(4);
-        else if (radioButtonUVHigh.isChecked())
-            reqinfo.setUrge(5);
+        if (radioButtonUVLow.isChecked()) reqinfo.setUrge(1);
+        else if (radioButtonULow.isChecked()) reqinfo.setUrge(2);
+        else if (radioButtonUMed.isChecked()) reqinfo.setUrge(3);
+        else if (radioButtonUHigh.isChecked()) reqinfo.setUrge(4);
+        else if (radioButtonUVHigh.isChecked()) reqinfo.setUrge(5);
 
-        if (radioButtonEVLow.isChecked())
-            reqinfo.setEsta(1);
-        else if (radioButtonELow.isChecked())
-            reqinfo.setEsta(2);
-        else if (radioButtonEMed.isChecked())
-            reqinfo.setEsta(3);
-        else if (radioButtonEHigh.isChecked())
-            reqinfo.setEsta(4);
-        else if (radioButtonEVHigh.isChecked())
-            reqinfo.setEsta(5);
+        if (radioButtonEVLow.isChecked()) reqinfo.setEsta(1);
+        else if (radioButtonELow.isChecked()) reqinfo.setEsta(2);
+        else if (radioButtonEMed.isChecked()) reqinfo.setEsta(3);
+        else if (radioButtonEHigh.isChecked()) reqinfo.setEsta(4);
+        else if (radioButtonEVHigh.isChecked()) reqinfo.setEsta(5);
 
-        if (radioButtonVer.isChecked())
-            reqinfo.setState(true);
-        else
-            reqinfo.setState(false);
+        if (radioButtonVer.isChecked()) reqinfo.setState(true);
+        else reqinfo.setState(false);
 
         reqinfo.setCategory(spinnerCateg.getSelectedItemPosition() + 1);
         reqinfo.setCommentary(editTextComen.getText().toString());
@@ -334,5 +294,4 @@ public class ReqInfoFragment extends Fragment {
         reqinfo.setTimeMax(seekBarTlifMax.getProgress());
 
     }
-
 }

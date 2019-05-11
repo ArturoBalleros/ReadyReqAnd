@@ -51,10 +51,8 @@ public class GroupActivity extends AppCompatActivity {
 
         //Bundle
         Bundle bu = getIntent().getExtras();
-        if (bu != null && bu.getInt("code") != MyApplication.NOTHING)
-            intCode = bu.getInt("code");
-        else
-            intCode = MyApplication.NOTHING;
+        if (bu != null && bu.getInt("code") != MyApplication.NOTHING) intCode = bu.getInt("code");
+        else intCode = MyApplication.NOTHING;
 
         worker = new Worker();
 
@@ -132,10 +130,8 @@ public class GroupActivity extends AppCompatActivity {
         editTextName.setText(worker.getName());
         editTextOrg.setText(worker.getOrganization());
         editTextRol.setText(worker.getRole());
-        if (worker.isDeveloper())
-            radioButtonYes.setChecked(true);
-        else
-            radioButtonNo.setChecked(true);
+        if (worker.isDeveloper()) radioButtonYes.setChecked(true);
+        else radioButtonNo.setChecked(true);
         spinnerCateg.setSelection(worker.getCategory() - 1);
         editTextComen.setText(worker.getCommentary());
 
@@ -145,10 +141,8 @@ public class GroupActivity extends AppCompatActivity {
         worker.setName(editTextName.getText().toString());
         worker.setOrganization(editTextOrg.getText().toString());
         worker.setRole(editTextRol.getText().toString());
-        if (radioButtonYes.isChecked())
-            worker.setDeveloper(true);
-        else
-            worker.setDeveloper(false);
+        if (radioButtonYes.isChecked()) worker.setDeveloper(true);
+        else worker.setDeveloper(false);
         worker.setCategory(spinnerCateg.getSelectedItemPosition() + 1);
         worker.setCommentary(editTextComen.getText().toString());
     }
@@ -162,10 +156,8 @@ public class GroupActivity extends AppCompatActivity {
             url += "b=" + worker.getName() + "&";
             url += "c=" + worker.getOrganization() + "&";
             url += "d=" + worker.getRole() + "&";
-            if (worker.isDeveloper())
-                url += "e=" + 1 + "&";
-            else
-                url += "e=" + 0 + "&";
+            if (worker.isDeveloper()) url += "e=" + 1 + "&";
+            else url += "e=" + 0 + "&";
             url += "f=" + worker.getCategory() + "&";
             url += "g=" + worker.getCommentary();
 
@@ -175,10 +167,8 @@ public class GroupActivity extends AppCompatActivity {
             url += "a=" + worker.getName() + "&";
             url += "b=" + worker.getOrganization() + "&";
             url += "c=" + worker.getRole() + "&";
-            if (worker.isDeveloper())
-                url += "d=" + 1 + "&";
-            else
-                url += "d=" + 0 + "&";
+            if (worker.isDeveloper()) url += "d=" + 1 + "&";
+            else url += "d=" + 0 + "&";
             url += "e=" + worker.getCategory() + "&";
             url += "f=" + worker.getCommentary();
 

@@ -130,10 +130,8 @@ public class Worker {
                     w.setName(jsonObject.optString("Nombre"));
                     w.setOrganization(jsonObject.optString("Organizacion"));
                     w.setRole(jsonObject.optString("Rol"));
-                    if (jsonObject.optInt("Desarrollador") == 0)
-                        w.setDeveloper(false);
-                    else
-                        w.setDeveloper(true);
+                    if (jsonObject.optInt("Desarrollador") == 0) w.setDeveloper(false);
+                    else w.setDeveloper(true);
                     w.setCategory(jsonObject.optInt("Categoria"));
                     w.setCommentary(jsonObject.optString("Comentario"));
                     GroupActivity.setValuesUI(w);
@@ -164,9 +162,6 @@ public class Worker {
                 }
             }
         };
-
         request.add(jsonObjectRequest);
-
     }
-
 }

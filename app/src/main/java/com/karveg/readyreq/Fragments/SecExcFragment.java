@@ -1,6 +1,5 @@
 package com.karveg.readyreq.Fragments;
 
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,10 +14,8 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.karveg.readyreq.Adapters.SecExcAdapter;
-import com.karveg.readyreq.Adapters.SecNorAdapter;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Models.Generic;
 import com.karveg.readyreq.Models.ReqFun;
@@ -28,9 +25,6 @@ import com.karveg.readyreq.Utils.Utils;
 
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SecExcFragment extends Fragment {
 
     private static ReqFun reqfun;
@@ -167,12 +161,9 @@ public class SecExcFragment extends Fragment {
     private static void visibilityFab() {
         boolean visibility = false;
         for (Generic g : objects)
-            if (g.isSelected())
-                visibility = true;
-        if (visibility)
-            fabDel.setVisibility(View.VISIBLE);
-        else
-            fabDel.setVisibility(View.INVISIBLE);
+            if (g.isSelected()) visibility = true;
+        if (visibility) fabDel.setVisibility(View.VISIBLE);
+        else fabDel.setVisibility(View.INVISIBLE);
     }
 
     public static void updateSecExc() {
@@ -190,5 +181,4 @@ public class SecExcFragment extends Fragment {
         }
         fabUpd.setVisibility(View.INVISIBLE);
     }
-
 }

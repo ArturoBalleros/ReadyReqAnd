@@ -14,8 +14,6 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.karveg.readyreq.Activities.ReqFunActivity;
-import com.karveg.readyreq.Activities.ReqInfoActivity;
-import com.karveg.readyreq.Activities.ReqNFunActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Fragments.ReqFunFragment;
 import com.karveg.readyreq.R;
@@ -273,44 +271,37 @@ public class ReqFun implements Serializable {
                     json = response.optJSONArray("Resul2");
                     if (json != null)
                         r.setAutors(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
-                    else
-                        r.setAutors(new ArrayList<Generic>());
+                    else r.setAutors(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul3");
                     if (json != null)
                         r.setSources(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
-                    else
-                        r.setSources(new ArrayList<Generic>());
+                    else r.setSources(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul4");
                     if (json != null)
                         r.setObjetives(Utils.JSONArrayToListGeneric(json, MyApplication.OBJETIVOS));
-                    else
-                        r.setObjetives(new ArrayList<Generic>());
+                    else r.setObjetives(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul5");
                     if (json != null)
                         r.setActors(Utils.JSONArrayToListGeneric(json, MyApplication.ACTORES));
-                    else
-                        r.setActors(new ArrayList<Generic>());
+                    else r.setActors(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul6");
                     if (json != null)
                         r.setRequirements(Utils.JSONArrayToListGeneric(json, MyApplication.REQU));
-                    else
-                        r.setRequirements(new ArrayList<Generic>());
+                    else r.setRequirements(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul7");
                     if (json != null)
                         r.setSecNor(Utils.JSONArrayToListGeneric(json, MyApplication.NOTHING));
-                    else
-                        r.setSecNor(new ArrayList<Generic>());
+                    else r.setSecNor(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul8");
                     if (json != null)
                         r.setSecExc(Utils.JSONArrayToListGeneric(json, MyApplication.NOTHING));
-                    else
-                        r.setSecExc(new ArrayList<Generic>());
+                    else r.setSecExc(new ArrayList<Generic>());
 
                     ReqFunActivity.setValueReque(r);
                 }
@@ -377,7 +368,7 @@ public class ReqFun implements Serializable {
                 else if (jsonObject.optString("a").equals("No5"))
                     Toast.makeText(ctx, R.string.error_empty_query, Toast.LENGTH_SHORT).show();
                 else {
-                     ReqFunActivity.saveObjects(ctx,jsonObject.optInt("Id"));
+                    ReqFunActivity.saveObjects(ctx, jsonObject.optInt("Id"));
                 }
                 progressDialog.dismiss();
             }

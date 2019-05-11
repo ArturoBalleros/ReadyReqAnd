@@ -13,18 +13,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.karveg.readyreq.Activities.ActorActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Fragments.EstimFragment;
 import com.karveg.readyreq.R;
-import com.karveg.readyreq.Utils.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 
 public class Estim {
     private int DSR;

@@ -36,10 +36,8 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.SimpleCallbac
 
     @Override
     public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder source, RecyclerView.ViewHolder target) {
-        if (source.getItemViewType() != target.getItemViewType())
-            return false;
-        if (mFrom == null)
-            mFrom = source.getAdapterPosition();
+        if (source.getItemViewType() != target.getItemViewType()) return false;
+        if (mFrom == null) mFrom = source.getAdapterPosition();
         mTo = target.getAdapterPosition();
         mAdapter.onItemMove(source.getAdapterPosition(), target.getAdapterPosition());
         return true;
@@ -64,8 +62,7 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.SimpleCallbac
             ItemTouchHelperViewHolder itemViewHolder = (ItemTouchHelperViewHolder) viewHolder;
             itemViewHolder.onItemClear();
         }
-        if (mFrom != null && mTo != null)
-            mAdapter.onDrop(mFrom, mTo);
+        if (mFrom != null && mTo != null) mAdapter.onDrop(mFrom, mTo);
         mFrom = mTo = null;
     }
 }

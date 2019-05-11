@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -20,9 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.karveg.readyreq.Activities.ListActivity;
 import com.karveg.readyreq.Activities.MainActivity;
-import com.karveg.readyreq.Activities.ObjecActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Fragments.ActoFragment;
 import com.karveg.readyreq.Fragments.AuthFragment;
@@ -34,7 +31,6 @@ import com.karveg.readyreq.Fragments.SecExcFragment;
 import com.karveg.readyreq.Fragments.SecNorFragment;
 import com.karveg.readyreq.Fragments.SourFragment;
 import com.karveg.readyreq.Models.Generic;
-import com.karveg.readyreq.Models.Worker;
 import com.karveg.readyreq.R;
 
 import javax.crypto.Cipher;
@@ -65,22 +61,14 @@ public class Utils {
     }
 
     public static int imageSelect(int mode) {
-        if (MyApplication.GRUPO == mode)
-            return R.drawable.ic_grupo;
-        else if (MyApplication.PAQUETES == mode)
-            return R.drawable.ic_paque;
-        else if (MyApplication.OBJETIVOS == mode)
-            return R.drawable.ic_objet;
-        else if (MyApplication.ACTORES == mode)
-            return R.drawable.ic_actor;
-        else if (MyApplication.REQ_FUNC == mode)
-            return R.drawable.ic_rf;
-        else if (MyApplication.REQ_NO_FUN == mode)
-            return R.drawable.ic_rnf;
-        else if (MyApplication.REQ_INFO == mode)
-            return R.drawable.ic_ri;
-        else
-            return -1;
+        if (MyApplication.GRUPO == mode) return R.drawable.ic_grupo;
+        else if (MyApplication.PAQUETES == mode) return R.drawable.ic_paque;
+        else if (MyApplication.OBJETIVOS == mode) return R.drawable.ic_objet;
+        else if (MyApplication.ACTORES == mode) return R.drawable.ic_actor;
+        else if (MyApplication.REQ_FUNC == mode) return R.drawable.ic_rf;
+        else if (MyApplication.REQ_NO_FUN == mode) return R.drawable.ic_rnf;
+        else if (MyApplication.REQ_INFO == mode) return R.drawable.ic_ri;
+        else return -1;
     }
 
     public static String getUrlList(int mode) {
@@ -98,18 +86,14 @@ public class Utils {
             return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqnfun_frag_list.php";
         else if (MyApplication.REQ_INFO == mode)
             return "http://" + MyApplication.IP_SERVER + ":8080/readyreq/reqinfo_frag_list.php";
-        else
-            return "";
+        else return "";
     }
 
     public static int deterTipoReq(int imag) {
         int tipo = 0;
-        if (imag == R.drawable.ic_ri)
-            tipo = 1;
-        if (imag == R.drawable.ic_rnf)
-            tipo = 2;
-        if (imag == R.drawable.ic_rf)
-            tipo = 3;
+        if (imag == R.drawable.ic_ri) tipo = 1;
+        if (imag == R.drawable.ic_rnf) tipo = 2;
+        if (imag == R.drawable.ic_rf) tipo = 3;
         return tipo;
     }
 
@@ -186,22 +170,14 @@ public class Utils {
     }
 
     public static String getNameSearch(int mode) {
-        if (MyApplication.GRUPO == mode)
-            return "group_frag_list_search";
-        else if (MyApplication.PAQUETES == mode)
-            return "paq_frag_list_search";
-        else if (MyApplication.OBJETIVOS == mode)
-            return "objet_frag_list_search";
-        else if (MyApplication.ACTORES == mode)
-            return "actor_frag_list_search";
-        else if (MyApplication.REQ_FUNC == mode)
-            return "reqfun_frag_list_search";
-        else if (MyApplication.REQ_NO_FUN == mode)
-            return "reqnfun_frag_list_search";
-        else if (MyApplication.REQ_INFO == mode)
-            return "reqinfo_frag_list_search";
-        else
-            return "";
+        if (MyApplication.GRUPO == mode) return "group_frag_list_search";
+        else if (MyApplication.PAQUETES == mode) return "paq_frag_list_search";
+        else if (MyApplication.OBJETIVOS == mode) return "objet_frag_list_search";
+        else if (MyApplication.ACTORES == mode) return "actor_frag_list_search";
+        else if (MyApplication.REQ_FUNC == mode) return "reqfun_frag_list_search";
+        else if (MyApplication.REQ_NO_FUN == mode) return "reqnfun_frag_list_search";
+        else if (MyApplication.REQ_INFO == mode) return "reqinfo_frag_list_search";
+        else return "";
     }
 
     public static void showDeleteItems(final List<Generic> objects, final int id, final Context ctx, final int mode, final int flagTab, final AlertDialog progressDialog) {
@@ -262,18 +238,12 @@ public class Utils {
     }
 
     private static void updateFragment(int flagTab) {
-        if (flagTab == MyApplication.NOTHING)
-            GenericFragment.updateRecyclerView();
-        if (flagTab == MyApplication.AUTH)
-            AuthFragment.updateRecyclerView();
-        if (flagTab == MyApplication.SOUR)
-            SourFragment.updateRecyclerView();
-        if (flagTab == MyApplication.OBJE)
-            ObjecFragment.updateRecyclerView();
-        if (flagTab == MyApplication.REQU)
-            RequFragment.updateRecyclerView();
-        if (flagTab == MyApplication.ACTO)
-            ActoFragment.updateRecyclerView();
+        if (flagTab == MyApplication.NOTHING) GenericFragment.updateRecyclerView();
+        if (flagTab == MyApplication.AUTH) AuthFragment.updateRecyclerView();
+        if (flagTab == MyApplication.SOUR) SourFragment.updateRecyclerView();
+        if (flagTab == MyApplication.OBJE) ObjecFragment.updateRecyclerView();
+        if (flagTab == MyApplication.REQU) RequFragment.updateRecyclerView();
+        if (flagTab == MyApplication.ACTO) ActoFragment.updateRecyclerView();
     }
 
     public static void create_update_delete(final Context ctx, String url, final AlertDialog progressDialog, final int mode, final boolean salt) {
@@ -315,12 +285,9 @@ public class Utils {
                         ctx.startActivity(i);
                         ((Activity) ctx).finish();
                     }
-                    if (mode == MyApplication.DAT_ESP)
-                        DatEspFragment.updateDatEsp();
-                    if (mode == MyApplication.SEC_NOR)
-                        SecNorFragment.updateSecNor();
-                    if (mode == MyApplication.SEC_EXC)
-                        SecExcFragment.updateSecExc();
+                    if (mode == MyApplication.DAT_ESP) DatEspFragment.updateDatEsp();
+                    if (mode == MyApplication.SEC_NOR) SecNorFragment.updateSecNor();
+                    if (mode == MyApplication.SEC_EXC) SecExcFragment.updateSecExc();
                 }
                 progressDialog.dismiss();
             }
@@ -472,22 +439,15 @@ public class Utils {
                     Generic g = new Generic(objects.size() + 1, text);
                     objects.add(g);
                     String url = "http://" + MyApplication.IP_SERVER + ":8080/readyreq/rel_create.php?";
-                    if (mode == MyApplication.SEC_NOR)
-                        url += "a=reqsecnor(idreq,descrip)&";
-                    if (mode == MyApplication.SEC_EXC)
-                        url += "a=reqsecexc(idreq,descrip)&";
-                    if (mode == MyApplication.DAT_ESP)
-                        url += "a=reqidatesp(idreq,descrip)&";
+                    if (mode == MyApplication.SEC_NOR) url += "a=reqsecnor(idreq,descrip)&";
+                    if (mode == MyApplication.SEC_EXC) url += "a=reqsecexc(idreq,descrip)&";
+                    if (mode == MyApplication.DAT_ESP) url += "a=reqidatesp(idreq,descrip)&";
                     url += "b=" + id + ",'" + text + "'";
-                    if (id != MyApplication.NOTHING)
-                        saveObject(ctx, url);
+                    if (id != MyApplication.NOTHING) saveObject(ctx, url);
                 }
-                if (mode == MyApplication.SEC_NOR)
-                    SecNorFragment.updateRecyclerView();
-                if (mode == MyApplication.SEC_EXC)
-                    SecExcFragment.updateRecyclerView();
-                if (mode == MyApplication.DAT_ESP)
-                    DatEspFragment.updateRecyclerView();
+                if (mode == MyApplication.SEC_NOR) SecNorFragment.updateRecyclerView();
+                if (mode == MyApplication.SEC_EXC) SecExcFragment.updateRecyclerView();
+                if (mode == MyApplication.DAT_ESP) DatEspFragment.updateRecyclerView();
 
 
             }

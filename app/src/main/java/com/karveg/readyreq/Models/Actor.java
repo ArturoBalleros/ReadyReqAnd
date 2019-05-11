@@ -14,7 +14,6 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.karveg.readyreq.Activities.ActorActivity;
-import com.karveg.readyreq.Activities.GroupActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
@@ -38,7 +37,7 @@ Actor implements Serializable {
     private int Category;
     private String Commentary;
     private List<Generic> Autors = new ArrayList<>();
-    private List<Generic> Sources= new ArrayList<>();
+    private List<Generic> Sources = new ArrayList<>();
 
     public Actor() {
     }
@@ -160,16 +159,15 @@ Actor implements Serializable {
 
                     json = response.optJSONArray("Resul2");
                     if (json != null)
-                        a.setAutors(Utils.JSONArrayToListGeneric(json,MyApplication.GRUPO));
-                    else
-                        a.setAutors(new ArrayList<Generic>());
+                        a.setAutors(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
+                    else a.setAutors(new ArrayList<Generic>());
 
                     json = response.optJSONArray("Resul3");
                     if (json != null)
-                        a.setSources(Utils.JSONArrayToListGeneric(json,MyApplication.GRUPO));
+                        a.setSources(Utils.JSONArrayToListGeneric(json, MyApplication.GRUPO));
                     else a.setSources(new ArrayList<Generic>());
 
-                   ActorActivity.setValueActor(a);
+                    ActorActivity.setValueActor(a);
                 }
                 progressDialog.dismiss();
             }
@@ -234,7 +232,7 @@ Actor implements Serializable {
                 else if (jsonObject.optString("a").equals("No5"))
                     Toast.makeText(ctx, R.string.error_empty_query, Toast.LENGTH_SHORT).show();
                 else {
-                    ActorActivity.saveObjects(ctx,jsonObject.optInt("Id"));
+                    ActorActivity.saveObjects(ctx, jsonObject.optInt("Id"));
                 }
                 progressDialog.dismiss();
             }

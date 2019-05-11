@@ -1,24 +1,16 @@
 package com.karveg.readyreq.Adapters;
 
-import android.app.AlertDialog;
-import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 
-import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Interfaces.ItemTouchHelperAdapter;
 import com.karveg.readyreq.Interfaces.ItemTouchHelperViewHolder;
 import com.karveg.readyreq.Models.Generic;
 import com.karveg.readyreq.R;
-import com.karveg.readyreq.Utils.Utils;
 
 import java.util.Collections;
 import java.util.List;
@@ -28,7 +20,7 @@ public class DatEspAdapter extends RecyclerView.Adapter<DatEspAdapter.ViewHolder
     //Atributos
     private static List<Generic> objects;
     private int layout;
-    private  ICallback listener;
+    private ICallback listener;
 
     public DatEspAdapter(List<Generic> objects, int layout, ICallback listener) {
         this.objects = objects;
@@ -47,7 +39,7 @@ public class DatEspAdapter extends RecyclerView.Adapter<DatEspAdapter.ViewHolder
     //solo se ejecuta al crear
     @Override
     public void onBindViewHolder(DatEspAdapter.ViewHolder holder, int position) {
-        holder.bind(objects.get(position),listener);
+        holder.bind(objects.get(position), listener);
     }
 
     //numero
@@ -103,12 +95,13 @@ public class DatEspAdapter extends RecyclerView.Adapter<DatEspAdapter.ViewHolder
         //Darle color cuando lo descelecionas
         @Override
         public void onItemClear() {
-            itemView.setBackgroundColor(  objects.get(getAdapterPosition()).isSelected()? Color.CYAN : Color.parseColor("#E2E2E2"));
+            itemView.setBackgroundColor(objects.get(getAdapterPosition()).isSelected() ? Color.CYAN : Color.parseColor("#E2E2E2"));
         }
     }
 
     public interface ICallback {
         void onItemPositionChange(int fromPosition, int toPosition);
+
         void onItemClick(Generic object, int position, View v);
     }
 }

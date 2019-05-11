@@ -14,11 +14,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.karveg.readyreq.Activities.ListActivity;
 import com.karveg.readyreq.Adapters.ActoAdapter;
-import com.karveg.readyreq.Adapters.AutoAdapter;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Models.Generic;
 import com.karveg.readyreq.Models.ReqFun;
@@ -26,9 +24,6 @@ import com.karveg.readyreq.R;
 
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ActoFragment extends Fragment {
 
     private static List<Generic> objects;
@@ -126,5 +121,4 @@ public class ActoFragment extends Fragment {
         dialogBuilder.setCancelable(false);
         return dialogBuilder;
     }
-
 }

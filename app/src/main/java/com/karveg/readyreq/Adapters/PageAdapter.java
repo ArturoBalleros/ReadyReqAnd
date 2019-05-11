@@ -9,7 +9,6 @@ import com.karveg.readyreq.Fragments.ActoFragment;
 import com.karveg.readyreq.Fragments.ActorDataFragment;
 import com.karveg.readyreq.Fragments.AuthFragment;
 import com.karveg.readyreq.Fragments.DatEspFragment;
-import com.karveg.readyreq.Fragments.GenericFragment;
 import com.karveg.readyreq.Fragments.ObjecDataFragment;
 import com.karveg.readyreq.Fragments.ObjecFragment;
 import com.karveg.readyreq.Fragments.ReqFunFragment;
@@ -74,18 +73,12 @@ public class PageAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        if (mode == MyApplication.ACTORES)
-            return selectFragActor(position);
-        else if (mode == MyApplication.OBJETIVOS)
-            return selectFragObjec(position);
-        else if (mode == MyApplication.REQ_NO_FUN)
-            return selectFragReqNFun(position);
-        else if (mode == MyApplication.REQ_INFO)
-            return selectFragReqInfo(position);
-        else if (mode == MyApplication.REQ_FUNC)
-            return selectFragReqFun(position);
-        else
-            return null;
+        if (mode == MyApplication.ACTORES) return selectFragActor(position);
+        else if (mode == MyApplication.OBJETIVOS) return selectFragObjec(position);
+        else if (mode == MyApplication.REQ_NO_FUN) return selectFragReqNFun(position);
+        else if (mode == MyApplication.REQ_INFO) return selectFragReqInfo(position);
+        else if (mode == MyApplication.REQ_FUNC) return selectFragReqFun(position);
+        else return null;
     }
 
     @Override

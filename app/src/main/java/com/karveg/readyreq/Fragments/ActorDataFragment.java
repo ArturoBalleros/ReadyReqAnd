@@ -2,7 +2,6 @@ package com.karveg.readyreq.Fragments;
 
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +12,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
-import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Models.Actor;
 import com.karveg.readyreq.R;
 
@@ -80,12 +78,9 @@ public class ActorDataFragment extends Fragment {
     private void setValuesUI() {
         editTextName.setText(actor.getName());
         editTextDesc.setText(actor.getDescription());
-        if (actor.getComple() == 1)
-            radioButtonLow.setChecked(true);
-        else if (actor.getComple() == 2)
-            radioButtonMed.setChecked(true);
-        else
-            radioButtonHigh.setChecked(true);
+        if (actor.getComple() == 1) radioButtonLow.setChecked(true);
+        else if (actor.getComple() == 2) radioButtonMed.setChecked(true);
+        else radioButtonHigh.setChecked(true);
         editTextDescComp.setText(actor.getDescComple());
         spinnerCateg.setSelection(actor.getCategory() - 1);
         editTextComen.setText(actor.getCommentary());
@@ -95,14 +90,10 @@ public class ActorDataFragment extends Fragment {
         actor.setName(editTextName.getText().toString());
         actor.setDescription(editTextDesc.getText().toString());
         actor.setDescComple(editTextDescComp.getText().toString());
-        if (radioButtonLow.isChecked())
-            actor.setComple(1);
-        else if (radioButtonMed.isChecked())
-            actor.setComple(2);
-        else
-            actor.setComple(3);
+        if (radioButtonLow.isChecked()) actor.setComple(1);
+        else if (radioButtonMed.isChecked()) actor.setComple(2);
+        else actor.setComple(3);
         actor.setCategory(spinnerCateg.getSelectedItemPosition() + 1);
         actor.setCommentary(editTextComen.getText().toString());
     }
-
 }

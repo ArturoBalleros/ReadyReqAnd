@@ -22,8 +22,6 @@ import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Fragments.ReqFunFragment;
 import com.karveg.readyreq.Models.Generic;
 import com.karveg.readyreq.Models.ReqFun;
-import com.karveg.readyreq.Models.ReqInfo;
-import com.karveg.readyreq.Models.ReqNFun;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
 
@@ -64,10 +62,8 @@ public class ReqFunActivity extends AppCompatActivity {
 
             if (bu.getSerializable("reqfun") != null) {
                 reqfun = (ReqFun) bu.getSerializable("reqfun");
-                if (bu.getInt("flagTab") != 0)
-                    setViewPager(bu.getInt("flagTab"));
-                else
-                    setViewPager(MyApplication.NOTHING);
+                if (bu.getInt("flagTab") != 0) setViewPager(bu.getInt("flagTab"));
+                else setViewPager(MyApplication.NOTHING);
             }
         } else {//nuevo
             reqfun = new ReqFun();
@@ -190,10 +186,8 @@ public class ReqFunActivity extends AppCompatActivity {
             url += "h=" + reqfun.getPrior() + "&";
             url += "i=" + reqfun.getUrge() + "&";
             url += "j=" + reqfun.getEsta() + "&";
-            if (reqfun.isState())
-                url += "k=" + 1 + "&";
-            else
-                url += "k=" + 0 + "&";
+            if (reqfun.isState()) url += "k=" + 1 + "&";
+            else url += "k=" + 0 + "&";
             url += "l=" + reqfun.getCategory() + "&";
             url += "m=" + reqfun.getCommentary();
             Utils.create_update_delete(ReqFunActivity.this, url, progressDialog, MyApplication.REQ_FUNC, true);
@@ -210,10 +204,8 @@ public class ReqFunActivity extends AppCompatActivity {
             url += "g=" + reqfun.getPrior() + "&";
             url += "h=" + reqfun.getUrge() + "&";
             url += "i=" + reqfun.getEsta() + "&";
-            if (reqfun.isState())
-                url += "j=" + 1 + "&";
-            else
-                url += "j=" + 0 + "&";
+            if (reqfun.isState()) url += "j=" + 1 + "&";
+            else url += "j=" + 0 + "&";
             url += "k=" + reqfun.getCategory() + "&";
             url += "l=" + reqfun.getCommentary();
             Utils.create_update_delete(ReqFunActivity.this, url, progressDialog, MyApplication.REQ_FUNC, true);
@@ -268,6 +260,4 @@ public class ReqFunActivity extends AppCompatActivity {
             Utils.saveObject(ctx, url);
         }
     }
-
-
 }

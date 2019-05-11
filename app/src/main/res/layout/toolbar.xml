@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/toolbarIcon"
         android:layout_width="35dp"
-        android:layout_height="35dp"/>
+        android:layout_height="35dp" />
 
     <TextView
         android:id="@+id/toolbarTitle"
