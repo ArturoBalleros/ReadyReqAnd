@@ -23,45 +23,9 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 
-public class Package {
-    private int Id;
-    private String Name;
-    private int Category;
-    private String Commentary;
+public class Package extends ObjBase {
 
     public Package() {
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public int getCategory() {
-        return Category;
-    }
-
-    public void setCategory(int category) {
-        Category = category;
-    }
-
-    public String getCommentary() {
-        return Commentary;
-    }
-
-    public void setCommentary(String commentary) {
-        Commentary = commentary;
     }
 
     public static void getPackage(final Context ctx, int intCode, final AlertDialog progressDialog) {

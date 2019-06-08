@@ -27,35 +27,14 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class
-Actor implements Serializable {
-    private int Id;
-    private String Name;
+public class Actor extends ObjBase implements Serializable  {
     private String Description;
     private int Comple;
     private String DescComple;
-    private int Category;
-    private String Commentary;
     private List<Generic> Autors = new ArrayList<>();
     private List<Generic> Sources = new ArrayList<>();
 
     public Actor() {
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
     }
 
     public String getDescription() {
@@ -80,22 +59,6 @@ Actor implements Serializable {
 
     public void setDescComple(String descComple) {
         DescComple = descComple;
-    }
-
-    public int getCategory() {
-        return Category;
-    }
-
-    public void setCategory(int category) {
-        Category = category;
-    }
-
-    public String getCommentary() {
-        return Commentary;
-    }
-
-    public void setCommentary(String commentary) {
-        Commentary = commentary;
     }
 
     public List<Generic> getAutors() {
