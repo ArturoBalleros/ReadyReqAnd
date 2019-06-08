@@ -79,6 +79,8 @@ public class ReqNFun extends ObjEstandar implements Serializable {
                     ReqNFun r = new ReqNFun();
                     r.setId(jsonObject.optInt("Id"));
                     r.setName(jsonObject.optString("Nombre"));
+                    r.setVersion(jsonObject.optDouble("Version"));
+                    r.setFech(Utils.StringToDate(jsonObject.optString("Fecha"), true));
                     r.setDescription(jsonObject.optString("Descripcion"));
                     r.setPrior(jsonObject.optInt("Prioridad"));
                     r.setUrge(jsonObject.optInt("Urgencia"));

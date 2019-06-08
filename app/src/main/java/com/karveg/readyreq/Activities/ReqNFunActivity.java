@@ -174,28 +174,32 @@ public class ReqNFunActivity extends AppCompatActivity {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqnfun_update.php?";
             url += "a=" + reqnfun.getId() + "&";
             url += "b=" + reqnfun.getName() + "&";
-            url += "c=" + reqnfun.getDescription() + "&";
-            url += "d=" + reqnfun.getPrior() + "&";
-            url += "e=" + reqnfun.getUrge() + "&";
-            url += "f=" + reqnfun.getEsta() + "&";
-            if (reqnfun.isState()) url += "g=" + 1 + "&";
-            else url += "g=" + 0 + "&";
-            url += "h=" + reqnfun.getCategory() + "&";
-            url += "i=" + reqnfun.getCommentary();
+            url += "c=" + reqnfun.getVersion() + "&";
+            url += "d=" + Utils.DateToString(reqnfun.getFech(), true) + "&";
+            url += "e=" + reqnfun.getDescription() + "&";
+            url += "f=" + reqnfun.getPrior() + "&";
+            url += "g=" + reqnfun.getUrge() + "&";
+            url += "h=" + reqnfun.getEsta() + "&";
+            if (reqnfun.isState()) url += "i=" + 1 + "&";
+            else url += "i=" + 0 + "&";
+            url += "j=" + reqnfun.getCategory() + "&";
+            url += "k=" + reqnfun.getCommentary();
             Utils.create_update_delete(ReqNFunActivity.this, url, progressDialog, MyApplication.REQ_NO_FUN, true);
 
         } else { //Creo
 
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqnfun_create.php?";
             url += "a=" + reqnfun.getName() + "&";
-            url += "b=" + reqnfun.getDescription() + "&";
-            url += "c=" + reqnfun.getPrior() + "&";
-            url += "d=" + reqnfun.getUrge() + "&";
-            url += "e=" + reqnfun.getEsta() + "&";
-            if (reqnfun.isState()) url += "f=" + 1 + "&";
-            else url += "f=" + 0 + "&";
-            url += "g=" + reqnfun.getCategory() + "&";
-            url += "h=" + reqnfun.getCommentary();
+            url += "b=" + reqnfun.getVersion() + "&";
+            url += "c=" + Utils.DateToString(reqnfun.getFech(), true) + "&";
+            url += "d=" + reqnfun.getDescription() + "&";
+            url += "e=" + reqnfun.getPrior() + "&";
+            url += "f=" + reqnfun.getUrge() + "&";
+            url += "g=" + reqnfun.getEsta() + "&";
+            if (reqnfun.isState()) url += "h=" + 1 + "&";
+            else url += "h=" + 0 + "&";
+            url += "i=" + reqnfun.getCategory() + "&";
+            url += "j=" + reqnfun.getCommentary();
             Utils.create_update_delete(ReqNFunActivity.this, url, progressDialog, MyApplication.REQ_NO_FUN, true);
             ReqNFun.getIdReque(getApplicationContext(), reqnfun.getName(), progressDialog);
 
