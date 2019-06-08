@@ -44,20 +44,21 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Utils {
-    // //http://programacodigosimple.blogspot.com/2015/10/encriptar-un-texto-en-lenguaje-java-y.html
-    public static String encrypt(String input, String key) {
-        byte[] crypted = null;
-        try {
-            SecretKeySpec skey = new SecretKeySpec(key.getBytes(), "AES");
-            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
-            cipher.init(Cipher.ENCRYPT_MODE, skey);
-            crypted = cipher.doFinal(input.getBytes());
-        } catch (Exception e) {
-            System.out.println(e.toString());
+    public static String encrypt(String input) {
+        String claveEncriptada = "";
+        int cont = 0;
+        Random r = new Random();
+        String[] valoresAleatorios = new String[]{"a", "A", "b", "B", "c", "C", "d", "D", "e", "E", "f", "F", "g", "G", "h", "H", "j", "J", "k", "K", "l", "L", "m", "M", "n", "N", "o", "O", "p", "P", "q", "Q", "r", "R", "s", "S", "t", "T", "u", "U", "v", "V", "w", "W", "x", "X", "y", "Y", "z", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+
+        for (int i = 0; i < input.length(); i++){
+            claveEncriptada += input.charAt(i);
+            cont++;
+            for (int j = 0; j < cont; j++) claveEncriptada += valoresAleatorios[r.nextInt(valoresAleatorios.length)];
         }
-        return new String(Base64.encodeBase64(crypted));
+        return claveEncriptada;
     }
 
     public static int imageSelect(int mode) {
