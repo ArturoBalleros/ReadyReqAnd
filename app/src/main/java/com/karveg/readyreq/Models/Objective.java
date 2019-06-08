@@ -69,6 +69,8 @@ public class Objective extends ObjEstandar implements Serializable {
                     Objective o = new Objective();
                     o.setId(jsonObject.optInt("Id"));
                     o.setName(jsonObject.optString("Nombre"));
+                    o.setVersion(jsonObject.optDouble("Version"));
+                    o.setFech(Utils.StringToDate(jsonObject.optString("Fecha"), true));
                     o.setDescription(jsonObject.optString("Descripcion"));
                     o.setPrior(jsonObject.optInt("Prioridad"));
                     o.setUrge(jsonObject.optInt("Urgencia"));

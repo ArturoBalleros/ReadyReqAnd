@@ -177,28 +177,32 @@ public class ObjecActivity extends AppCompatActivity {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_update.php?";
             url += "a=" + objective.getId() + "&";
             url += "b=" + objective.getName() + "&";
-            url += "c=" + objective.getDescription() + "&";
-            url += "d=" + objective.getPrior() + "&";
-            url += "e=" + objective.getUrge() + "&";
-            url += "f=" + objective.getEsta() + "&";
-            if (objective.isState()) url += "g=" + 1 + "&";
-            else url += "g=" + 0 + "&";
-            url += "h=" + objective.getCategory() + "&";
-            url += "i=" + objective.getCommentary();
+            url += "c=" + objective.getVersion() + "&";
+            url += "d=" + Utils.DateToString(objective.getFech(), true) + "&";
+            url += "e=" + objective.getDescription() + "&";
+            url += "f=" + objective.getPrior() + "&";
+            url += "g=" + objective.getUrge() + "&";
+            url += "h=" + objective.getEsta() + "&";
+            if (objective.isState()) url += "i=" + 1 + "&";
+            else url += "i=" + 0 + "&";
+            url += "j=" + objective.getCategory() + "&";
+            url += "k=" + objective.getCommentary();
             Utils.create_update_delete(ObjecActivity.this, url, progressDialog, MyApplication.OBJETIVOS, true);
 
         } else { //Creo
 
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_create.php?";
             url += "a=" + objective.getName() + "&";
-            url += "b=" + objective.getDescription() + "&";
-            url += "c=" + objective.getPrior() + "&";
-            url += "d=" + objective.getUrge() + "&";
-            url += "e=" + objective.getEsta() + "&";
-            if (objective.isState()) url += "f=" + 1 + "&";
-            else url += "f=" + 0 + "&";
-            url += "g=" + objective.getCategory() + "&";
-            url += "h=" + objective.getCommentary();
+            url += "b=" + objective.getVersion() + "&";
+            url += "c=" + Utils.DateToString(objective.getFech(), true) + "&";
+            url += "d=" + objective.getDescription() + "&";
+            url += "e=" + objective.getPrior() + "&";
+            url += "f=" + objective.getUrge() + "&";
+            url += "g=" + objective.getEsta() + "&";
+            if (objective.isState()) url += "h=" + 1 + "&";
+            else url += "h=" + 0 + "&";
+            url += "i=" + objective.getCategory() + "&";
+            url += "j=" + objective.getCommentary();
             Utils.create_update_delete(ObjecActivity.this, url, progressDialog, MyApplication.OBJETIVOS, true);
             Objective.getIdObjec(getApplicationContext(), objective.getName(), progressDialog);
 

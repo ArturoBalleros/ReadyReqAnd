@@ -1,24 +1,30 @@
 package com.karveg.readyreq.Fragments;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.karveg.readyreq.Models.Objective;
 import com.karveg.readyreq.R;
+import com.karveg.readyreq.Utils.Utils;
 
 public class ObjecDataFragment extends Fragment {
 
     private static Objective objective;
 
     private static EditText editTextName;
+    private static TextView editTextVer;
+    private static TextView editTextDate;
     private static EditText editTextDesc;
 
     private static RadioButton radioButtonPVLow;
@@ -80,11 +86,31 @@ public class ObjecDataFragment extends Fragment {
         bindUI(view);
         setValuesUI();
 
+        editTextDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+
         return view;
+    }
+
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                editTextDate.setText(day + "/" + (month + 1) + "/" + year);
+            }
+        });
+        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
     }
 
     private void bindUI(View view) {
         editTextName = view.findViewById(R.id.editTextName);
+        editTextVer = view.findViewById(R.id.editTextVer);
+        editTextDate = view.findViewById(R.id.editTextDate);
         editTextDesc = view.findViewById(R.id.editTextDesc);
 
         radioButtonPVLow = view.findViewById(R.id.radioButtonPVLow);
@@ -114,6 +140,8 @@ public class ObjecDataFragment extends Fragment {
 
     private void setValuesUI() {
         editTextName.setText(objective.getName());
+        editTextVer.setText(objective.getVersion() + "");
+        editTextDate.setText(Utils.DateToString(objective.getFech(), false));
         editTextDesc.setText(objective.getDescription());
 
         if (objective.getPrior() == 1) radioButtonPVLow.setChecked(true);
@@ -143,6 +171,8 @@ public class ObjecDataFragment extends Fragment {
 
     public static void setValuesObjec() {
         objective.setName(editTextName.getText().toString());
+        objective.setVersion(Double.parseDouble(editTextVer.getText().toString()));
+        objective.setFech(Utils.StringToDate(editTextDate.getText().toString(), false));
         objective.setDescription(editTextDesc.getText().toString());
 
         if (radioButtonPVLow.isChecked()) objective.setPrior(1);
