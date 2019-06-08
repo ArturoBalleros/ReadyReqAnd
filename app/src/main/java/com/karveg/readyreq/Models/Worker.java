@@ -95,7 +95,7 @@ public class Worker extends ObjBase {
                     w.setName(jsonObject.optString("Nombre"));
                     w.setOrganization(jsonObject.optString("Organizacion"));
                     w.setVersion(jsonObject.optDouble("Version"));
-                    w.setFech(Utils.StringToDate(jsonObject.optString("Fecha")));
+                    w.setFech(Utils.StringToDate(jsonObject.optString("Fecha"), true));
                     w.setRole(jsonObject.optString("Rol"));
                     if (jsonObject.optInt("Desarrollador") == 0) w.setDeveloper(false);
                     else w.setDeveloper(true);

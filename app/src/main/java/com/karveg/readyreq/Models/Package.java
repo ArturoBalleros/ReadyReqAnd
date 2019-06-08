@@ -16,6 +16,7 @@ import com.android.volley.toolbox.Volley;
 import com.karveg.readyreq.Activities.PackageActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.R;
+import com.karveg.readyreq.Utils.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,6 +66,8 @@ public class Package extends ObjBase {
                     Package p = new Package();
                     p.setId(jsonObject.optInt("Id"));
                     p.setName(jsonObject.optString("Nombre"));
+                    p.setVersion(jsonObject.optDouble("Version"));
+                    p.setFech(Utils.StringToDate(jsonObject.optString("Fecha"), true));
                     p.setCategory(jsonObject.optInt("Categoria"));
                     p.setCommentary(jsonObject.optString("Comentario"));
                     PackageActivity.setValuesUI(p);

@@ -175,7 +175,7 @@ public class GroupActivity extends AppCompatActivity {
     public void setValuesWorker() {
         worker.setName(editTextName.getText().toString());
         worker.setVersion(Double.parseDouble(editTextVer.getText().toString()));
-        worker.setFech(Utils.StringToDate(editTextDate.getText().toString()));
+        worker.setFech(Utils.StringToDate(editTextDate.getText().toString(), false));
         worker.setName(editTextName.getText().toString());
         worker.setOrganization(editTextOrg.getText().toString());
         worker.setRole(editTextRol.getText().toString());

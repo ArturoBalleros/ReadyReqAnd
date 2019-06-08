@@ -1,6 +1,7 @@
 package com.karveg.readyreq.Activities;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,11 +11,13 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.karveg.readyreq.App.MyApplication;
+import com.karveg.readyreq.Fragments.DatePickerFragment;
 import com.karveg.readyreq.Models.Package;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
@@ -27,6 +30,8 @@ public class PackageActivity extends AppCompatActivity {
     private TextView toolbarTitle;
 
     private static TextView editTextName;
+    private static TextView editTextVer;
+    private static TextView editTextDate;
     private static Spinner spinnerCateg;
     private static TextView editTextComen;
     private static Package pack;
@@ -52,12 +57,32 @@ public class PackageActivity extends AppCompatActivity {
 
         if (intCode != MyApplication.NOTHING)
             Package.getPackage(getApplicationContext(), intCode, progressDialog);
+
+        editTextDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+    }
+
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                editTextDate.setText(day + "/" + (month + 1) + "/" + year);
+            }
+        });
+        newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 
     private void bindUI() {
         editTextName = findViewById(R.id.editTextName);
         spinnerCateg = findViewById(R.id.spinnerCateg);
         editTextComen = findViewById(R.id.editTextComen);
+        editTextVer = findViewById(R.id.editTextVer);
+        editTextDate = findViewById(R.id.editTextDate);
     }
 
     private void setToolbar() {
@@ -117,14 +142,17 @@ public class PackageActivity extends AppCompatActivity {
 
     public static void setValuesUI(Package p) {
         pack = p;
-        editTextName.setText(p.getName());
-        spinnerCateg.setSelection(p.getCategory() - 1);
-        editTextComen.setText(p.getCommentary());
-
+        editTextName.setText(pack.getName());
+        editTextVer.setText(pack.getVersion() + "");
+        editTextDate.setText(Utils.DateToString(pack.getFech(), false));
+        spinnerCateg.setSelection(pack.getCategory() - 1);
+        editTextComen.setText(pack.getCommentary());
     }
 
     public void setValuesPackage() {
         pack.setName(editTextName.getText().toString());
+        pack.setVersion(Double.parseDouble(editTextVer.getText().toString()));
+        pack.setFech(Utils.StringToDate(editTextDate.getText().toString(), false));
         pack.setCategory(spinnerCateg.getSelectedItemPosition() + 1);
         pack.setCommentary(editTextComen.getText().toString());
     }
@@ -136,15 +164,19 @@ public class PackageActivity extends AppCompatActivity {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_update.php?";
             url += "a=" + pack.getId() + "&";
             url += "b=" + pack.getName() + "&";
-            url += "c=" + pack.getCategory() + "&";
-            url += "d=" + pack.getCommentary();
+            url += "c=" + pack.getVersion() + "&";
+            url += "d=" + Utils.DateToString(pack.getFech(), true) + "&";
+            url += "e=" + pack.getCategory() + "&";
+            url += "f=" + pack.getCommentary();
 
         } else { //Creo
 
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_create.php?";
             url += "a=" + pack.getName() + "&";
-            url += "b=" + pack.getCategory() + "&";
-            url += "c=" + pack.getCommentary();
+            url += "b=" + pack.getVersion() + "&";
+            url += "c=" + Utils.DateToString(pack.getFech(), true) + "&";
+            url += "d=" + pack.getCategory() + "&";
+            url += "e=" + pack.getCommentary();
 
         }
         Utils.create_update_delete(PackageActivity.this, url, progressDialog, MyApplication.PAQUETES, true);

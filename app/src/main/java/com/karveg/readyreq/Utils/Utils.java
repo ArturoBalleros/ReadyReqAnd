@@ -48,10 +48,10 @@ import java.util.Random;
 
 public class Utils {
 
-    public static Date StringToDate(String input) {
+    public static Date StringToDate(String input, boolean MySQL) {
         Date date = new Date();
         try {
-            date = new SimpleDateFormat("dd/MM/yyyy").parse(input);
+            date = MySQL ? new SimpleDateFormat("yyyy-MM-dd").parse(input) : new SimpleDateFormat("dd/MM/yyyy").parse(input);
         } catch (ParseException e) {
             e.printStackTrace();
         }
