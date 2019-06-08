@@ -215,7 +215,7 @@ public class ReqFunFragment extends Fragment {
 
     public static void setPackages(List<Generic> p) {
         packages = p;
-        packages.add(0, new Generic(0, "No paquete"));
+        packages.add(0, new Generic(1, "No Asignado"));
         ArrayList<String> namePack = new ArrayList<>();
         for (Generic g : packages) namePack.add(g.getName());
         ArrayAdapter<String> adapter = new ArrayAdapter<>(ctx, android.R.layout.simple_list_item_1, namePack);
