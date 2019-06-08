@@ -25,6 +25,16 @@
             android:textSize="18dp" />
 
         <EditText
+            android:id="@+id/editTextIpServerMySQL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/conf_frag_ip_sql"
+            android:textSize="18dp" />
+
+        <EditText
             android:id="@+id/editTextUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,6 +86,15 @@
             android:hint="@string/conf_frag_port_http"
             android:inputType="number"
             android:textSize="18dp" />
+
+        <Switch
+            android:id="@+id/switchHTTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/conf_frag_http" />
 
         <Button
             android:id="@+id/buttonConnect"

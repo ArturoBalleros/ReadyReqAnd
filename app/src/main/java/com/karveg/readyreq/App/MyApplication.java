@@ -9,11 +9,13 @@ import com.karveg.readyreq.Utils.SharedP;
 public class MyApplication extends Application {
 
     public static String IP_SERVER;
+    public static String IP_SERVER_SQL;
     public static String USER;
     public static String PASS;
     public static String DATABASE;
     public static int PORT;
     public static int PORTHTTP;
+    public static String HTTP;
 
     public static final int NOTHING = -1;
     public static final int GRUPO = 0;
@@ -44,10 +46,12 @@ public class MyApplication extends Application {
 
         sharedPref = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
         IP_SERVER = SharedP.getIPSerPrefs(sharedPref);
+        IP_SERVER_SQL = SharedP.getIPSerSQLPrefs(sharedPref);
         USER = SharedP.getUserPrefs(sharedPref);
         PASS = SharedP.getPassPrefs(sharedPref);
         DATABASE = SharedP.getBasePrefs(sharedPref);
         PORT = SharedP.getPortPrefs(sharedPref);
         PORTHTTP = SharedP.getPortHttpPrefs(sharedPref);
+        HTTP = SharedP.getHttpPrefs(sharedPref);
     }
 }

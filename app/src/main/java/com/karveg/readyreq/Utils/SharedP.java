@@ -10,6 +10,10 @@ public class SharedP {
         return prefs.getString("IPServer", "192.168.0.106");
     }
 
+    public static String getIPSerSQLPrefs(SharedPreferences prefs) {
+        return prefs.getString("IPServerMySQL", "192.168.0.106");
+    }
+
     public static String getUserPrefs(SharedPreferences prefs) {
         return prefs.getString("User", "programas");
     }
@@ -30,10 +34,22 @@ public class SharedP {
         return prefs.getInt("PortHTTP", 8080);
     }
 
+    public static String getHttpPrefs(SharedPreferences prefs) {
+        return prefs.getString("HTTP", "http");
+    }
+
     public static void saveIPSer(SharedPreferences prefs, String ipSer) {
         SharedPreferences.Editor editor = prefs.edit();//escribir
         editor.putString("IPServer", ipSer);
         MyApplication.IP_SERVER = ipSer;
+        editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
+        editor.apply();
+    }
+
+    public static void saveIPSerSQL(SharedPreferences prefs, String ipSerSQL) {
+        SharedPreferences.Editor editor = prefs.edit();//escribir
+        editor.putString("IPServerMySQL", ipSerSQL);
+        MyApplication.IP_SERVER_SQL = ipSerSQL;
         editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
         editor.apply();
     }
@@ -74,6 +90,14 @@ public class SharedP {
         SharedPreferences.Editor editor = prefs.edit();//escribir
         editor.putInt("PortHTTP", PortHttp);
         MyApplication.PORTHTTP = PortHttp;
+        editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
+        editor.apply();
+    }
+
+    public static void saveHttp(SharedPreferences prefs, String Http) {
+        SharedPreferences.Editor editor = prefs.edit();//escribir
+        editor.putString("HTTP", Http);
+        MyApplication.HTTP = Http;
         editor.commit();//esto pararía el codigo hasta ejecutarse y guardar todos los valores
         editor.apply();
     }

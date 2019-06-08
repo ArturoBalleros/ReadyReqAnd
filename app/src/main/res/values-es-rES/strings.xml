@@ -21,11 +21,13 @@
 
     <string name="progress_dialog">Obteniendo información</string>
     <string name="conf_frag_ip">Ip Servidor</string>
+    <string name="conf_frag_ip_sql">Ip Servidor MySQL</string>
     <string name="conf_frag_user">Usuario</string>
     <string name="conf_frag_pass">Contraseña</string>
     <string name="conf_frag_database">Base de datos</string>
     <string name="conf_frag_port">Puerto Mysql</string>
     <string name="conf_frag_port_http">Puerto HTTP</string>
+    <string name="conf_frag_http">HTTP/HTTPS</string>
     <string name="conf_frag_conn">Conectar y Guardar</string>
     <string name="success">Correcto</string>
 

@@ -21,11 +21,13 @@
 
     <string name="progress_dialog">Getting information</string>
     <string name="conf_frag_ip">Ip Server</string>
+    <string name="conf_frag_ip_sql">Ip Server MySQL</string>
     <string name="conf_frag_user">User</string>
     <string name="conf_frag_pass">Password</string>
     <string name="conf_frag_database">Database</string>
     <string name="conf_frag_port">Port MySql</string>
     <string name="conf_frag_port_http">Port HTTP</string>
+    <string name="conf_frag_http">HTTP/HTTPS</string>
     <string name="conf_frag_conn">Connect and Save</string>
     <string name="success">Success</string>
 

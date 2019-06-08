@@ -7,12 +7,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
@@ -43,11 +43,13 @@ public class ConfigFragment extends Fragment {
     private SharedPreferences prefs;
 
     private EditText editTextIpServer;
+    private EditText editTextIpServerMySQL;
     private EditText editTextUser;
     private EditText editTextPass;
     private EditText editTextDatabase;
     private EditText editTextPort;
     private EditText editTextPortHTTP;
+    private Switch switchHTTP;
     private Button buttonConnect;
 
 
@@ -99,12 +101,16 @@ public class ConfigFragment extends Fragment {
 
     private void webService() {
         String url = "";
+        final String http = switchHTTP.isChecked() ? "https" : "http";
 
         progressDialog.show();
-        url = "http://" + editTextIpServer.getText().toString() + ":" + editTextPortHTTP.getText().toString() + "/readyreq/conf_frag_connection_android.php?";
-        url += "a=" + editTextIpServer.getText().toString() + "&";
+        url = http + "://" + editTextIpServer.getText().toString() + ":" + editTextPortHTTP.getText().toString() + "/readyreq/conf_frag_connection.php?";
+        if (editTextIpServerMySQL.getText().toString().isEmpty())
+            url += "a=" + editTextIpServer.getText().toString() + "&";
+        else
+            url += "a=" + editTextIpServerMySQL.getText().toString() + "&";
         url += "b=" + editTextUser.getText().toString() + "&";
-        url += "c=" + Utils.encrypt(editTextPass.getText().toString(), "readyreqreadyreq") + "&";
+        url += "c=" + Utils.encrypt(editTextPass.getText().toString()) + "&";
         url += "d=" + editTextDatabase.getText().toString() + "&";
         url += "e=" + editTextPort.getText().toString();
 
@@ -125,11 +131,33 @@ public class ConfigFragment extends Fragment {
                 if (jsonObject.optString("a").equals("Si")) {
 
                     SharedP.saveIPSer(prefs, editTextIpServer.getText().toString());
+                    MyApplication.IP_SERVER = editTextIpServer.getText().toString();
+
+                    //Si la ip del servidor mysql esta vacia
+                    if (editTextIpServerMySQL.getText().toString().isEmpty()) {
+                        SharedP.saveIPSerSQL(prefs, editTextIpServer.getText().toString());
+                        editTextIpServerMySQL.setText(editTextIpServer.getText().toString());
+                    } else
+                        SharedP.saveIPSerSQL(prefs, editTextIpServerMySQL.getText().toString());
+                    MyApplication.IP_SERVER_SQL = editTextIpServerMySQL.getText().toString();
+
                     SharedP.saveUser(prefs, editTextUser.getText().toString());
+                    MyApplication.USER = editTextUser.getText().toString();
+
                     SharedP.savePass(prefs, editTextPass.getText().toString());
+                    MyApplication.PASS = editTextPass.getText().toString();
+
                     SharedP.saveDatabase(prefs, editTextDatabase.getText().toString());
+                    MyApplication.DATABASE = editTextDatabase.getText().toString();
+
                     SharedP.savePort(prefs, Integer.parseInt(editTextPort.getText().toString()));
+                    MyApplication.PORT = Integer.parseInt(editTextPort.getText().toString());
+
                     SharedP.savePortHttp(prefs, Integer.parseInt(editTextPortHTTP.getText().toString()));
+                    MyApplication.PORTHTTP = Integer.parseInt(editTextPortHTTP.getText().toString());
+
+                    SharedP.saveHttp(prefs, http);
+                    MyApplication.HTTP = http;
 
                     Toast.makeText(getContext(), R.string.success, Toast.LENGTH_SHORT).show();
 
@@ -172,22 +200,25 @@ public class ConfigFragment extends Fragment {
 
     private void bindUI(View view) {
         editTextIpServer = view.findViewById(R.id.editTextIpServer);
+        editTextIpServerMySQL = view.findViewById(R.id.editTextIpServerMySQL);
         editTextUser = view.findViewById(R.id.editTextUser);
         editTextPass = view.findViewById(R.id.editTextPass);
         editTextDatabase = view.findViewById(R.id.editTextDatabase);
         editTextPort = view.findViewById(R.id.editTextPort);
         editTextPortHTTP = view.findViewById(R.id.editTextPortHttp);
+        switchHTTP = view.findViewById(R.id.switchHTTP);
         buttonConnect = view.findViewById(R.id.buttonConnect);
-        editTextIpServer.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
     }
 
     private void getDataSharedP() {
         editTextIpServer.setText(MyApplication.IP_SERVER);
+        editTextIpServerMySQL.setText(MyApplication.IP_SERVER_SQL);
         editTextUser.setText(MyApplication.USER);
         editTextPass.setText(MyApplication.PASS);
         editTextDatabase.setText(MyApplication.DATABASE);
         editTextPort.setText(MyApplication.PORT + "");
         editTextPortHTTP.setText(MyApplication.PORTHTTP + "");
+        switchHTTP.setChecked((MyApplication.HTTP.equals("http")) ? false : true);
     }
 
     private AlertDialog.Builder CreateProgressDialog() {
