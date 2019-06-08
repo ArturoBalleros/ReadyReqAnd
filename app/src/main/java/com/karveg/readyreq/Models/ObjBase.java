@@ -1,12 +1,13 @@
 package com.karveg.readyreq.Models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class ObjBase  {
+public abstract class ObjBase implements Serializable {
     private int Id;
     private String Name;
     private double Version = 1.0;
-    private Date Fech;
+    private Date Fech = new Date();
     private int Category;
     private String Commentary;
 

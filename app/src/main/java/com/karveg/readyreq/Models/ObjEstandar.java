@@ -1,9 +1,10 @@
 package com.karveg.readyreq.Models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ObjEstandar extends ObjBase {
+public abstract class ObjEstandar extends ObjBase implements Serializable {
     private String Description;
     private int Prior;
     private int Urge;

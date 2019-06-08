@@ -114,6 +114,8 @@ public class Actor extends ObjBase implements Serializable  {
                     Actor a = new Actor();
                     a.setId(jsonObject.optInt("Id"));
                     a.setName(jsonObject.optString("Nombre"));
+                    a.setVersion(jsonObject.optDouble("Version"));
+                    a.setFech(Utils.StringToDate(jsonObject.optString("Fecha"), true));
                     a.setDescription(jsonObject.optString("Descripcion"));
                     a.setComple(jsonObject.optInt("Complejidad"));
                     a.setDescComple(jsonObject.optString("DescComple"));

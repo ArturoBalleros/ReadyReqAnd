@@ -174,22 +174,26 @@ public class ActorActivity extends AppCompatActivity {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_update.php?";
             url += "a=" + actor.getId() + "&";
             url += "b=" + actor.getName() + "&";
-            url += "c=" + actor.getDescription() + "&";
-            url += "d=" + actor.getComple() + "&";
-            url += "e=" + actor.getDescComple() + "&";
-            url += "f=" + actor.getCategory() + "&";
-            url += "g=" + actor.getCommentary();
+            url += "c=" + actor.getVersion() + "&";
+            url += "d=" + Utils.DateToString(actor.getFech(), true) + "&";
+            url += "e=" + actor.getDescription() + "&";
+            url += "f=" + actor.getComple() + "&";
+            url += "g=" + actor.getDescComple() + "&";
+            url += "h=" + actor.getCategory() + "&";
+            url += "i=" + actor.getCommentary();
             Utils.create_update_delete(ActorActivity.this, url, progressDialog, MyApplication.ACTORES, true);
 
         } else { //Creo
 
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_create.php?";
             url += "a=" + actor.getName() + "&";
-            url += "b=" + actor.getDescription() + "&";
-            url += "c=" + actor.getComple() + "&";
-            url += "d=" + actor.getDescComple() + "&";
-            url += "e=" + actor.getCategory() + "&";
-            url += "f=" + actor.getCommentary();
+            url += "b=" + actor.getVersion() + "&";
+            url += "c=" + Utils.DateToString(actor.getFech(), true) + "&";
+            url += "d=" + actor.getDescription() + "&";
+            url += "e=" + actor.getComple() + "&";
+            url += "f=" + actor.getDescComple() + "&";
+            url += "g=" + actor.getCategory() + "&";
+            url += "h=" + actor.getCommentary();
             Utils.create_update_delete(ActorActivity.this, url, progressDialog, MyApplication.ACTORES, true);
             Actor.getIdActor(getApplicationContext(), actor.getName(), progressDialog);
 
