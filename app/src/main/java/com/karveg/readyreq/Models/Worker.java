@@ -16,6 +16,7 @@ import com.android.volley.toolbox.Volley;
 import com.karveg.readyreq.Activities.GroupActivity;
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.R;
+import com.karveg.readyreq.Utils.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -93,6 +94,8 @@ public class Worker extends ObjBase {
                     w.setId(jsonObject.optInt("Id"));
                     w.setName(jsonObject.optString("Nombre"));
                     w.setOrganization(jsonObject.optString("Organizacion"));
+                    w.setVersion(jsonObject.optDouble("Version"));
+                    w.setFech(Utils.StringToDate(jsonObject.optString("Fecha")));
                     w.setRole(jsonObject.optString("Rol"));
                     if (jsonObject.optInt("Desarrollador") == 0) w.setDeveloper(false);
                     else w.setDeveloper(true);

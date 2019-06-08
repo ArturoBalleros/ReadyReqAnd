@@ -5,7 +5,7 @@ import java.util.Date;
 public abstract class ObjBase  {
     private int Id;
     private String Name;
-    private double Version;
+    private double Version = 1.0;
     private Date Fech;
     private int Category;
     private String Commentary;

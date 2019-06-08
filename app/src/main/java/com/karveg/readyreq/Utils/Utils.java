@@ -33,30 +33,47 @@ import com.karveg.readyreq.Fragments.SourFragment;
 import com.karveg.readyreq.Models.Generic;
 import com.karveg.readyreq.R;
 
-import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
-
-import org.apache.commons.codec.binary.Base64;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
 public class Utils {
+
+    public static Date StringToDate(String input) {
+        Date date = new Date();
+        try {
+            date = new SimpleDateFormat("dd/MM/yyyy").parse(input);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+    public static String DateToString(Date input, boolean MySQL) {
+        DateFormat df = MySQL ? new SimpleDateFormat("yyyy/MM/dd") : new SimpleDateFormat("dd/MM/yyyy");
+        return df.format(input);
+    }
+
     public static String encrypt(String input) {
         String claveEncriptada = "";
         int cont = 0;
         Random r = new Random();
         String[] valoresAleatorios = new String[]{"a", "A", "b", "B", "c", "C", "d", "D", "e", "E", "f", "F", "g", "G", "h", "H", "j", "J", "k", "K", "l", "L", "m", "M", "n", "N", "o", "O", "p", "P", "q", "Q", "r", "R", "s", "S", "t", "T", "u", "U", "v", "V", "w", "W", "x", "X", "y", "Y", "z", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
-        for (int i = 0; i < input.length(); i++){
+        for (int i = 0; i < input.length(); i++) {
             claveEncriptada += input.charAt(i);
             cont++;
-            for (int j = 0; j < cont; j++) claveEncriptada += valoresAleatorios[r.nextInt(valoresAleatorios.length)];
+            for (int j = 0; j < cont; j++)
+                claveEncriptada += valoresAleatorios[r.nextInt(valoresAleatorios.length)];
         }
         return claveEncriptada;
     }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="formato_fecha">formato (dd/MM/yyyy)</string>
+
     <string name="app_name">ReadyReq</string>
     <string name="menu_grupo">Grupo de Trabajo</string>
     <string name="menu_actor">Actores del Proyecto</string>
@@ -56,6 +58,7 @@
     <string name="secexc">Sec. Exc.</string>
 
     <string name="text_name">Nombre</string>
+    <string name="text_version">Versión</string>
     <string name="text_org">Organización</string>
     <string name="text_rol">Rol</string>
     <string name="text_yes">Si</string>

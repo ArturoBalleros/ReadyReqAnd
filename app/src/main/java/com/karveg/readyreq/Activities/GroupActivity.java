@@ -1,7 +1,14 @@
 package com.karveg.readyreq.Activities;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Intent;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,15 +17,19 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.karveg.readyreq.App.MyApplication;
+import com.karveg.readyreq.Fragments.DatePickerFragment;
 import com.karveg.readyreq.Models.Worker;
 import com.karveg.readyreq.R;
 import com.karveg.readyreq.Utils.Utils;
+
 
 public class GroupActivity extends AppCompatActivity {
 
@@ -30,6 +41,8 @@ public class GroupActivity extends AppCompatActivity {
     private static TextView editTextName;
     private static TextView editTextOrg;
     private static TextView editTextRol;
+    private static TextView editTextVer;
+    private static TextView editTextDate;
     private static RadioButton radioButtonYes;
     private static RadioButton radioButtonNo;
     private static Spinner spinnerCateg;
@@ -37,7 +50,6 @@ public class GroupActivity extends AppCompatActivity {
     private static Worker worker;
 
     private AlertDialog progressDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +70,26 @@ public class GroupActivity extends AppCompatActivity {
 
         if (intCode != MyApplication.NOTHING)
             Worker.getWorker(getApplicationContext(), intCode, progressDialog);
+
+        editTextDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
     }
+
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                editTextDate.setText(day + "/" + (month + 1) + "/" + year);
+            }
+        });
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
 
     private void bindUI() {
         editTextName = findViewById(R.id.editTextName);
@@ -68,6 +99,8 @@ public class GroupActivity extends AppCompatActivity {
         radioButtonNo = findViewById(R.id.radioButtonNo);
         spinnerCateg = findViewById(R.id.spinnerCateg);
         editTextComen = findViewById(R.id.editTextComen);
+        editTextVer = findViewById(R.id.editTextVer);
+        editTextDate = findViewById(R.id.editTextDate);
     }
 
     private void setToolbar() {
@@ -128,6 +161,8 @@ public class GroupActivity extends AppCompatActivity {
     public static void setValuesUI(Worker w) {
         worker = w;
         editTextName.setText(worker.getName());
+        editTextVer.setText(worker.getVersion() + "");
+        editTextDate.setText(Utils.DateToString(worker.getFech(), false));
         editTextOrg.setText(worker.getOrganization());
         editTextRol.setText(worker.getRole());
         if (worker.isDeveloper()) radioButtonYes.setChecked(true);
@@ -138,6 +173,9 @@ public class GroupActivity extends AppCompatActivity {
     }
 
     public void setValuesWorker() {
+        worker.setName(editTextName.getText().toString());
+        worker.setVersion(Double.parseDouble(editTextVer.getText().toString()));
+        worker.setFech(Utils.StringToDate(editTextDate.getText().toString()));
         worker.setName(editTextName.getText().toString());
         worker.setOrganization(editTextOrg.getText().toString());
         worker.setRole(editTextRol.getText().toString());
@@ -154,23 +192,27 @@ public class GroupActivity extends AppCompatActivity {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/group_update.php?";
             url += "a=" + worker.getId() + "&";
             url += "b=" + worker.getName() + "&";
-            url += "c=" + worker.getOrganization() + "&";
-            url += "d=" + worker.getRole() + "&";
-            if (worker.isDeveloper()) url += "e=" + 1 + "&";
-            else url += "e=" + 0 + "&";
-            url += "f=" + worker.getCategory() + "&";
-            url += "g=" + worker.getCommentary();
+            url += "c=" + worker.getVersion() + "&";
+            url += "d=" + Utils.DateToString(worker.getFech(), true) + "&";
+            url += "e=" + worker.getOrganization() + "&";
+            url += "f=" + worker.getRole() + "&";
+            if (worker.isDeveloper()) url += "g=" + 1 + "&";
+            else url += "g=" + 0 + "&";
+            url += "h=" + worker.getCategory() + "&";
+            url += "i=" + worker.getCommentary();
 
         } else { //Creo
 
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/group_create.php?";
             url += "a=" + worker.getName() + "&";
-            url += "b=" + worker.getOrganization() + "&";
-            url += "c=" + worker.getRole() + "&";
-            if (worker.isDeveloper()) url += "d=" + 1 + "&";
-            else url += "d=" + 0 + "&";
-            url += "e=" + worker.getCategory() + "&";
-            url += "f=" + worker.getCommentary();
+            url += "b=" + worker.getVersion() + "&";
+            url += "c=" + Utils.DateToString(worker.getFech(), true) + "&";
+            url += "d=" + worker.getOrganization() + "&";
+            url += "e=" + worker.getRole() + "&";
+            if (worker.isDeveloper()) url += "f=" + 1 + "&";
+            else url += "f=" + 0 + "&";
+            url += "g=" + worker.getCategory() + "&";
+            url += "h =" + worker.getCommentary();
 
         }
         Utils.create_update_delete(GroupActivity.this, url, progressDialog, MyApplication.GRUPO, true);
