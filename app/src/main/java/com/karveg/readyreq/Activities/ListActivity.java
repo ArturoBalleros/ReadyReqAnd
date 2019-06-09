@@ -303,14 +303,14 @@ public class ListActivity extends AppCompatActivity {
                 progressDialog.show();
                 if (mode == MyApplication.ACTORES) {
                     if (flagTab == MyApplication.AUTH) {
-                        url += "a=actauto(idautor,idact)&";
+                        url += "a=ActAuto(idautor,idact)&";
                         url += "b=" + g.getId() + "," + actor.getId();
                         if (actor.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         actor.getAutors().add(g);
                     }
                     if (flagTab == MyApplication.SOUR) {
-                        url += "a=actfuen(idfuen,idact)&";
+                        url += "a=ActFuen(idfuen,idact)&";
                         url += "b=" + g.getId() + "," + actor.getId();
                         if (actor.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
@@ -319,7 +319,7 @@ public class ListActivity extends AppCompatActivity {
                 }
                 if (mode == MyApplication.OBJETIVOS) {
                     if (flagTab == MyApplication.AUTH) {
-                        url += "a=objauto(idautor,idobj)&";
+                        url += "a=ObjAuto(idautor,idobj)&";
                         url += "b=" + g.getId() + "," + objective.getId();
                         if (objective.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
@@ -333,7 +333,7 @@ public class ListActivity extends AppCompatActivity {
                         objective.getSources().add(g);
                     }
                     if (flagTab == MyApplication.OBJE) {
-                        url += "a=objsubobj(idsubobj,idobj)&";
+                        url += "a=ObjSubobj(idsubobj,idobj)&";
                         url += "b=" + g.getId() + "," + objective.getId();
                         if (objective.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
@@ -342,35 +342,35 @@ public class ListActivity extends AppCompatActivity {
                 }
                 if (mode == MyApplication.REQ_FUNC) {
                     if (flagTab == MyApplication.AUTH) {
-                        url += "a=reqauto(idautor,idreq)&";
+                        url += "a=ReqAuto(idautor,idreq)&";
                         url += "b=" + g.getId() + "," + reqfun.getId();
                         if (reqfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqfun.getAutors().add(g);
                     }
                     if (flagTab == MyApplication.SOUR) {
-                        url += "a=reqfuen(idfuen,idreq)&";
+                        url += "a=ReqFuen(idfuen,idreq)&";
                         url += "b=" + g.getId() + "," + reqfun.getId();
                         if (reqfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqfun.getSources().add(g);
                     }
                     if (flagTab == MyApplication.OBJE) {
-                        url += "a=reqobj(idobj,idreq)&";
+                        url += "a=ReqObj(idobj,idreq)&";
                         url += "b=" + g.getId() + "," + reqfun.getId();
                         if (reqfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqfun.getObjetives().add(g);
                     }
                     if (flagTab == MyApplication.REQU) {
-                        url += "a=reqreqr(idreqr,tiporeq,idreq)&";
+                        url += "a=ReqReqR(idreqr,tiporeq,idreq)&";
                         url += "b=" + g.getId() + "," + Utils.deterTipoReq(g.getImage()) + "," + reqfun.getId();
                         if (reqfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqfun.getRequirements().add(g);
                     }
                     if (flagTab == MyApplication.ACTO) {
-                        url += "a=reqact(idact,idreq)&";
+                        url += "a=ReqAct(idact,idreq)&";
                         url += "b=" + g.getId() + "," + reqfun.getId();
                         if (reqfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
@@ -379,28 +379,28 @@ public class ListActivity extends AppCompatActivity {
                 }
                 if (mode == MyApplication.REQ_NO_FUN) {
                     if (flagTab == MyApplication.AUTH) {
-                        url += "a=reqnauto(idautor,idreq)&";
+                        url += "a=ReqNAuto(idautor,idreq)&";
                         url += "b=" + g.getId() + "," + reqnfun.getId();
                         if (reqnfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqnfun.getAutors().add(g);
                     }
                     if (flagTab == MyApplication.SOUR) {
-                        url += "a=reqnfuen(idfuen,idreq)&";
+                        url += "a=ReqNFuen(idfuen,idreq)&";
                         url += "b=" + g.getId() + "," + reqnfun.getId();
                         if (reqnfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqnfun.getSources().add(g);
                     }
                     if (flagTab == MyApplication.OBJE) {
-                        url += "a=reqnobj(idobj,idreq)&";
+                        url += "a=ReqNObj(idobj,idreq)&";
                         url += "b=" + g.getId() + "," + reqnfun.getId();
                         if (reqnfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqnfun.getObjetives().add(g);
                     }
                     if (flagTab == MyApplication.REQU) {
-                        url += "a=reqnreqr(idreqr,tiporeq,idreq)&";
+                        url += "a=ReqNReqR(idreqr,tiporeq,idreq)&";
                         url += "b=" + g.getId() + "," + Utils.deterTipoReq(g.getImage()) + "," + reqnfun.getId();
                         if (reqnfun.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
@@ -409,28 +409,28 @@ public class ListActivity extends AppCompatActivity {
                 }
                 if (mode == MyApplication.REQ_INFO) {
                     if (flagTab == MyApplication.AUTH) {
-                        url += "a=reqiauto(idautor,idreq)&";
+                        url += "a=ReqIAuto(idautor,idreq)&";
                         url += "b=" + g.getId() + "," + reqinfo.getId();
                         if (reqinfo.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqinfo.getAutors().add(g);
                     }
                     if (flagTab == MyApplication.SOUR) {
-                        url += "a=reqifuen(idfuen,idreq)&";
+                        url += "a=ReqIFuen(idfuen,idreq)&";
                         url += "b=" + g.getId() + "," + reqinfo.getId();
                         if (reqinfo.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqinfo.getSources().add(g);
                     }
                     if (flagTab == MyApplication.OBJE) {
-                        url += "a=reqiobj(idobj,idreq)&";
+                        url += "a=ReqIObj(idobj,idreq)&";
                         url += "b=" + g.getId() + "," + reqinfo.getId();
                         if (reqinfo.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);
                         reqinfo.getObjetives().add(g);
                     }
                     if (flagTab == MyApplication.REQU) {
-                        url += "a=reqireqr(idreqr,tiporeq,idreq)&";
+                        url += "a=ReqIReqR(idreqr,tiporeq,idreq)&";
                         url += "b=" + g.getId() + "," + Utils.deterTipoReq(g.getImage()) + "," + reqinfo.getId();
                         if (reqinfo.getId() != MyApplication.NOTHING)
                             Utils.saveObject(getApplicationContext(), url);

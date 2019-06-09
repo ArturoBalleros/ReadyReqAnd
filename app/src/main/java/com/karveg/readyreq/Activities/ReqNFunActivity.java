@@ -210,25 +210,25 @@ public class ReqNFunActivity extends AppCompatActivity {
         String url = "";
         for (Generic g : reqnfun.getAutors()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqnauto(idautor,idreq)&";
+            url += "a=ReqNAuto(idautor,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqnfun.getSources()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqnfuen(idfuen,idreq)&";
+            url += "a=ReqNFuen(idfuen,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqnfun.getObjetives()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqnobj(idobj,idreq)&";
+            url += "a=ReqNObj(idobj,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqnfun.getRequirements()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqnreqr(idreqr,tiporeq,idreq)&";
+            url += "a=ReqNReqR(idreqr,tiporeq,idreq)&";
             url += "b=" + g.getId() + "," + Utils.deterTipoReq(g.getImage()) + "," + reqnfun.getId();
             Utils.saveObject(ctx, url);
         }

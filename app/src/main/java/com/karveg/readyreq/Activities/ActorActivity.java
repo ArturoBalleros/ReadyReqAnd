@@ -204,13 +204,13 @@ public class ActorActivity extends AppCompatActivity {
         String url = "";
         for (Generic g : actor.getAutors()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=actauto(idautor,idact)&";
+            url += "a=ActAuto(idautor,idact)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : actor.getSources()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=actfuen(idfuen,idact)&";
+            url += "a=ActFuen(idfuen,idact)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }

@@ -213,19 +213,19 @@ public class ObjecActivity extends AppCompatActivity {
         String url = "";
         for (Generic g : objective.getAutors()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=objauto(idautor,idobj)&";
+            url += "a=ObjAuto(idautor,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : objective.getSources()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=objfuen(idfuen,idobj)&";
+            url += "a=ObjFuen(idfuen,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : objective.getObjetives()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=objsubobj(idsubobj,idobj)&";
+            url += "a=ObjSubobj(idsubobj,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }

@@ -219,31 +219,31 @@ public class ReqInfoActivity extends AppCompatActivity {
         String url = "";
         for (Generic g : reqinfo.getAutors()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqiauto(idautor,idreq)&";
+            url += "a=ReqIAuto(idautor,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqinfo.getSources()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqifuen(idfuen,idreq)&";
+            url += "a=ReqIFuen(idfuen,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqinfo.getObjetives()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqiobj(idobj,idreq)&";
+            url += "a=ReqIObj(idobj,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqinfo.getRequirements()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqireqr(idreqr,tiporeq,idreq)&";
+            url += "a=ReqIReqR(idreqr,tiporeq,idreq)&";
             url += "b=" + g.getId() + "," + Utils.deterTipoReq(g.getImage()) + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqinfo.getDatEspec()) {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
-            url += "a=reqidatesp(idreq,descrip)&";
+            url += "a=ReqIDatEsp(idreq,descrip)&";
             url += "b=" + id + ",'" + g.getName() + "'";
             Utils.saveObject(ctx, url);
         }
