@@ -1,12 +1,14 @@
 package com.karveg.readyreq.Fragments;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
@@ -15,12 +17,15 @@ import android.widget.TextView;
 
 import com.karveg.readyreq.Models.ReqInfo;
 import com.karveg.readyreq.R;
+import com.karveg.readyreq.Utils.Utils;
 
 public class ReqInfoFragment extends Fragment {
 
     private static ReqInfo reqinfo;
 
     private static EditText editTextName;
+    private static TextView editTextVer;
+    private static TextView editTextDate;
     private static EditText editTextDesc;
 
     private static RadioButton radioButtonPVLow;
@@ -91,7 +96,25 @@ public class ReqInfoFragment extends Fragment {
         Events();
         setValuesUI();
 
+        editTextDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+
         return view;
+    }
+
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                editTextDate.setText(day + "/" + (month + 1) + "/" + year);
+            }
+        });
+        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
     }
 
     private void Events() {
@@ -182,6 +205,8 @@ public class ReqInfoFragment extends Fragment {
 
     private void bindUI(View view) {
         editTextName = view.findViewById(R.id.editTextName);
+        editTextVer = view.findViewById(R.id.editTextVer);
+        editTextDate = view.findViewById(R.id.editTextDate);
         editTextDesc = view.findViewById(R.id.editTextDesc);
 
         radioButtonPVLow = view.findViewById(R.id.radioButtonPVLow);
@@ -222,6 +247,8 @@ public class ReqInfoFragment extends Fragment {
 
     private void setValuesUI() {
         editTextName.setText(reqinfo.getName());
+        editTextVer.setText(reqinfo.getVersion() + "");
+        editTextDate.setText(Utils.DateToString(reqinfo.getFech(), false));
         editTextDesc.setText(reqinfo.getDescription());
 
         if (reqinfo.getPrior() == 1) radioButtonPVLow.setChecked(true);
@@ -262,6 +289,8 @@ public class ReqInfoFragment extends Fragment {
 
     public static void setValuesReque() {
         reqinfo.setName(editTextName.getText().toString());
+        reqinfo.setVersion(Double.parseDouble(editTextVer.getText().toString()));
+        reqinfo.setFech(Utils.StringToDate(editTextDate.getText().toString(), false));
         reqinfo.setDescription(editTextDesc.getText().toString());
 
         if (radioButtonPVLow.isChecked()) reqinfo.setPrior(1);

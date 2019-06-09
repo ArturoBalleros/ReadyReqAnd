@@ -124,6 +124,8 @@ public class ReqInfo extends ObjEstandar implements Serializable {
                     ReqInfo r = new ReqInfo();
                     r.setId(jsonObject.optInt("Id"));
                     r.setName(jsonObject.optString("Nombre"));
+                    r.setVersion(jsonObject.optDouble("Version"));
+                    r.setFech(Utils.StringToDate(jsonObject.optString("Fecha"), true));
                     r.setDescription(jsonObject.optString("Descripcion"));
                     r.setTimeMed(jsonObject.optInt("TiemMed"));
                     r.setTimeMax(jsonObject.optInt("TiemMax"));
