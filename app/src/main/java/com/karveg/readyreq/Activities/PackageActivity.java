@@ -161,7 +161,7 @@ public class PackageActivity extends AppCompatActivity {
         String url;
         if (intCode != MyApplication.NOTHING) { //Modifico
 
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_update.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_update.php?";
             url += "a=" + pack.getId() + "&";
             url += "b=" + pack.getName() + "&";
             url += "c=" + pack.getVersion() + "&";

@@ -222,7 +222,7 @@ public class ListActivity extends AppCompatActivity {
         String url = "";
 
         progressDialog.show();
-        url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_list.php?";
+        url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_list.php?";
         url += "a=" + mode + "&";
         url += "b=" + flagTab + "&";
         if (mode == MyApplication.ACTORES) url += "c=" + actor.getId();
@@ -299,7 +299,7 @@ public class ListActivity extends AppCompatActivity {
     private void addObjects() {
         for (Generic g : objects)
             if (g.isSelected()) {
-                String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+                String url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
                 progressDialog.show();
                 if (mode == MyApplication.ACTORES) {
                     if (flagTab == MyApplication.AUTH) {

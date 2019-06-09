@@ -85,7 +85,7 @@ public class Actor extends ObjBase implements Serializable  {
 
         request = Volley.newRequestQueue(ctx);
 
-        String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_search.php?";
+        String url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_search.php?";
         url += "a=" + intCode;
         url = url.replace(" ", "%20");
         jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
@@ -171,7 +171,7 @@ public class Actor extends ObjBase implements Serializable  {
 
         request = Volley.newRequestQueue(ctx);
 
-        String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_id.php?";
+        String url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_id.php?";
         url += "a=" + Name;
         url = url.replace(" ", "%20");
         jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
