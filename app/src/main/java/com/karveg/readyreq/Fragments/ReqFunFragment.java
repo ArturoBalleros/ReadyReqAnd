@@ -1,6 +1,7 @@
 package com.karveg.readyreq.Fragments;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,14 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.karveg.readyreq.App.MyApplication;
 import com.karveg.readyreq.Models.Generic;
 import com.karveg.readyreq.Models.ReqFun;
 import com.karveg.readyreq.R;
+import com.karveg.readyreq.Utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +30,8 @@ public class ReqFunFragment extends Fragment {
 
     private static Spinner spinnerPack;
     private static EditText editTextName;
+    private static TextView editTextVer;
+    private static TextView editTextDate;
     private static EditText editTextDesc;
 
     private static EditText editTextPreCond;
@@ -96,12 +102,32 @@ public class ReqFunFragment extends Fragment {
         setValuesUI();
         ReqFun.getPackages(ctx);
 
+        editTextDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+
         return view;
+    }
+
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                editTextDate.setText(day + "/" + (month + 1) + "/" + year);
+            }
+        });
+        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
     }
 
     private void bindUI(View view) {
         spinnerPack = view.findViewById(R.id.spinnerPack);
         editTextName = view.findViewById(R.id.editTextName);
+        editTextVer = view.findViewById(R.id.editTextVer);
+        editTextDate = view.findViewById(R.id.editTextDate);
         editTextDesc = view.findViewById(R.id.editTextDesc);
 
         editTextPreCond = view.findViewById(R.id.editTextPreCond);
@@ -138,6 +164,8 @@ public class ReqFunFragment extends Fragment {
 
     private void setValuesUI() {
         editTextName.setText(reqfun.getName());
+        editTextVer.setText(reqfun.getVersion() + "");
+        editTextDate.setText(Utils.DateToString(reqfun.getFech(), false));
         editTextDesc.setText(reqfun.getDescription());
 
         editTextPreCond.setText(reqfun.getPreCond());
@@ -174,6 +202,8 @@ public class ReqFunFragment extends Fragment {
 
     public static void setValuesReque() {
         reqfun.setName(editTextName.getText().toString());
+        reqfun.setVersion(Double.parseDouble(editTextVer.getText().toString()));
+        reqfun.setFech(Utils.StringToDate(editTextDate.getText().toString(), false));
         reqfun.setDescription(editTextDesc.getText().toString());
 
         reqfun.setPackage(0);

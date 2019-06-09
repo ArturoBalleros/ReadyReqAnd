@@ -143,6 +143,8 @@ public class ReqFun extends ObjEstandar implements Serializable {
                     ReqFun r = new ReqFun();
                     r.setId(jsonObject.optInt("Id"));
                     r.setName(jsonObject.optString("Nombre"));
+                    r.setVersion(jsonObject.optDouble("Version"));
+                    r.setFech(Utils.StringToDate(jsonObject.optString("Fecha"), true));
                     r.setDescription(jsonObject.optString("Descripcion"));
                     r.setPackage(jsonObject.optInt("Paquete"));
                     r.setPreCond(jsonObject.optString("Precond"));

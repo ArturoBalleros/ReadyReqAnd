@@ -43,6 +43,29 @@
                     android:textSize="18dp" />
 
                 <EditText
+                    android:id="@+id/editTextVer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/text_version"
+                    android:inputType="numberDecimal"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:hint="@string/formato_fecha"
+                    android:inputType="date"
+                    android:maxLines="1" />
+
+                <EditText
                     android:id="@+id/editTextDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

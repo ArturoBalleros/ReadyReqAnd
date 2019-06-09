@@ -178,36 +178,40 @@ public class ReqFunActivity extends AppCompatActivity {
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqfun_update.php?";
             url += "a=" + reqfun.getId() + "&";
             url += "b=" + reqfun.getName() + "&";
-            url += "c=" + reqfun.getDescription() + "&";
-            url += "d=" + reqfun.getPackage() + "&";
-            url += "e=" + reqfun.getPreCond() + "&";
-            url += "f=" + reqfun.getPostCond() + "&";
-            url += "g=" + reqfun.getComplejidad() + "&";//complejidad
-            url += "h=" + reqfun.getPrior() + "&";
-            url += "i=" + reqfun.getUrge() + "&";
-            url += "j=" + reqfun.getEsta() + "&";
-            if (reqfun.isState()) url += "k=" + 1 + "&";
-            else url += "k=" + 0 + "&";
-            url += "l=" + reqfun.getCategory() + "&";
-            url += "m=" + reqfun.getCommentary();
+            url += "c=" + reqfun.getVersion() + "&";
+            url += "d=" + Utils.DateToString(reqfun.getFech(), true) + "&";
+            url += "e=" + reqfun.getDescription() + "&";
+            url += "f=" + reqfun.getPackage() + "&";
+            url += "g=" + reqfun.getPreCond() + "&";
+            url += "h=" + reqfun.getPostCond() + "&";
+            url += "i=" + reqfun.getComplejidad() + "&";//complejidad
+            url += "j=" + reqfun.getPrior() + "&";
+            url += "k=" + reqfun.getUrge() + "&";
+            url += "l=" + reqfun.getEsta() + "&";
+            if (reqfun.isState()) url += "m=" + 1 + "&";
+            else url += "m=" + 0 + "&";
+            url += "n=" + reqfun.getCategory() + "&";
+            url += "o=" + reqfun.getCommentary();
             Utils.create_update_delete(ReqFunActivity.this, url, progressDialog, MyApplication.REQ_FUNC, true);
 
         } else { //Creo
 
             url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqfun_create.php?";
             url += "a=" + reqfun.getName() + "&";
-            url += "b=" + reqfun.getDescription() + "&";
-            url += "c=" + reqfun.getPackage() + "&";
-            url += "d=" + reqfun.getPreCond() + "&";
-            url += "e=" + reqfun.getPostCond() + "&";
-            url += "f=" + reqfun.getComplejidad() + "&";//complejidad
-            url += "g=" + reqfun.getPrior() + "&";
-            url += "h=" + reqfun.getUrge() + "&";
-            url += "i=" + reqfun.getEsta() + "&";
-            if (reqfun.isState()) url += "j=" + 1 + "&";
-            else url += "j=" + 0 + "&";
-            url += "k=" + reqfun.getCategory() + "&";
-            url += "l=" + reqfun.getCommentary();
+            url += "b=" + reqfun.getVersion() + "&";
+            url += "c=" + Utils.DateToString(reqfun.getFech(), true) + "&";
+            url += "d=" + reqfun.getDescription() + "&";
+            url += "e=" + reqfun.getPackage() + "&";
+            url += "f=" + reqfun.getPreCond() + "&";
+            url += "g=" + reqfun.getPostCond() + "&";
+            url += "h=" + reqfun.getComplejidad() + "&";//complejidad
+            url += "i=" + reqfun.getPrior() + "&";
+            url += "j=" + reqfun.getUrge() + "&";
+            url += "k=" + reqfun.getEsta() + "&";
+            if (reqfun.isState()) url += "l=" + 1 + "&";
+            else url += "l=" + 0 + "&";
+            url += "m=" + reqfun.getCategory() + "&";
+            url += "n=" + reqfun.getCommentary();
             Utils.create_update_delete(ReqFunActivity.this, url, progressDialog, MyApplication.REQ_FUNC, true);
             ReqFun.getIdReque(getApplicationContext(), reqfun.getName(), progressDialog);
 
