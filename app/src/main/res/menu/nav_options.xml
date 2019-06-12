@@ -31,7 +31,7 @@
             android:title="@string/menu_ri" />
         <item
             android:id="@+id/menu_estim"
-            android:icon="@drawable/ic_conf"
+            android:icon="@drawable/ic_estim"
             android:title="@string/menu_estim" />
         <item
             android:id="@+id/menu_conf"
