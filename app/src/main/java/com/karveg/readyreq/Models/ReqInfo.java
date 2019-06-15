@@ -95,7 +95,7 @@ public class ReqInfo extends ObjEstandar implements Serializable {
 
         request = Volley.newRequestQueue(ctx);
 
-        String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_search.php?";
+        String url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_search.php?";
         url += "a=" + intCode;
         url = url.replace(" ", "%20");
         jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
@@ -203,7 +203,7 @@ public class ReqInfo extends ObjEstandar implements Serializable {
 
         request = Volley.newRequestQueue(ctx);
 
-        String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_id.php?";
+        String url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_id.php?";
         url += "a=" + Name;
         url = url.replace(" ", "%20");
         jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {

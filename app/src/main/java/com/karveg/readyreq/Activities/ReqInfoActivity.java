@@ -171,7 +171,7 @@ public class ReqInfoActivity extends AppCompatActivity {
     private void saveReque() {
         String url;
         if (reqinfo.getId() != MyApplication.NOTHING) { //Modifico
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_update.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_update.php?";
             url += "a=" + reqinfo.getId() + "&";
             url += "b=" + reqinfo.getName() + "&";
             url += "c=" + reqinfo.getVersion() + "&";
@@ -192,7 +192,7 @@ public class ReqInfoActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/reqinfo_create.php?";
             url += "a=" + reqinfo.getName() + "&";
             url += "b=" + reqinfo.getVersion() + "&";
             url += "c=" + Utils.DateToString(reqinfo.getFech(), true) + "&";
@@ -218,31 +218,31 @@ public class ReqInfoActivity extends AppCompatActivity {
     public static void saveObjects(Context ctx, int id) {
         String url = "";
         for (Generic g : reqinfo.getAutors()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ReqIAuto(idautor,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqinfo.getSources()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ReqIFuen(idfuen,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqinfo.getObjetives()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ReqIObj(idobj,idreq)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqinfo.getRequirements()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ReqIReqR(idreqr,tiporeq,idreq)&";
             url += "b=" + g.getId() + "," + Utils.deterTipoReq(g.getImage()) + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : reqinfo.getDatEspec()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ReqIDatEsp(idreq,descrip)&";
             url += "b=" + id + ",'" + g.getName() + "'";
             Utils.saveObject(ctx, url);

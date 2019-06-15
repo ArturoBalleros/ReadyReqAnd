@@ -171,7 +171,7 @@ public class ActorActivity extends AppCompatActivity {
         String url;
         if (actor.getId() != MyApplication.NOTHING) { //Modifico
 
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_update.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_update.php?";
             url += "a=" + actor.getId() + "&";
             url += "b=" + actor.getName() + "&";
             url += "c=" + actor.getVersion() + "&";
@@ -185,7 +185,7 @@ public class ActorActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/actor_create.php?";
             url += "a=" + actor.getName() + "&";
             url += "b=" + actor.getVersion() + "&";
             url += "c=" + Utils.DateToString(actor.getFech(), true) + "&";
@@ -203,13 +203,13 @@ public class ActorActivity extends AppCompatActivity {
     public static void saveObjects(Context ctx, int id) {
         String url = "";
         for (Generic g : actor.getAutors()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ActAuto(idautor,idact)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : actor.getSources()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ActFuen(idfuen,idact)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);

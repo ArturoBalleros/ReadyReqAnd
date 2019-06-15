@@ -174,7 +174,7 @@ public class ObjecActivity extends AppCompatActivity {
         String url;
         if (objective.getId() != MyApplication.NOTHING) { //Modifico
 
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_update.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_update.php?";
             url += "a=" + objective.getId() + "&";
             url += "b=" + objective.getName() + "&";
             url += "c=" + objective.getVersion() + "&";
@@ -191,7 +191,7 @@ public class ObjecActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/objet_create.php?";
             url += "a=" + objective.getName() + "&";
             url += "b=" + objective.getVersion() + "&";
             url += "c=" + Utils.DateToString(objective.getFech(), true) + "&";
@@ -212,19 +212,19 @@ public class ObjecActivity extends AppCompatActivity {
     public static void saveObjects(Context ctx, int id) {
         String url = "";
         for (Generic g : objective.getAutors()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ObjAuto(idautor,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : objective.getSources()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ObjFuen(idfuen,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);
         }
         for (Generic g : objective.getObjetives()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ObjSubobj(idsubobj,idobj)&";
             url += "b=" + g.getId() + "," + id;
             Utils.saveObject(ctx, url);

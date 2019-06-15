@@ -140,7 +140,7 @@ public class DatEspFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String url = "";
-                url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?";
+                url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_delete.php?";
                 url += "a=ReqIDatEsp where idreq = " + reqinfo.getId() + ";";
                 Utils.create_update_delete(getContext(), url, progressDialog, MyApplication.DAT_ESP, false);
             }
@@ -167,7 +167,7 @@ public class DatEspFragment extends Fragment {
     public static void updateDatEsp() {
         String url = "";
         for (Generic g : reqinfo.getDatEspec()) {
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_create.php?";
             url += "a=ReqIDatEsp(idreq,descrip)&";
             url += "b=" + reqinfo.getId() + ",'" + g.getName() + "'";
             try {

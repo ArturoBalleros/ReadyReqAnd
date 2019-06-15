@@ -1,5 +1,5 @@
 24/08 	Nav y iconos
-	SharedPreferences y MyApplication
+10 h	SharedPreferences y MyApplication
 	pruebas de encriptacion y desencriptacion
 	fragment conf diseño 
 	multilenguaje nav y fragment config
@@ -7,7 +7,7 @@
 	php de conexion a base de datos
 
 27/08	Conf fragment acabado
-	php funciones implementadas write y leer
+14 h	php funciones implementadas write y leer
 	diseño fargment principal app en papel
 	creacion de todos los fragments principales (menos boton de crear) -listados
 	menu nav options acabado
@@ -18,50 +18,47 @@
 	scrips php para buscar en todas tablas principales group_create/delete/update/SEARCH
 
 28/08   Activity group acabado (crear y update) y eliminacion de trabajador (php incluidos)
-
+4 h
 29/08	dISEÑO ACTIVITY PAQUETE
-	scrips php para buscar en todas tablas principales PAQ_create/delete/update/SEArcH
+6h	scrips php para buscar en todas tablas principales PAQ_create/delete/update/SEArcH
 	funcionamiento del activity (rellenar datos) Paquetes
 	
 30/08	Creación de modelos
-	Modificacion de Default -> GENERIC campo imagen en prevision a los requeriments de relacionados
+6h	Modificacion de Default -> GENERIC campo imagen en prevision a los requeriments de relacionados
 	DefauultFeragment -> GenericFragment adaptacion para cuando puede hacerse click o no
 	DefaultAdapter -> GenericAdapter adaptacion para cuando debe monstrar el popup o no
 	Popup al eliminar se ha añadido confirmacion y se ha movido ese metodo al fragment
 
 31/08	Creacion del Actor Activity
-	Creaciopn del metodo getActor y script php
+5h	Creaciopn del metodo getActor y script php
 	Configuracion del TabControl y funcionamiento
 
 01/09	Diseño Fragment Data Actor
-
- Diseño de los fragmentos datas restantes(objetos, recinfo,reqfun,reqnfun)
-
-
+7h 	Diseño de los fragmentos datas restantes(objetos, recinfo,reqfun,reqnfun)
 	Creacion de los scrips php object,reqfun,reqnfun,reqinfo search
 
 04/09	Flag NoCode y adaptacion
-	correccion de scrips php
+3h	correccion de scrips php
 	funcionamiento parcial de actoractivity [visualizacion] (falta guardar actualizar y eliminar y funcionamiento de fuentes y actores)
 
 05/09	visualizacion reqnfun y reqinfo (creacion del datafragment)
-	modificacion scrip search de los req
+4h	modificacion scrip search de los req
 
 06/09	visualizacion reqfun
-	list activity -> adaptacion de los otros activities (el bundle)
+7h	list activity -> adaptacion de los otros activities (el bundle)
 	ajustado metodo para seleccionar una pestaña al acceder a los activities
 
 07/09	multiselecion y cracion del layout list activity
-	creacion de una funcion php y scrip para saber que obtener al querer añadir autores actores etc
+7h	creacion de una funcion php y scrip para saber que obtener al querer añadir autores actores etc
 
 08/09	finalizacion del script php con las opciones necesarias
-	reparado el error en la multiselección
+8h	reparado el error en la multiselección
 	list activity acabado (añade y todo)
 	crear lineas en las secuencias de los reqfun y en reqinfo (No se deja modificar porque no funciona bien)
 	ME HE DADO CUENTA DE QUE LAS PUTAS REFERENCIAS FUNCIONAN MAL Y ME VEO OBLIGADO A HACER UNA MODIFICACION TOTAL DEL CODIGO ME CAGO EN MI PUTA MADRE
 
 09/09	SUSPIROS DE DESESPERACIÓN Y UN NUEVO COMIENZO
-	Se han creado los fragments con sus correspondientes adaptadores de autores fuentes y objetivos
+32h	Se han creado los fragments con sus correspondientes adaptadores de autores fuentes y objetivos
 	en los actores ya se pueden crear y modificar del todo (objetos relacionados incluidos)
 	Se han creado nuevos scrips php para obtener id de un objeto recien creado para actores objetivos reqfun reqnfun y reqinfo
 	se han creado scrip de creacion y modificacion de actores
@@ -74,13 +71,15 @@
 	se han creado scrip de creacion y modificacion de reqinfo
 	
 15/09	Funcionamiento de reqinfo completo excepto eliminar
-	Funcionamiento parcial reqfun
+6h	Funcionamiento parcial reqfun
 	Scripts de eliminacion
 	(Modificacion general de eliminar paquetes y creacion de uno por defecto)
 
 16/09	Creacion de scrip reqfun create y update
-	Acabado a priori salvo revision de codigo y posibles bugs
+3h	Acabado a priori salvo revision de codigo y posibles bugs
 
-26/09	Eliminacion lupa cuando el fragment configuracion es seleccionado
-10/12	GenericFragment al obtener items se ha añadido un nuevo mensaje de error al estar programando en IOS me di cuenta getObjects el no4
-15/12	Se ha añadido al obtener los paquetes para asignalos a los requisitos funcionales el paquete 0 "No paquete" que indica que no tiene paquete asignado ese req fun
+26/09 30min	Eliminacion lupa cuando el fragment configuracion es seleccionado
+10/12 20min	GenericFragment al obtener items se ha añadido un nuevo mensaje de error al estar programando en IOS me di cuenta getObjects el no4
+15/12 20min	Se ha añadido al obtener los paquetes para asignalos a los requisitos funcionales el paquete 0 "No paquete" que indica que no tiene paquete asignado ese req fun
+
+GitHub

@@ -171,7 +171,7 @@ public class PackageActivity extends AppCompatActivity {
 
         } else { //Creo
 
-            url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_create.php?";
+            url = MyApplication.HTTP + "://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/paq_create.php?";
             url += "a=" + pack.getName() + "&";
             url += "b=" + pack.getVersion() + "&";
             url += "c=" + Utils.DateToString(pack.getFech(), true) + "&";
