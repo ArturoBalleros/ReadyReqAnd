@@ -121,51 +121,72 @@ public class EstimFragment extends Fragment {
     private void bindUI(View view) {
 
         textViewDSR = view.findViewById(R.id.textViewDSR);
+        textViewDSR.setText("0");
         seekBarDSR = view.findViewById(R.id.seekBarDSR);
         textViewRTII = view.findViewById(R.id.textViewRTII);
+        textViewRTII.setText("0");
         seekBarRTII = view.findViewById(R.id.seekBarRTII);
         textViewEUE = view.findViewById(R.id.textViewEUE);
+        textViewEUE.setText("0");
         seekBarEUE = view.findViewById(R.id.seekBarEUE);
         textViewCIPR = view.findViewById(R.id.textViewCIPR);
+        textViewCIPR.setText("0");
         seekBarCIPR = view.findViewById(R.id.seekBarCIPR);
 
         textViewRCMBAF = view.findViewById(R.id.textViewRCMBAF);
+        textViewRCMBAF.setText("0");
         seekBarRCMBAF = view.findViewById(R.id.seekBarRCMBAF);
         textViewIE = view.findViewById(R.id.textViewIE);
+        textViewIE.setText("0");
         seekBarIE = view.findViewById(R.id.seekBarIE);
         textViewU = view.findViewById(R.id.textViewU);
+        textViewU.setText("0");
         seekBarU = view.findViewById(R.id.seekBarU);
         textViewCPS = view.findViewById(R.id.textViewCPS);
+        textViewCPS.setText("0");
         seekBarCPS = view.findViewById(R.id.seekBarCPS);
 
         textViewETC = view.findViewById(R.id.textViewETC);
+        textViewETC.setText("0");
         seekBarETC = view.findViewById(R.id.seekBarETC);
         textViewHC = view.findViewById(R.id.textViewHC);
+        textViewHC.setText("0");
         seekBarHC = view.findViewById(R.id.seekBarHC);
         textViewCS = view.findViewById(R.id.textViewCS);
+        textViewCS.setText("0");
         seekBarCS = view.findViewById(R.id.seekBarCS);
         textViewDOTPC = view.findViewById(R.id.textViewDOTPC);
+        textViewDOTPC.setText("0");
         seekBarDOTPC = view.findViewById(R.id.seekBarDOTPC);
         textViewUT = view.findViewById(R.id.textViewUT);
+        textViewUT.setText("0");
         seekBarUT = view.findViewById(R.id.seekBarUT);
 
 
         textViewFWTP = view.findViewById(R.id.textViewFWTP);
+        textViewFWTP.setText("0");
         seekBarFWTP = view.findViewById(R.id.seekBarFWTP);
         textViewAE = view.findViewById(R.id.textViewAE);
+        textViewAE.setText("0");
         seekBarAE = view.findViewById(R.id.seekBarAE);
         textViewOOPE = view.findViewById(R.id.textViewOOPE);
+        textViewOOPE.setText("0");
         seekBarOOPE = view.findViewById(R.id.seekBarOOPE);
         textViewLAC = view.findViewById(R.id.textViewLAC);
+        textViewLAC.setText("0");
         seekBarLAC = view.findViewById(R.id.seekBarLAC);
 
         textViewM = view.findViewById(R.id.textViewM);
+        textViewM.setText("0");
         seekBarM = view.findViewById(R.id.seekBarM);
         textViewSR = view.findViewById(R.id.textViewSR);
+        textViewSR.setText("0");
         seekBarSR = view.findViewById(R.id.seekBarSR);
         textViewPTS = view.findViewById(R.id.textViewPTS);
+        textViewPTS.setText("0");
         seekBarPTS = view.findViewById(R.id.seekBarPTS);
         textViewDPL = view.findViewById(R.id.textViewDPL);
+        textViewDPL.setText("0");
         seekBarDPL = view.findViewById(R.id.seekBarDPL);
 
 
@@ -715,7 +736,7 @@ public class EstimFragment extends Fragment {
 
     private static void sendRequest(String NomEst, int value) {
         String url = "http://" + MyApplication.IP_SERVER + ":" + MyApplication.PORTHTTP + "/readyreq/rel_update.php?";
-        url += "a=estim";
+        url += "a=Estim";
         url += "&b=ValEst = " + value;
         url += "&c=NomEst = '" + NomEst + "'";
         Utils.saveObject(ctx, url);
