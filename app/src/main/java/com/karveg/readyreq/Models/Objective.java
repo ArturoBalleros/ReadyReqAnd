@@ -1,3 +1,6 @@
+/*
+   Autor: Arturo Balleros Albillo
+ */
 package com.karveg.readyreq.Models;
 
 import android.app.AlertDialog;
@@ -25,7 +28,6 @@ import org.json.JSONObject;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Objective extends ObjEstandar implements Serializable {
 

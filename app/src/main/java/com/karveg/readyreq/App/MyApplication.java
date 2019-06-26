@@ -1,3 +1,6 @@
+/*
+   Autor: Arturo Balleros Albillo
+ */
 package com.karveg.readyreq.App;
 
 import android.app.Application;

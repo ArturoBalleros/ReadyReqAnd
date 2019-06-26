@@ -1,6 +1,7 @@
+/*
+   Autor: Arturo Balleros Albillo
+ */
 package com.karveg.readyreq.Fragments;
-
-//Buscar en todos los sitio ctrl + shift + f
 
 import android.app.AlertDialog;
 import android.content.Context;

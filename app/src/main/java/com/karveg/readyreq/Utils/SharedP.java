@@ -1,3 +1,6 @@
+/*
+   Autor: Arturo Balleros Albillo
+ */
 package com.karveg.readyreq.Utils;
 
 import android.content.SharedPreferences;
@@ -7,23 +10,23 @@ import com.karveg.readyreq.App.MyApplication;
 public class SharedP {
 
     public static String getIPSerPrefs(SharedPreferences prefs) {
-        return prefs.getString("IPServer", "192.168.0.106");
+        return prefs.getString("IPServer", "");
     }
 
     public static String getIPSerSQLPrefs(SharedPreferences prefs) {
-        return prefs.getString("IPServerMySQL", "192.168.0.106");
+        return prefs.getString("IPServerMySQL", "");
     }
 
     public static String getUserPrefs(SharedPreferences prefs) {
-        return prefs.getString("User", "programas");
+        return prefs.getString("User", "");
     }
 
     public static String getPassPrefs(SharedPreferences prefs) {
-        return prefs.getString("Password", "56151621");
+        return prefs.getString("Password", "");
     }
 
     public static String getBasePrefs(SharedPreferences prefs) {
-        return prefs.getString("Database", "ready");
+        return prefs.getString("Database", "");
     }
 
     public static int getPortPrefs(SharedPreferences prefs) {

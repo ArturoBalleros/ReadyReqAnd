@@ -1,3 +1,6 @@
+/*
+   Autor: Arturo Balleros Albillo
+ */
 package com.karveg.readyreq.Fragments;
 
 import android.annotation.SuppressLint;
@@ -12,7 +15,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.karveg.readyreq.Models.ReqNFun;
 import com.karveg.readyreq.R;

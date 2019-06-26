@@ -1,3 +1,6 @@
+/*
+   Autor: Arturo Balleros Albillo
+ */
 package com.karveg.readyreq.Interfaces;
 
 public interface ItemTouchHelperAdapter {

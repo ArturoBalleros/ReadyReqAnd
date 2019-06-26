@@ -1,5 +1,7 @@
+/*
+   Autor: Arturo Balleros Albillo
+ */
 package com.karveg.readyreq.Fragments;
-
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
